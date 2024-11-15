@@ -14,6 +14,15 @@
     (println (string/join " | " row))
     (println (string/join (repeat (count row) "- - ")))))
 
+(defn login
+  "Login with username"
+  [username]
+  (if (seq username)
+    (do
+      (println "Login successful!")
+      username)
+    (println "Please enter a valid username.")))
+
 ;; (def board (create-board 5))
 ;; (print-board board)
 
@@ -41,10 +50,15 @@
                    nil
                    sekvenca)))
 
-(defn my-map-lazy_recursion [funkcija sekvenca]
+(defn my-map-rec [funkcija sekvenca]
+  (if (seq sekvenca)
+    (cons (funkcija (first sekvenca)) (my-map-rec funkcija (rest sekvenca)))
+    sekvenca))
+
+(defn my-map-lazy-rec [funkcija sekvenca]
   (lazy-seq
    (if (seq sekvenca)
-     (cons (funkcija (first sekvenca)) (my-map-lazy_recursion funkcija (rest sekvenca)))
+     (cons (funkcija (first sekvenca)) (my-map-lazy-rec funkcija (rest sekvenca)))
      nil)))
 
 (defn my-map-when-let [funkcija sekvenca]
@@ -53,12 +67,7 @@
      (cons (funkcija (first s))
            (my-map-when-let funkcija (rest s))))))
 
-(defn my-map-rec [funkcija sekvenca]
-  (if (seq sekvenca)
-    (cons (funkcija (first sekvenca)) (my-map-rec funkcija (rest sekvenca)))
-    sekvenca))
-
-(defn my-map-recur [funkcija sekvenca]
+(defn my-map-recur-conj [funkcija sekvenca]
   (loop [remaining sekvenca
          result []]
     (if (seq remaining)
@@ -79,29 +88,13 @@
       (recur (next remaining) (cons (funkcija (first remaining)) result))
       (reverse result))))
 
-
-;; Problem 55, Count Occurences
-;; Difficulty: medium
-;; Write a function which returns a map containing
-;; the number of occurences of each distinct item in a sequence.
-
-;; (= (__ [1 1 2 3 2 1 1]) {1 4, 2 2, 3 1})
-;; (= (__ [:b :a :b :a :b]) {:a 2, :b 3})
-;; (= (__ '([1 2] [1 3] [1 3])) {[1 2] 1, [1 3] 2})
-
-;; sa get se prvo pitam da li item, odnosno prvi clan vektora, postoji
-;; unutar resulting-map-a. ako ne postoji, vratim 0
-;; ako postoji, vratim vrednost koja je vezana za taj key (item)
-;; onda inkrementiramo taj broj za 1 i dodelimo ga sa assoc da to bude
-;; nova vrednost sa kojom asociramo taj item 
-
 (defn my-frequencies [vector]
   (reduce (fn [resulting-map item]
             (assoc resulting-map item (inc (get resulting-map item 0))))
           {}
           vector))
 
-(defn my-frequencies-rec [vector]
+(defn my-frequencies-rec-letfn [vector]
   (letfn [(count-items [counts remaining]
             (if (empty? remaining)
               counts
@@ -109,6 +102,21 @@
                     current-count (if (contains? counts item) (counts item) 0)]
                 (count-items (conj counts [item (inc current-count)]) (rest remaining)))))]
     (count-items {} vector)))
+
+(defn my-frequencies-rec [vector counts]
+  (if (empty? vector)
+    counts
+    (let [item (first vector)
+          current-count (get counts item 0)]
+      (my-frequencies-rec (rest vector) (assoc counts item (inc current-count))))))
+
+(defn my-frequencies-rec2 [vector]
+  (if (empty? vector)
+    {}
+    (let [item (first vector)
+          rest-frequencies (my-frequencies-rec2 (rest vector))]
+      (assoc rest-frequencies item (inc (get rest-frequencies item 0))))))
+
 
 (defn my-frequencies-recur [vector]
   (loop [counts {} remaining vector]
@@ -123,3 +131,52 @@
         (map (fn [item]
                [item (count (filter #(= % item) vector))])
              (distinct vector))))
+
+(defn sum-list [numbers]
+  (loop [remaining-numbers numbers
+         total 0]
+    (if (empty? remaining-numbers)
+      total
+      (let [[head & remaining] remaining-numbers]
+        (recur remaining (+ total head))))))
+
+(defn sum-without-recur
+  ([vals] (sum-without-recur vals 0))
+  ([vals accumulating-total]
+   (if (empty? vals)
+     accumulating-total
+     (sum-without-recur (rest vals) (+ (first vals) accumulating-total)))))
+
+(def calories [2.3 4.6 6.6 2.1])
+(def fat [1 2.2 3 8.1])
+(defn merge-food-stuff
+  [calories fats]
+  {:calories calories
+   :fat fats})
+
+(defmacro my-print
+  [expression]
+  (list 'let ['result expression]
+        (list 'println 'result)
+        'result))
+
+;;procitati nes iz user story applied
+;;naci na nekom sajtu slucajeve koriscenja 
+;;user would like to get a reccomendation about what to wear //sta do gde??
+;;moramo da imamo integracione testove, funkciponalne testove... biblioteka midje koja se ubaci u lajningen i pomaze nam da pisemo testove 
+;;test driven development 
+;;za svoj domen uraditi 5 slucajeva koriscenja sa test driven stvarima 
+
+(defn reccomend-what-to-wear
+  "This function will recommend clothing based on conditions (to be implemented)."
+  []
+  :todo)
+
+(defn my-function [] 3)
+
+(def x 1)
+
+(defn first-element [sequence default]
+  (if (nil? sequence)
+    default
+    (first sequence)))

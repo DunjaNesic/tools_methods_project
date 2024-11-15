@@ -36,8 +36,8 @@ You can configure this with the setting:
 ;   - See https://calva.io/connect-sequences/
 ; 
 
-; Starting Jack-in: (cd /home/dunja/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:37463 ...
+; Starting Jack-in: (cd /home/dunja/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:35883 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -47,38 +47,89 @@ clj꞉tools-methods-project.core꞉> 
 about why stdout printed to this file is prepended with `;` to be line comments."
 clj꞉tools-methods-project.core꞉> 
 ; Jack-in done.
-clj꞉tools-methods-project.core꞉> (def x 4)
-#'tools-methods-project.core/x
-clj꞉tools-methods-project.core꞉> x
-4
 clj꞉tools-methods-project.core꞉> 
-(x)
-; Execution error (ClassCastException) at tools-methods-project.core/eval10360 (form-init5832708808625963143.clj:55).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+#'tools-methods-project.core/first-element
 clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-#'tools-methods-project.core/my-map-recur-next
-clj꞉tools-methods-project.core꞉> (= (frequencies [1 1 2 3 2 1 1]) {1 4, 2 2, 3 1})
-true
-clj꞉tools-methods-project.core꞉> (frequencies [1 1 2 3 2 2 3 3 3 3 3])
-{1 2, 2 3, 3 6}
-clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-#'tools-methods-project.core/my-frequencies
-clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-#'tools-methods-project.core/my-frequencies
-clj꞉tools-methods-project.core꞉> 
-#'tools-methods-project.core/my-frequencies
-clj꞉tools-methods-project.core꞉> (my-frequencies [1 2 1 1 3 3 1 2 1 1 3])
-{1 6, 2 2, 3 3}
-clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-#'tools-methods-project.core/my-frequencies
-clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-#'tools-methods-project.core/my-frequencies-recur
-clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-#'tools-methods-project.core/my-frequencies-distinct
-clj꞉tools-methods-project.core꞉> 
+; You should expect to see three failures below.
+; 
+; FAIL about `first-element` - about my function - it should not return 3 at (board_test.clj:20)
+; Expected: Anything BUT
+; 3
+; Actual:
+; 3
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:30)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:31)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:33)
+; Expected:
+; :default
+; Actual:
+; nil
+; Execution error (IllegalStateException) at tools-methods-project.board-test/eval17723$loading (form-init6001065093319435047.clj:1).
+; => already refers to: #'midje.sweet/=> in namespace: tools-methods-project.board-test
+clj꞉tools-methods-project.board-test꞉> 
+; Evaluating file: board_test.clj
+; You should expect to see three failures below.
+; 
+; FAIL about `first-element` - about my function - it should not return 3 at (board_test.clj:19)
+; Expected: Anything BUT
+; 3
+; Actual:
+; 3
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:29)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:30)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:32)
+; Expected:
+; :default
+; Actual:
+; nil
+false
+clj꞉tools-methods-project.board-test꞉> 
+; You should expect to see three failures below.
+; 
+; FAIL about `first-element` - about my function - it should not return 3 at (board_test.clj:19)
+; Expected: Anything BUT
+; 3
+; Actual:
+; 3
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:29)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:30)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (board_test.clj:32)
+; Expected:
+; :default
+; Actual:
+; nil
+false
+clj꞉tools-methods-project.board-test꞉> 
