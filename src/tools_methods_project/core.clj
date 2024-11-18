@@ -160,13 +160,6 @@
         (list 'println 'result)
         'result))
 
-;;procitati nes iz user story applied
-;;naci na nekom sajtu slucajeve koriscenja 
-;;user would like to get a reccomendation about what to wear //sta do gde??
-;;moramo da imamo integracione testove, funkciponalne testove... biblioteka midje koja se ubaci u lajningen i pomaze nam da pisemo testove 
-;;test driven development 
-;;za svoj domen uraditi 5 slucajeva koriscenja sa test driven stvarima 
-
 (defn reccomend-what-to-wear
   "This function will recommend clothing based on conditions (to be implemented)."
   []
@@ -174,9 +167,40 @@
 
 (defn my-function [] 3)
 
-(def x 1)
-
 (defn first-element [sequence default]
   (if (nil? sequence)
     default
     (first sequence)))
+
+;;procitati nes iz user story applied
+;;naci na nekom sajtu slucajeve koriscenja 
+;;user would like to get a reccomendation about what to wear //sta do gde??
+;;moramo da imamo integracione testove, funkciponalne testove...
+;;biblioteka midje koja se ubaci u lajningen i pomaze nam da pisemo testove 
+;;test driven development 
+;;za svoj domen uraditi 5 slucajeva koriscenja sa test driven stvarima 
+
+;;moj domen:
+;; 1. placing ships
+;; 2. taking a turn
+;; 3. playing with a friend
+;; 4. playing with AI
+;; 5. replay the game
+;; 6. view stats from that and all previous games
+
+(defn sleep-print-update
+  [sleep-time thread-name update-fn]
+  (fn [state]
+    (Thread/sleep sleep-time)
+    (println (str thread-name ": " state))
+    (update-fn state)))
+(def counter (ref 0))
+(future (dosync (commute counter (sleep-print-update 100 "Thread A" inc))))
+(future (dosync (commute counter (sleep-print-update 150 "Thread B" inc))))
+
+;;kupujemprodajem
+;; Kao korisnik, želim da mogu da pretražujem oglase po kategorijama kako bih lako pronašao proizvode koji me interesuju.
+;; Kao prodavac, želim da mogu da postavim oglas sa slikama proizvoda kako bih privukao više potencijalnih kupaca.
+;; Kao kupac, želim da mogu da filtriram oglase prema cenama i lokaciji kako bih našao proizvode u svom budžetu i bliže mom mestu.
+;; Kao korisnik, želim da mogu da sačuvam oglase u listu favorita kako bih se kasnije vratio i razmotrio proizvode koji mi se dopadaju.
+;; Kao korisnik, želim da mogu da šaljem privatne poruke prodavcima kako bih postavio dodatna pitanja pre nego što obavim kupovinu.
