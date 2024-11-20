@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /home/dunja/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
-; Using host:port 127.0.0.1:46417 ...
+; Using host:port 127.0.0.1:37645 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,221 +48,181 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉tools-methods-project.core꞉> 
 ; Jack-in done.
 clj꞉tools-methods-project.core꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> (check-symptoms ["fever"])
+#'tools-methods-project.core/color-rgb-map
+clj꞉tools-methods-project.core꞉> 
+; Syntax error compiling at (src/tools_methods_project/core.clj:273:3).
+; No such namespace: math
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: core.clj
+; We suggest: shorts
+; We suggest: pants
+; We don't have a suggestion for this top.
+; 
+; Syntax error compiling at (src/tools_methods_project/core.clj:273:3).
+; No such namespace: math
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; Evaluating file: core.clj
+; We suggest: sweatpants
+; We suggest: pants
+; We don't have a suggestion for this top.
+; 
+; Syntax error compiling at (src/tools_methods_project/core.clj:273:31).
+; No such var: mathh/expt
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+#'tools-methods-project.core/color-rgb-map
+clj꞉tools-methods-project.core꞉> 
+; Syntax error compiling at (src/tools_methods_project/core.clj:273:31).
+; No such var: mathh/expt
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: core.clj
+; We suggest: sweatpants
+; We suggest: skirt
+; We don't have a suggestion for this top.
+; 
+; Syntax error compiling at (src/tools_methods_project/core.clj:273:30).
+; No such var: math/expt
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+#'tools-methods-project.core/color-rgb-map
+clj꞉tools-methods-project.core꞉> 
+; Syntax error compiling at (src/tools_methods_project/core.clj:273:30).
+; No such var: math/expt
+clj꞉tools-methods-project.core꞉> 
+#'tools-methods-project.core/rgb-distance
+clj꞉tools-methods-project.core꞉> 
+#'tools-methods-project.core/match-coefficient
+clj꞉tools-methods-project.core꞉> 
+#'tools-methods-project.core/color-coefficient
+clj꞉tools-methods-project.core꞉> 
+; 0.18350341907227397
 nil
-clj꞉tools-methods-project.symptom-checker꞉> 
-#'tools-methods-project.symptom-checker/symptom-disease-map
-clj꞉tools-methods-project.symptom-checker꞉> 
-#'tools-methods-project.symptom-checker/disease-specialist-map
-clj꞉tools-methods-project.symptom-checker꞉> 
-#'tools-methods-project.symptom-checker/predict-diagnoses
-clj꞉tools-methods-project.symptom-checker꞉> 
-#'tools-methods-project.symptom-checker/recommend-specialists
-clj꞉tools-methods-project.symptom-checker꞉> 
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> (check-symptoms ["fever"])
-{:diagnoses ("Flu" "COVID-19"), :specialists ("General Practitioner" "Infectious Disease Specialist")}
-clj꞉tools-methods-project.symptom-checker꞉> 
-true
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; Evaluating file: symptom_checker_test.clj
-; 
-; FAIL about `check-symptoms` - it combines predictions and recommendations at (symptom_checker_test.clj:20)
-; Expected:
-; {:diagnoses #<clojure.lang.AFunction$1@322ffa4e>
-;  :specialists #<clojure.lang.AFunction$1@4e395097>}
-; Actual:
-; {:diagnoses ("Flu" "COVID-19" "Bronchitis")
-;  :specialists ("General Practitioner"
-;                "Infectious Disease Specialist"
-;                "Pulmologist")}
-; Diffs: in [:diagnoses] expected #function[clojure.lang.AFunction/1], was ("Flu" "COVID-19" "Bronchitis")
-;               in [:specialists] expected #function[clojure.lang.AFunction/1], was ("General Practitioner" "Infectious Disease Specialist" "Pulmologist")
-false
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-true
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; Evaluating file: symptom_checker_test.clj
-; 
-; FAIL about `check-symptoms` - it combines predictions and recommendations at (symptom_checker_test.clj:20)
-; Expected:
-; {:diagnoses #<clojure.lang.AFunction$1@405a891d>
-;  :specialists #<clojure.lang.AFunction$1@5de44c60>}
-; Actual:
-; {:diagnoses ("Flu" "COVID-19" "Bronchitis")
-;  :specialists ("General Practitioner"
-;                "Infectious Disease Specialist"
-;                "Pulmologist")}
-; Diffs: in [:diagnoses] expected #function[clojure.lang.AFunction/1], was ("Flu" "COVID-19" "Bronchitis")
-;               in [:specialists] expected #function[clojure.lang.AFunction/1], was ("General Practitioner" "Infectious Disease Specialist" "Pulmologist")
-false
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; Evaluating file: symptom_checker_test.clj
-; 
-; FAIL about `check-symptoms` - User wants to combine predictions and recommendations at (symptom_checker_test.clj:21)
-; Expected:
-; {:diagnoses #<clojure.lang.AFunction$1@5fb7c217>
-;  :specialists #<clojure.lang.AFunction$1@1d1935e9>}
-; Actual:
-; {:diagnoses ("Flu" "COVID-19" "Bronchitis")
-;  :specialists ("General Practitioner"
-;                "Infectious Disease Specialist"
-;                "Pulmologist")}
-; Diffs: in [:diagnoses] expected #function[clojure.lang.AFunction/1], was ("Flu" "COVID-19" "Bronchitis")
-;               in [:specialists] expected #function[clojure.lang.AFunction/1], was ("General Practitioner" "Infectious Disease Specialist" "Pulmologist")
-false
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; Evaluating file: personalized_treatment_test.clj
-; 
-; ; clj  tools-methods-project.personalized-treatment-test 
-; Syntax error compiling at (test/tools_methods_project/personalized_treatment_test.clj:10:14).
-; Unable to resolve symbol: generate-recommendations in this context
-; Evaluation of file personalized_treatment_test.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.personalized-treatment-test꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> 
-; Evaluating file: symptom_checker_test.clj
-; 
-; FAIL about `predict-diagnoses` - User wants to know his diagnosis based on input symptoms at (symptom_checker_test.clj:9)
-; Actual result did not agree with the checking function.
-; Actual result:
-; ("Flu" "COVID-19")
-; Checking function: (contains ["Flu" "COVID-19" "Bronchitis"])
-;     The checker said this about the reason:
-;         Best match found: ["Flu" "COVID-19"]
-; 
-; FAIL about `check-symptoms` - User wants to combine predictions and recommendations at (symptom_checker_test.clj:21)
-; Expected:
-; {:diagnoses #<clojure.lang.AFunction$1@32834107>
-;  :specialists #<clojure.lang.AFunction$1@3d260ca8>}
-; Actual:
-; {:diagnoses ("Flu" "COVID-19" "Bronchitis")
-;  :specialists ("General Practitioner"
-;                "Infectious Disease Specialist"
-;                "Pulmologist")}
-; Diffs: in [:diagnoses] expected #function[clojure.lang.AFunction/1], was ("Flu" "COVID-19" "Bronchitis")
-;               in [:specialists] expected #function[clojure.lang.AFunction/1], was ("General Practitioner" "Infectious Disease Specialist" "Pulmologist")
-false
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; 
-; FAIL User wants to know his diagnosis based on input symptoms at (symptom_checker_test.clj:9)
-; Actual result did not agree with the checking function.
-; Actual result:
-; ("Flu" "COVID-19")
-; Checking function: (contains ["Flu" "COVID-19" "Bronchitis"])
-;     The checker said this about the reason:
-;         Best match found: ["Flu" "COVID-19"]
-; Syntax error reading source at (REPL:11:61).
-; Unmatched delimiter: )
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; 
-; FAIL User wants to know his diagnosis based on input symptoms at (symptom_checker_test.clj:9)
-; Actual result did not agree with the checking function.
-; Actual result:
-; ("Flu" "COVID-19")
-; Checking function: (contains ["Flu" "COVID-19" "Bronchitis"])
-;     The checker said this about the reason:
-;         Best match found: ["Flu" "COVID-19"]
-; Syntax error reading source at (REPL:11:61).
-; Unmatched delimiter: )
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; 
-; FAIL about `predict-diagnoses` - User wants to know his diagnosis based on input symptoms at (symptom_checker_test.clj:9)
-; Actual result did not agree with the checking function.
-; Actual result:
-; ("Flu" "COVID-19")
-; Checking function: (contains ["Flu" "COVID-19" "Bronchitis"])
-;     The checker said this about the reason:
-;         Best match found: ["Flu" "COVID-19"]
-false
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; Evaluating file: symptom_checker_test.clj
-; 
-; FAIL about `check-symptoms` - User wants to combine predictions and recommendations at (symptom_checker_test.clj:21)
-; Expected:
-; {:diagnoses #<clojure.lang.AFunction$1@1697a9ab>
-;  :specialists #<clojure.lang.AFunction$1@13f5ab29>}
-; Actual:
-; {:diagnoses ("Flu" "COVID-19" "Bronchitis")
-;  :specialists ("General Practitioner"
-;                "Infectious Disease Specialist"
-;                "Pulmologist")}
-; Diffs: in [:diagnoses] expected #function[clojure.lang.AFunction/1], was ("Flu" "COVID-19" "Bronchitis")
-;               in [:specialists] expected #function[clojure.lang.AFunction/1], was ("General Practitioner" "Infectious Disease Specialist" "Pulmologist")
-false
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-true
-clj꞉tools-methods-project.symptom-checker-test꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> 
-; Evaluating file: healthcare_chatbot.clj
-#'tools-methods-project.healthcare-chatbot/faq-db
-clj꞉tools-methods-project.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-#'tools-methods-project.healthcare-chatbot/answer-faq
-clj꞉tools-methods-project.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-#'tools-methods-project.healthcare-chatbot/answer-faq
-clj꞉tools-methods-project.healthcare-chatbot꞉> 
-#'tools-methods-project.healthcare-chatbot/faq-db
-clj꞉tools-methods-project.healthcare-chatbot꞉> 
-#'tools-methods-project.healthcare-chatbot/answer-faq
-clj꞉tools-methods-project.healthcare-chatbot꞉> (answer-faq ["What is flu?"])
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.healthcare-chatbot꞉> (answer-faq "What is flu?")
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot_test.clj
-true
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
+clj꞉tools-methods-project.core꞉> 
+"yellow"
+clj꞉tools-methods-project.core꞉> 
+; 0.42264973081037427
 nil
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
-true
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
-; Evaluating file: healthcare_chatbot_test.clj
+clj꞉tools-methods-project.core꞉> 
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: core.clj
+; We suggest: sweatpants
+; We suggest: skirt
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; Evaluating file: core.clj
+; We suggest: jeans
+; We suggest: pants
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; Evaluating file: core.clj
+; We suggest: shorts
+; We suggest: pants
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; Evaluating file: core_test.clj
 ; 
-; FAIL about `answer-faq` - it returns the correct answer for a known question at (healthcare_chatbot_test.clj:7)
+; FAIL User chooses two light pieces - white and white. at (core_test.clj:10)
 ; Expected:
-; "Flu is a viral infection that attacks your respiratory system."
+; "Kombinacija je neutralna!"
 ; Actual:
-; "I'm sorry, I don't have an answer to that question."
-; Diffs: strings have 1 difference (1% similarity)
-;                 expected: "(Flu is a viral infection that attacks your respiratory system)."
-;                 actual:   "(I'm sorry, I don't have an answer to that question-----------)."
-false
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
+; "Kombinacija je neutralna."
+; Diffs: strings have 1 difference (96% similarity)
+;                 expected: "...tralna(!)"
+;                 actual:   "...tralna(.)"
 ; 
-; FAIL about `answer-faq` - it returns the correct answer for a known question at (healthcare_chatbot_test.clj:7)
-; Expected:
-; "Flu is a viral infection that attacks your respiratory system."
+; FAIL about `first-element` - about `my function` - it should not return 3 at (core_test.clj:23)
+; Expected: Anything BUT
+; 3
 ; Actual:
-; "I'm sorry, I don't have an answer to that question."
-; Diffs: strings have 1 difference (1% similarity)
-;                 expected: "(Flu is a viral infection that attacks your respiratory system)."
-;                 actual:   "(I'm sorry, I don't have an answer to that question-----------)."
+; 3
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (core_test.clj:26)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (core_test.clj:27)
+; Expected:
+; :default
+; Actual:
+; nil
+; 
+; FAIL about `first-element` - default value is returned for empty sequences at (core_test.clj:29)
+; Expected:
+; :default
+; Actual:
+; nil
 false
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
-; Evaluating file: healthcare_chatbot_test.clj
-true
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
-true
-clj꞉tools-methods-project.healthcare-chatbot-test꞉> 
-; Evaluating file: healthcare_chatbot.clj
-#'tools-methods-project.healthcare-chatbot/answer-faq
-clj꞉tools-methods-project.healthcare-chatbot꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> 
-; Evaluating file: symptom_checker.clj
-#'tools-methods-project.symptom-checker/check-symptoms
-clj꞉tools-methods-project.symptom-checker꞉> 
+clj꞉tools-methods-project.core-test꞉> 
+; Evaluating file: core.clj
+; We suggest: jeans
+; We suggest: pants
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; 0.6264204140537716
+nil
+clj꞉tools-methods-project.core꞉> 
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: core.clj
+; We suggest: shorts
+; We suggest: skirt
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1

@@ -1,5 +1,6 @@
 (ns tools-methods-project.core
   (:require
+   [clojure.math :as math]
    [clojure.string :as string]))
 
 (defn create-board
@@ -204,3 +205,88 @@
 ;; Kao kupac, želim da mogu da filtriram oglase prema cenama i lokaciji kako bih našao proizvode u svom budžetu i bliže mom mestu.
 ;; Kao korisnik, želim da mogu da sačuvam oglase u listu favorita kako bih se kasnije vratio i razmotrio proizvode koji mi se dopadaju.
 ;; Kao korisnik, želim da mogu da šaljem privatne poruke prodavcima kako bih postavio dodatna pitanja pre nego što obavim kupovinu.
+
+(def ponderi {:sareno -1
+              :svetlo 0
+              :tamno  1})
+
+(defn classify-color
+  "stavljamo nase boje u neke kategorije"
+  [color]
+  (case color
+    :crvena :sareno
+    :plava  :tamno
+    :zelena :sareno
+    :bela   :svetlo
+    :crna   :tamno
+    :zuta   :svetlo))
+
+(defn evaluate-outfit [clothing-items]
+  (let [categories (map classify-color clothing-items)
+        score (reduce + (map ponderi categories))]
+    (cond
+      (> score 0) "Kombinacija je dobra!"
+      (< score 0) "Kombinacija je loša!"
+      :else "Kombinacija je neutralna.")))
+
+
+;;naci na netu formulu za boje i napisati funkciju, naci neki sistem za racunjanje tog koeficijenta
+;;naci jos nesto po cemu bi moglo da se racuna, kao sto je npr donji ves, odeca, obuca, aksesoari
+;;resiti onaj problem 4 nogu
+;;sezone, pol...formalno, neformalno...
+;;funkcija koja prima neki odevni predmet, ja prepoznam koji je to odevni predmet i
+;;onda prepoznam koje je boje i onda ttrazim ostatak odevnig orpedmdeta
+;;npr dobijem gornji deo i odmah mu slajem neki donji deo
+;;itd itd i tako dalje razradujem moju funkciju
+
+(def possible-bottoms
+  {"t-shirt" ["jeans" "shorts" "sweatpants"]
+   "sweater" ["pants" "sweatpants" "skirt"]
+   "shirt" ["jeans" "pants" "shorts"]})
+
+(defn random-element [collection]
+  (nth collection (rand-int (count collection))))
+
+(defn suggest-bottom
+  [top]
+  (if-let [bottoms (possible-bottoms top)]
+    (str "We suggest: " (random-element bottoms))
+    "We don't have a suggestion for this top."))
+
+(println (suggest-bottom "t-shirt"))
+(println (suggest-bottom "sweater"))
+(println (suggest-bottom "jacket"))
+
+;; Predefined RGB values for colors
+(def color-rgb-map
+  {"red" [255 0 0]
+   "blue" [0 0 255]
+   "green" [0 255 0]
+   "yellow" [255 255 0]
+   "black" [0 0 0]
+   "white" [255 255 255]
+   "orange" [255 165 0]
+   "purple" [128 0 128]})
+
+;; Euclidean distance in RGB space
+(defn rgb-distance [rgb1 rgb2]
+  (math/sqrt (reduce + (map #(Math/pow (- %1 %2) 2) rgb1 rgb2))))
+
+;; Normalizing coefficient to a 0-1 scale
+(defn match-coefficient [distance max-distance]
+  (- 1 (/ distance max-distance)))
+
+;; If coef is small then the colors are different, if its big or close to 1 then they are identical
+(defn color-coefficient
+  [color1 color2]
+  (let [rgb1 (color-rgb-map color1)
+        rgb2 (color-rgb-map color2)
+        max-distance (rgb-distance [0 0 0] [255 255 255])
+        distance (rgb-distance rgb1 rgb2)]
+    (match-coefficient distance max-distance)))
+
+;; Sa CIEDE2000 formulom bi bilo vise accurate, ali ne bih znala kako da iskucam to
+
+(println (color-coefficient "red" "blue"))
+(println (color-coefficient "red" "yellow"))
+(println (color-coefficient "red" "red"))  
