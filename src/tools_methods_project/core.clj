@@ -3,6 +3,15 @@
    [clojure.math :as math]
    [clojure.string :as string]))
 
+;;Korisnik zeli da na osnovu svojih simptoma dobije moguce dijagnoze
+;;Korisnik zeli da na osnovu svojih simptoma dobije savet kojim bi sve specijalistima trebalo da se obrati
+;;Korisnik zeli da dobije konkretne lekare specijaliste poredjane po nekom prioritetu (grad/cena)
+;;Korisnik zeli mogucnost četovanja sa izabranim lekarom
+;;Korisnik zeli da mu bude pruzena pomoc u vidu chatbota
+;;Korisnik zeli da dobije verovatnoce za postavljene dijagnoze
+;;Korisnik zeli da dobije personalizovanu terapiju na osnovu genetičkih predispozicija, stila zivota i oboljenja koja su mu dosad dijagnostifikovana
+;;Korisnik zeli da prati istoriju svojih simptoma tokom vremena
+
 (defn create-board
   "Creates a board (matrix) of hearts based on the size provided by the user."
   [size]
