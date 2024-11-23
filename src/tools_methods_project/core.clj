@@ -3,14 +3,14 @@
    [clojure.math :as math]
    [clojure.string :as string]))
 
-;;Korisnik zeli da na osnovu svojih simptoma dobije moguce dijagnoze
-;;Korisnik zeli da na osnovu svojih simptoma dobije savet kojim bi sve specijalistima trebalo da se obrati
-;;Korisnik zeli da dobije konkretne lekare specijaliste poredjane po nekom prioritetu (grad/cena)
-;;Korisnik zeli mogucnost četovanja sa izabranim lekarom
-;;Korisnik zeli da mu bude pruzena pomoc u vidu chatbota
-;;Korisnik zeli da dobije verovatnoce za postavljene dijagnoze
-;;Korisnik zeli da dobije personalizovanu terapiju na osnovu genetičkih predispozicija, stila zivota i oboljenja koja su mu dosad dijagnostifikovana
-;;Korisnik zeli da prati istoriju svojih simptoma tokom vremena
+;;Korisnik zeli da na osnovu svojih simptoma dobije moguce dijagnoze DONE
+;;Korisnik zeli da na osnovu svojih simptoma dobije savet kojim bi sve specijalistima trebalo da se obrati DONE
+;;Korisnik zeli da dobije konkretne lekare specijaliste poredjane po nekom prioritetu (grad/cena) DONE
+;;Korisnik zeli mogucnost četovanja sa izabranim lekarom DONE
+;;Korisnik zeli da mu bude pruzena pomoc u vidu chatbota DONE
+;;Korisnik zeli da dobije verovatnoce za postavljene dijagnoze DONE
+;;Korisnik zeli da dobije personalizovanu terapiju na osnovu genetičkih predispozicija, stila zivota i oboljenja koja su mu dosad dijagnostifikovana DONE
+;;Korisnik zeli da prati istoriju svojih simptoma tokom vremena DONE
 
 (defn create-board
   "Creates a board (matrix) of hearts based on the size provided by the user."
@@ -182,22 +182,6 @@
     default
     (first sequence)))
 
-;;procitati nes iz user story applied
-;;naci na nekom sajtu slucajeve koriscenja 
-;;user would like to get a reccomendation about what to wear //sta do gde??
-;;moramo da imamo integracione testove, funkciponalne testove...
-;;biblioteka midje koja se ubaci u lajningen i pomaze nam da pisemo testove 
-;;test driven development 
-;;za svoj domen uraditi 5 slucajeva koriscenja sa test driven stvarima 
-
-;;moj domen:
-;; 1. placing ships
-;; 2. taking a turn
-;; 3. playing with a friend
-;; 4. playing with AI
-;; 5. replay the game
-;; 6. view stats from that and all previous games
-
 (defn sleep-print-update
   [sleep-time thread-name update-fn]
   (fn [state]
@@ -207,13 +191,6 @@
 (def counter (ref 0))
 (future (dosync (commute counter (sleep-print-update 100 "Thread A" inc))))
 (future (dosync (commute counter (sleep-print-update 150 "Thread B" inc))))
-
-;;kupujemprodajem
-;; Kao korisnik, želim da mogu da pretražujem oglase po kategorijama kako bih lako pronašao proizvode koji me interesuju.
-;; Kao prodavac, želim da mogu da postavim oglas sa slikama proizvoda kako bih privukao više potencijalnih kupaca.
-;; Kao kupac, želim da mogu da filtriram oglase prema cenama i lokaciji kako bih našao proizvode u svom budžetu i bliže mom mestu.
-;; Kao korisnik, želim da mogu da sačuvam oglase u listu favorita kako bih se kasnije vratio i razmotrio proizvode koji mi se dopadaju.
-;; Kao korisnik, želim da mogu da šaljem privatne poruke prodavcima kako bih postavio dodatna pitanja pre nego što obavim kupovinu.
 
 (def ponderi {:sareno -1
               :svetlo 0
@@ -237,16 +214,6 @@
       (> score 0) "Kombinacija je dobra!"
       (< score 0) "Kombinacija je loša!"
       :else "Kombinacija je neutralna.")))
-
-
-;;naci na netu formulu za boje i napisati funkciju, naci neki sistem za racunjanje tog koeficijenta
-;;naci jos nesto po cemu bi moglo da se racuna, kao sto je npr donji ves, odeca, obuca, aksesoari
-;;resiti onaj problem 4 nogu
-;;sezone, pol...formalno, neformalno...
-;;funkcija koja prima neki odevni predmet, ja prepoznam koji je to odevni predmet i
-;;onda prepoznam koje je boje i onda ttrazim ostatak odevnig orpedmdeta
-;;npr dobijem gornji deo i odmah mu slajem neki donji deo
-;;itd itd i tako dalje razradujem moju funkciju
 
 (def possible-bottoms
   {"t-shirt" ["jeans" "shorts" "sweatpants"]

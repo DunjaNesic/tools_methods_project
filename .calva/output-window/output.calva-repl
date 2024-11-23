@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /home/dunja/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
-; Using host:port 127.0.0.1:40219 ...
+; Using host:port 127.0.0.1:36815 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,735 +48,315 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉tools-methods-project.core꞉> 
 ; Jack-in done.
 clj꞉tools-methods-project.core꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {:message "hi" :receiver "pjerkan"}
-; Actual:
-; "hi"
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-{:message "hi", :receiver "pjerkan"}
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"dunja" [{:message "hi" :receiver "pjerkan"}]}
-; Actual:
-; {:message "hi" :receiver "dunja" :sender "pjerkan"}
-; Diffs: expected map to contain key: "dunja", but not found.
-;                 map contained keys: #{:sender :receiver :message}, but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"dunja" [{:message "hi" :receiver "pjerkan"}]}
-; Actual:
-; {"pjerkan" {:message "hi" :receiver "dunja"}}
-; Diffs: expected map to contain key: "dunja", but not found.
-;                 map contained key: "pjerkan", but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :receiver "dunja"}]}
-; Actual:
-; {"dunja" {:message "hi" :sender "pjerkan"}}
-; Diffs: expected map to contain key: "pjerkan", but not found.
-;                 map contained key: "dunja", but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :receiver "dunja"}]}
-; Actual:
-; {"dunja" {:message "hi" :sender "pjerkan"}}
-; Diffs: expected map to contain key: "pjerkan", but not found.
-;                 map contained key: "dunja", but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :receiver "dunja"}]}
-; Actual:
-; {"dunja" {:message "hi" :sender "pjerkan"}}
-; Diffs: expected map to contain key: "pjerkan", but not found.
-;                 map contained key: "dunja", but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :receiver "dunja"}]}
-; Actual:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Diffs: in ["pjerkan"] expected [{:message "hi", :receiver "dunja"}], was {:message "hi", :sender "dunja"}
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Diffs: in ["pjerkan"] expected [{:message "hi", :sender "dunja"}], was {:message "hi", :sender "dunja"}
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Diffs: in ["pjerkan"] expected [{:message "hi", :sender "dunja"}], was {:message "hi", :sender "dunja"}
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" {:message "hi woo" :sender "dunja"}}
-; Actual:
-; {"pjerkan" {:message "hi" :sender "dunja"} :message "hi" :sender "dunja"}
-; Diffs: map contained keys: #{:sender :message}, but not expected.
-;               in ["pjerkan" :message]
-;                   strings have 1 difference (33% similarity)
-;                   expected: "hi( woo)"
-;                   actual:   "hi(----)"
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" {:message "hi woo" :sender "dunja"}}
-; Actual:
-; {"pjerkan" {:message "hi" :sender "dunja"} :message "hi" :sender "dunja"}
-; Diffs: map contained keys: #{:sender :message}, but not expected.
-;               in ["pjerkan" :message]
-;                   strings have 1 difference (33% similarity)
-;                   expected: "hi( woo)"
-;                   actual:   "hi(----)"
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" {:message "hi woo" :sender "dunja"}}
-; Actual:
-; {"pjerkan" {:message "hi" :sender "dunja"} :message "hi" :sender "dunja"}
-; Diffs: map contained keys: #{:sender :message}, but not expected.
-;               in ["pjerkan" :message]
-;                   strings have 1 difference (33% similarity)
-;                   expected: "hi( woo)"
-;                   actual:   "hi(----)"
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" {:message "hi woo" :sender "dunja"}}
-; Actual:
-; java.lang.ClassCastException: class java.lang.Character cannot be cast to class java.util.Map$Entry (java.lang.Character and java.util.Map$Entry are in module java.base of loader 'bootstrap')
-;   tools_methods_project.specialist_chat$send_message.invokeStatic(form-init17625354109980418833.clj:29)
-;   tools_methods_project.specialist_chat$send_message.invoke(form-init17625354109980418833.clj:26)
-;   tools_methods_project.specialist_chat_test$eval19769$fn__19770$fn__19771$fn__19772$fn__19773$fn__19778.invoke(form-init17625354109980418833.clj:10)
-;   tools_methods_project.specialist_chat_test$eval19769$fn__19770$fn__19771$fn__19772$fn__19773.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19769$fn__19770$fn__19771$fn__19772.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19769$fn__19770$fn__19771.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19769$fn__19770.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19769.invokeStatic(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19769.invoke(form-init17625354109980418833.clj:6)
-;   nrepl.middleware.interruptible_eval$evaluate$fn__1466$fn__1467.invoke(interruptible_eval.clj:87)
-;   nrepl.middleware.interruptible_eval$evaluate$fn__1466.invoke(interruptible_eval.clj:87)
-;   nrepl.middleware.interruptible_eval$evaluate.invokeStatic(interruptible_eval.clj:84)
-;   nrepl.middleware.interruptible_eval$evaluate.invoke(interruptible_eval.clj:56)
-;   nrepl.middleware.interruptible_eval$interruptible_eval$fn__1499$fn__1503.invoke(interruptible_eval.clj:152)
-;   nrepl.middleware.session$session_exec$main_loop__1569$fn__1573.invoke(session.clj:218)
-;   nrepl.middleware.session$session_exec$main_loop__1569.invoke(session.clj:217)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; java.lang.ClassCastException: class java.lang.Character cannot be cast to class java.util.Map$Entry (java.lang.Character and java.util.Map$Entry are in module java.base of loader 'bootstrap')
-;   tools_methods_project.specialist_chat$send_message.invokeStatic(form-init17625354109980418833.clj:29)
-;   tools_methods_project.specialist_chat$send_message.invoke(form-init17625354109980418833.clj:26)
-;   tools_methods_project.specialist_chat_test$eval19798$fn__19799$fn__19800$fn__19801$fn__19802$fn__19803.invoke(specialist_chat_test.clj:10)
-;   tools_methods_project.specialist_chat_test$eval19798$fn__19799$fn__19800$fn__19801$fn__19802.invoke(specialist_chat_test.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19798$fn__19799$fn__19800$fn__19801.invoke(specialist_chat_test.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19798$fn__19799$fn__19800.invoke(specialist_chat_test.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19798$fn__19799.invoke(specialist_chat_test.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19798.invokeStatic(specialist_chat_test.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19798.invoke(specialist_chat_test.clj:6)
-;   tools_methods_project.core$eval19786.invokeStatic(form-init17625354109980418833.clj:1)
-;   tools_methods_project.core$eval19786.invoke(form-init17625354109980418833.clj:1)
-;   nrepl.middleware.interruptible_eval$evaluate$fn__1466$fn__1467.invoke(interruptible_eval.clj:87)
-;   nrepl.middleware.interruptible_eval$evaluate$fn__1466.invoke(interruptible_eval.clj:87)
-;   nrepl.middleware.interruptible_eval$evaluate.invokeStatic(interruptible_eval.clj:84)
-;   nrepl.middleware.interruptible_eval$evaluate.invoke(interruptible_eval.clj:56)
-;   nrepl.middleware.interruptible_eval$interruptible_eval$fn__1499$fn__1503.invoke(interruptible_eval.clj:152)
-;   nrepl.middleware.session$session_exec$main_loop__1569$fn__1573.invoke(session.clj:218)
-;   nrepl.middleware.session$session_exec$main_loop__1569.invoke(session.clj:217)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; java.lang.ClassCastException: class java.lang.Character cannot be cast to class java.util.Map$Entry (java.lang.Character and java.util.Map$Entry are in module java.base of loader 'bootstrap')
-;   tools_methods_project.specialist_chat$send_message.invokeStatic(form-init17625354109980418833.clj:29)
-;   tools_methods_project.specialist_chat$send_message.invoke(form-init17625354109980418833.clj:26)
-;   tools_methods_project.specialist_chat_test$eval19810$fn__19811$fn__19812$fn__19813$fn__19814$fn__19815.invoke(form-init17625354109980418833.clj:10)
-;   tools_methods_project.specialist_chat_test$eval19810$fn__19811$fn__19812$fn__19813$fn__19814.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19810$fn__19811$fn__19812$fn__19813.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19810$fn__19811$fn__19812.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19810$fn__19811.invoke(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19810.invokeStatic(form-init17625354109980418833.clj:6)
-;   tools_methods_project.specialist_chat_test$eval19810.invoke(form-init17625354109980418833.clj:6)
-;   nrepl.middleware.interruptible_eval$evaluate$fn__1466$fn__1467.invoke(interruptible_eval.clj:87)
-;   nrepl.middleware.interruptible_eval$evaluate$fn__1466.invoke(interruptible_eval.clj:87)
-;   nrepl.middleware.interruptible_eval$evaluate.invokeStatic(interruptible_eval.clj:84)
-;   nrepl.middleware.interruptible_eval$evaluate.invoke(interruptible_eval.clj:56)
-;   nrepl.middleware.interruptible_eval$interruptible_eval$fn__1499$fn__1503.invoke(interruptible_eval.clj:152)
-;   nrepl.middleware.session$session_exec$main_loop__1569$fn__1573.invoke(session.clj:218)
-;   nrepl.middleware.session$session_exec$main_loop__1569.invoke(session.clj:217)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; {:message "woo" :sender "dunja"}
-; Diffs: expected map to contain key: "pjerkan", but not found.
-;                 map contained keys: #{:sender :message}, but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> (get messages "pjerkan")
+; Evaluating file: core.clj
+; We suggest: shorts
+; We suggest: skirt
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
 nil
-clj꞉tools-methods-project.specialist-chat꞉> (get messages pjerkan)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:403:45).
-; Unable to resolve symbol: pjerkan in this context
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; Evaluating file: specialist_chat.clj
+; Dunja Nesic
+; Sara Djokic
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_by_specialty.clj
+; Dunja Nesic
+; Sara Djokic
+nil
+clj꞉tools-methods-project.specialist-by-specialty꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialists_by_specialty.clj
+; Dunja Nesic
+; Sara Djokic
+nil
+clj꞉tools-methods-project.specialists-by-specialty꞉> 
+; Evaluating file: specialists_by_specialty_test.clj
+nil
+clj꞉tools-methods-project.specialists-by-specialty-test꞉> 
+; Evaluating file: diagnoses_probability.clj
+nil
+clj꞉tools-methods-project.diagnoses-probability꞉> 
+; Evaluating file: diagnosis_probability_test.clj
+nil
+clj꞉tools-methods-project.diagnosis-probability-test꞉> 
+; Evaluating file: symptoms_history.clj
+nil
+clj꞉tools-methods-project.symptoms-history꞉> 
+; Evaluating file: core.clj
+; We suggest: sweatpants
+; We suggest: pants
+; We don't have a suggestion for this top.
+; 0.18350341907227397
+; 0.42264973081037427
+; 1.0
+nil
+clj꞉tools-methods-project.core꞉> 
+; Thread A: 0
+; Thread B: 0
+; Thread A: 0
+; Thread B: 1
+; Evaluating file: symptoms_history_test.clj
+nil
+clj꞉tools-methods-project.symptoms-history-test꞉> 
+#'tools-methods-project.specialist-chat/messages
 clj꞉tools-methods-project.specialist-chat꞉> messages
-[{"pjerkan" [{:message "hi", :sender "dunja"}]}]
+{"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/send-message
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> (send-message "majmunee" "dunja" "djole" messages)
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"}],
+ "djole" ({:message "majmunee", :sender "dunja"})}
+clj꞉tools-methods-project.specialist-chat-test꞉> (send-message "majmuncino" "dunja" "djole" messages)
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"}],
+ "djole" ({:message "majmuncino", :sender "dunja"})}
+clj꞉tools-methods-project.specialist-chat-test꞉> messages
+{"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}
+clj꞉tools-methods-project.specialist-chat-test꞉> (send-message "majmunee" "dunja" "zika" messages)
+
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"} {:message "majmunee", :sender "dunja"}]}
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"} {:message "majmunee", :sender "dunja"}]}
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/counter
+clj꞉tools-methods-project.specialist-chat꞉> 
+1
+clj꞉tools-methods-project.specialist-chat꞉> 
+2
+clj꞉tools-methods-project.specialist-chat꞉> 
+3
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat_test.clj
+nil
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
 clj꞉tools-methods-project.specialist-chat꞉> 
 #'tools-methods-project.specialist-chat/messages
 clj꞉tools-methods-project.specialist-chat꞉> 
 #'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> (get messages "pjerkan")
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> messages
+#<Atom@6f52885e: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
+clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole" messages)
+; Execution error (ArityException) at tools-methods-project.specialist-chat/eval19428 (form-init13904680590702990012.clj:171).
+; Wrong number of args (4) passed to: tools-methods-project.specialist-chat/send-message
+clj꞉tools-methods-project.specialist-chat꞉> 
+(send-message "majmunee" "dunja" "djole")
+; Execution error (ClassCastException) at tools-methods-project.specialist-chat/send-message (form-init13904680590702990012.clj:9).
+; class java.lang.String cannot be cast to class clojure.lang.Associative (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.Associative is in unnamed module of loader 'app')
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/send-message
+clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole")
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"}],
+ "djole" ({:message "majmunee", :sender "dunja"})}
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/send-message
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/send-message
+clj꞉tools-methods-project.specialist-chat꞉> messages
+#<Atom@5c3a6e96: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
+clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole")
+; Execution error (ClassCastException) at tools-methods-project.specialist-chat/send-message (form-init13904680590702990012.clj:9).
+; class java.lang.String cannot be cast to class clojure.lang.Associative (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.Associative is in unnamed module of loader 'app')
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/send-message
+clj꞉tools-methods-project.specialist-chat꞉> messages
+#<Atom@4a7ef2a4: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
+clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole")
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"}],
+ "djole" ({:message "majmunee", :sender "dunja"})}
+clj꞉tools-methods-project.specialist-chat꞉> (send-message "vfddf" "dunja" "djole")
+{"pjerkan" [{:message "hi", :sender "dunja"}],
+ "zika" [{:message "hi", :sender "mika"}],
+ "djole" ({:message "vfddf", :sender "dunja"} {:message "majmunee", :sender "dunja"})}
+clj꞉tools-methods-project.specialist-chat꞉> messages
+#<Atom@4a7ef2a4: 
+  {"pjerkan" [{:message "hi", :sender "dunja"}],
+   "zika" [{:message "hi", :sender "mika"}],
+   "djole" ({:message "vfddf", :sender "dunja"} {:message "majmunee", :sender "dunja"})}>
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+; Evaluating file: specialist_chat.clj
+#'tools-methods-project.specialist-chat/show-all-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+#'tools-methods-project.specialist-chat/show-all-messages
+clj꞉tools-methods-project.specialist-chat꞉> (show-all-messages "djole")
+nil
+clj꞉tools-methods-project.specialist-chat꞉> messages
+#<Atom@3c9af513: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
+clj꞉tools-methods-project.specialist-chat꞉> (show-all-messages "pjerkan")
 [{:message "hi", :sender "dunja"}]
 clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
 ; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; {:message "woo" :sender "dunja"}
-; Diffs: expected map to contain key: "pjerkan", but not found.
-;                 map contained keys: #{:sender :message}, but not expected.
-false
+true
 clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; {:message "woo" :sender "dunja"}
-; Diffs: expected map to contain key: "pjerkan", but not found.
-;                 map contained keys: #{:sender :message}, but not expected.
-false
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+true
 clj꞉tools-methods-project.specialist-chat-test꞉> 
 ; Evaluating file: specialist_chat_test.clj
 ; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
+; FAIL User wants to view messages with everybody at (specialist_chat_test.clj:34)
 ; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
 ; [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
 ; Actual:
-; [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]
+; [{:message "hdi" :sender "dunja"} {:message "woo" :sender "dunja"}]
+; Diffs: in [0 :message]
+;                   strings have 1 difference (66% similarity)
+;                   expected: "h(-)i"
+;                   actual:   "h(d)i"
 false
 clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}] :message "woo" :sender "dunja"}
-; Diffs: map contained keys: #{:sender :message}, but not expected.
-;               in ["pjerkan"]
-;                   expected length of sequence is 2, actual length is 1.
-;                   actual is missing 1 element: ({:message "woo", :sender "dunja"})
-false
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> (show-all-messages "pjerkan")
+[{:message "hi", :sender "dunja"} {:message "woo", :sender "dunja"}]
+clj꞉tools-methods-project.specialist-chat-test꞉> messages
+#<Atom@3c9af513: 
+  {"pjerkan" [{:message "hi", :sender "dunja"} {:message "woo", :sender "dunja"}],
+   "zika" [{:message "hi", :sender "mika"}]}>
 clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
 #'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Diffs: in ["pjerkan"] expected {:message "hi", :sender "dunja"}, was [{:message "hi", :sender "dunja"}]
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Diffs: in ["pjerkan"] expected {:message "hi", :sender "dunja"}, was [{:message "hi", :sender "dunja"}]
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Diffs: in ["pjerkan"] expected {:message "hi", :sender "dunja"}, was [{:message "hi", :sender "dunja"}]
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" {:message "hi" :sender "dunja"}}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Diffs: in ["pjerkan"] expected {:message "hi", :sender "dunja"}, was [{:message "hi", :sender "dunja"}]
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; ()
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; (nil)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; ()
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; (nil)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; ()
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; (nil)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; ()
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:10)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; (nil)
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; ()
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:9)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"}]}
-; Actual:
-; ()
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
 clj꞉tools-methods-project.specialist-chat꞉> messages
-[{"pjerkan" [{:message "hi", :sender "dunja"}]} {"zika" [{:message "hi", :sender "mika"}]}]
-clj꞉tools-methods-project.specialist-chat꞉> (messages "pjerkan")
-; Execution error (IllegalArgumentException) at tools-methods-project.specialist-chat/eval20923 (form-init17625354109980418833.clj:673).
-; Key must be integer
-clj꞉tools-methods-project.specialist-chat꞉> ()
+#<Atom@5350fc57: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
+clj꞉tools-methods-project.specialist-chat꞉> (show-all-messages "pjerkan")
+[{:message "hi", :sender "dunja"}]
+clj꞉tools-methods-project.specialist-chat꞉> 
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> (show-all-messages "")
+nil
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
 ; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
+#'tools-methods-project.specialist-chat/show-all-messages
 clj꞉tools-methods-project.specialist-chat꞉> 
 #'tools-methods-project.specialist-chat/messages
 clj꞉tools-methods-project.specialist-chat꞉> 
 #'tools-methods-project.specialist-chat/send-message
 clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/send-message
+#'tools-methods-project.specialist-chat/show-messages
 clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
+#'tools-methods-project.specialist-chat/show-all-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
 ; 
-; FAIL User wants to send message - User sends the message at (specialist_chat_test.clj:11)
+; FAIL User wants to send the message at (specialist_chat_test.clj:7)
 ; Expected:
 ; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
 ; Actual:
+; {"pjerkan" [{:message "hi" :sender "dunja"}
+;             {:message "woo"
+;              :sender "dunja"
+;              :timestamp "2024-11-23T18:11:34.073470453"}]}
+; Diffs: in ["pjerkan" 1] map contained key: :timestamp, but not expected.
+; 
+; FAIL User wants to send the message at (specialist_chat_test.clj:8)
+; Expected:
 ; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]
-;  "zika" [{:message "hi" :sender "mika"}]}
-; Diffs: map contained key: "zika", but not expected.
+;  "zika" [{:message "hello" :sender "mika"}]}
+; Actual:
+; {"pjerkan" [{:message "hi" :sender "dunja"}
+;             {:message "woo"
+;              :sender "dunja"
+;              :timestamp "2024-11-23T18:11:34.073470453"}]
+;  "zika" ({:message "hello"
+;           :sender "mika"
+;           :timestamp "2024-11-23T18:11:34.085538115"})}
+; Diffs: in ["pjerkan" 1] map contained key: :timestamp, but not expected.
+;               in ["zika" 0] map contained key: :timestamp, but not expected.
 false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
 clj꞉tools-methods-project.specialist-chat-test꞉> 
 true
 clj꞉tools-methods-project.specialist-chat-test꞉> 
 ; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
+#'tools-methods-project.specialist-chat/show-all-messages
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: project.clj
+; 
+; ; clj  user 
+; Syntax error compiling at (project.clj:1:1).
+; Unable to resolve symbol: defproject in this context
+; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉user꞉> 
+; Evaluating file: specialist_chat.clj
 ; 
 ; ; clj  tools-methods-project.specialist-chat 
-; Syntax error macroexpanding clojure.core/let at (src/tools_methods_project/specialist_chat.clj:41:3).
-; podskup - failed: vector? at: [:bindings] spec: :clojure.core.specs.alpha/bindings
+; Execution error (FileNotFoundException) at tools-methods-project.specialist-chat/eval20248$loading (specialist_chat.clj:1).
+; Could not locate ring/adapter/jetty__init.class, ring/adapter/jetty.clj or ring/adapter/jetty.cljc on classpath.
 ; Evaluation of file specialist_chat.clj failed: class clojure.lang.Compiler$CompilerException
 clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
+; Evaluating file: project.clj
+; 
+; ; clj  user 
+; Syntax error compiling at (project.clj:1:1).
+; Unable to resolve symbol: defproject in this context
+; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉user꞉> 
+; Evaluating file: project.clj
+; 
+; Syntax error compiling at (project.clj:1:1).
+; Unable to resolve symbol: defproject in this context
+; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉user꞉> 
+; Evaluating file: project.clj
+; 
+; Syntax error compiling at (project.clj:1:1).
+; Unable to resolve symbol: defproject in this context
+; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉user꞉> 
 ; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
+#'tools-methods-project.specialist-chat/show-all-messages
 clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> (show-messages "pjerkan" "dunja")
-nil
-clj꞉tools-methods-project.specialist-chat꞉> (get messages pjerkan)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:740:45).
-; Unable to resolve symbol: pjerkan in this context
-clj꞉tools-methods-project.specialist-chat꞉> 
-(get messages "pjerkan")
-[{:message "hi", :sender "dunja"}]
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> (show-messages "pjerkan" "dunja")
-({:message "hi", :sender "dunja"})
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
