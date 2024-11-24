@@ -14,7 +14,6 @@
                                {:message "woo" :sender "dunja"}]
                     "zika" [{:message "hello" :sender "mika"}]})
 
-
 (fact "User wants to view messages from a specific sender"
       (reset! messages {"pjerkan" [{:message "hi" :sender "dunja"}
                                    {:message "woo" :sender "dunja"}]
