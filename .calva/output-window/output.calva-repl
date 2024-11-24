@@ -1,362 +1,91 @@
-; This is the Calva REPL Window.
-; It's just a file, really, with some special treatment from Calva.
-; Use it as a REPL input prompt if you like. (When the REPL is connected.)
-; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
-; Please see https://calva.io/repl-window/ for more info.
-; Happy coding! ♥️
-
-; TIPS: As with any Clojure file when the REPL is connected:
-; - `alt+enter` evaluates the current top level form.
-; - `ctrl+enter` evaluates the current form.
-; Special for this file:
-; - `alt+up` and `alt+down` traverse up and down the REPL command history
-;    when the cursor is after the last contents at the prompt
-; 
-; See also the Calva Inspector: https://calva.io/inspector/
-
-PLEASE NOTE
-We will update the default location of this file.
-The new default location will be
-  "<projectRootPath>/.calva/repl.calva-repl"
-For now the legacy path is used by default.
-To give yourself a smooth transition, you can opt in
-to the change, by configuring this setting as false:
-  "calva.useLegacyReplWindowPath"
-and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
-
-
-This file is configured as the output destination for all REPL output.
-You can configure this with the setting:
-  "calva.outputDestinations"
-
-
-; Jacking in...
-; Connecting using "Leiningen" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /home/dunja/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
-; Using host:port 127.0.0.1:36815 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉tools-methods-project.core꞉> 
-"Please see https://calva.io/output/#about-stdout-in-the-repl-window
-about why stdout printed to this file is prepended with `;` to be line comments."
-clj꞉tools-methods-project.core꞉> 
-; Jack-in done.
-clj꞉tools-methods-project.core꞉> 
-; Evaluating file: core.clj
-; We suggest: shorts
-; We suggest: skirt
-; We don't have a suggestion for this top.
-; 0.18350341907227397
-; 0.42264973081037427
-; 1.0
-nil
-clj꞉tools-methods-project.core꞉> 
-; Thread A: 0
-; Thread B: 0
-; Thread A: 0
-; Thread B: 1
 ; Evaluating file: specialist_chat.clj
-; Dunja Nesic
-; Sara Djokic
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_by_specialty.clj
-; Dunja Nesic
-; Sara Djokic
+; Dunja's Messages:  [{:message woo, :sender Zika}]
+; Pera: Hi Dunja!
+; Dunja: Hi Pera!
+; Pera's Messages With Dunja:  ()
 nil
-clj꞉tools-methods-project.specialist-by-specialty꞉> 
+clj꞉tools-methods-project.specialist-chat꞉> 
+; Pera: How about a game of chess?
+; Dunja: Tell me your favorite joke!
+; Dunja: What’s the best advice you’ve ever received?Pera: What are you passionate about?
+; 
+; Pera: What’s your biggest goal right now?
+; Dunja: What’s your dream job?
+; Pera: Omg you are so boring!Dunja: Tell me more!
+; 
+; Pera: How do you feel about the news today?Dunja: I can't believe this weather!
+; 
+; Pera: Do you believe in aliens?Dunja: What’s the best advice you’ve ever received?
+; 
+; Pera: How's it going?Dunja: What's the most exciting thing that's happened to you this week?
+; 
+; Pera: How's it going?Dunja: How’s your day been so far?
+; 
+; Dunja: What’s your biggest goal right now?Pera: What do you think?
+; 
+; Pera: I can't believe this weather!
+; Dunja: What’s new with you?
+; Pera: What’s your dream job?Dunja: What are you up to?
+; 
+; Pera has left the chat
+; Dunja has left the chat
+; Evaluating file: specialist_chat_test.clj
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
+true
+clj꞉tools-methods-project.specialist-chat-test꞉> 
 ; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
+; Dunja's Messages:  [{:message woo, :sender Zika}]
+; Pera: Hi Dunja!
+; Dunja: Hi Pera!
+; Pera's Messages With Dunja:  ({:message Hi Pera!, :sender Dunja})
+nil
 clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialists_by_specialty.clj
-; Dunja Nesic
-; Sara Djokic
-nil
-clj꞉tools-methods-project.specialists-by-specialty꞉> 
-; Evaluating file: specialists_by_specialty_test.clj
-nil
-clj꞉tools-methods-project.specialists-by-specialty-test꞉> 
-; Evaluating file: diagnoses_probability.clj
-nil
-clj꞉tools-methods-project.diagnoses-probability꞉> 
-; Evaluating file: diagnosis_probability_test.clj
-nil
-clj꞉tools-methods-project.diagnosis-probability-test꞉> 
-; Evaluating file: symptoms_history.clj
-nil
-clj꞉tools-methods-project.symptoms-history꞉> 
-; Evaluating file: core.clj
-; We suggest: sweatpants
-; We suggest: pants
-; We don't have a suggestion for this top.
-; 0.18350341907227397
-; 0.42264973081037427
-; 1.0
-nil
-clj꞉tools-methods-project.core꞉> 
-; Thread A: 0
-; Thread B: 0
-; Thread A: 0
-; Thread B: 1
-; Evaluating file: symptoms_history_test.clj
-nil
-clj꞉tools-methods-project.symptoms-history-test꞉> 
-#'tools-methods-project.specialist-chat/messages
+; Pera: What do you think?
+; Dunja: Have you seen any good movies lately?
+; Pera: That's interesting!
+; Dunja: That's interesting!
+; Pera: What’s your dream job?
+; Dunja: That's interesting!
+; Pera: What’s your dream job?
+; Dunja: What’s your dream job?
+; Dunja: What’s the best advice you’ve ever received?
+; Pera: How about a game of chess?
+; Pera: Do you like to read?
+; Dunja: Hello there!
+; Pera: What's the most exciting thing that's happened to you this week?Dunja: How do you feel about the news today?
+; 
+; Pera has left the chat
+; Dunja: Do you believe in aliens?
+; Dunja has left the chat
+ooo
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1:8492).
+; Unable to resolve symbol: ooo in this context
 clj꞉tools-methods-project.specialist-chat꞉> messages
-{"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> (send-message "majmunee" "dunja" "djole" messages)
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"}],
- "djole" ({:message "majmunee", :sender "dunja"})}
-clj꞉tools-methods-project.specialist-chat-test꞉> (send-message "majmuncino" "dunja" "djole" messages)
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"}],
- "djole" ({:message "majmuncino", :sender "dunja"})}
-clj꞉tools-methods-project.specialist-chat-test꞉> messages
-{"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}
-clj꞉tools-methods-project.specialist-chat-test꞉> (send-message "majmunee" "dunja" "zika" messages)
-
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"} {:message "majmunee", :sender "dunja"}]}
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"} {:message "majmunee", :sender "dunja"}]}
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/counter
-clj꞉tools-methods-project.specialist-chat꞉> 
-1
-clj꞉tools-methods-project.specialist-chat꞉> 
-2
-clj꞉tools-methods-project.specialist-chat꞉> 
-3
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-nil
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> messages
-#<Atom@6f52885e: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
-clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole" messages)
-; Execution error (ArityException) at tools-methods-project.specialist-chat/eval19428 (form-init13904680590702990012.clj:171).
-; Wrong number of args (4) passed to: tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-(send-message "majmunee" "dunja" "djole")
-; Execution error (ClassCastException) at tools-methods-project.specialist-chat/send-message (form-init13904680590702990012.clj:9).
-; class java.lang.String cannot be cast to class clojure.lang.Associative (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.Associative is in unnamed module of loader 'app')
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole")
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"}],
- "djole" ({:message "majmunee", :sender "dunja"})}
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> messages
-#<Atom@5c3a6e96: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
-clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole")
-; Execution error (ClassCastException) at tools-methods-project.specialist-chat/send-message (form-init13904680590702990012.clj:9).
-; class java.lang.String cannot be cast to class clojure.lang.Associative (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.Associative is in unnamed module of loader 'app')
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> messages
-#<Atom@4a7ef2a4: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
-clj꞉tools-methods-project.specialist-chat꞉> (send-message "majmunee" "dunja" "djole")
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"}],
- "djole" ({:message "majmunee", :sender "dunja"})}
-clj꞉tools-methods-project.specialist-chat꞉> (send-message "vfddf" "dunja" "djole")
-{"pjerkan" [{:message "hi", :sender "dunja"}],
- "zika" [{:message "hi", :sender "mika"}],
- "djole" ({:message "vfddf", :sender "dunja"} {:message "majmunee", :sender "dunja"})}
-clj꞉tools-methods-project.specialist-chat꞉> messages
-#<Atom@4a7ef2a4: 
-  {"pjerkan" [{:message "hi", :sender "dunja"}],
-   "zika" [{:message "hi", :sender "mika"}],
-   "djole" ({:message "vfddf", :sender "dunja"} {:message "majmunee", :sender "dunja"})}>
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-all-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-all-messages
-clj꞉tools-methods-project.specialist-chat꞉> (show-all-messages "djole")
-nil
-clj꞉tools-methods-project.specialist-chat꞉> messages
-#<Atom@3c9af513: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
-clj꞉tools-methods-project.specialist-chat꞉> (show-all-messages "pjerkan")
-[{:message "hi", :sender "dunja"}]
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-; 
-; FAIL User wants to view messages with everybody at (specialist_chat_test.clj:34)
-; Expected:
-; [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]
-; Actual:
-; [{:message "hdi" :sender "dunja"} {:message "woo" :sender "dunja"}]
-; Diffs: in [0 :message]
-;                   strings have 1 difference (66% similarity)
-;                   expected: "h(-)i"
-;                   actual:   "h(d)i"
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> (show-all-messages "pjerkan")
-[{:message "hi", :sender "dunja"} {:message "woo", :sender "dunja"}]
-clj꞉tools-methods-project.specialist-chat-test꞉> messages
-#<Atom@3c9af513: 
-  {"pjerkan" [{:message "hi", :sender "dunja"} {:message "woo", :sender "dunja"}],
-   "zika" [{:message "hi", :sender "mika"}]}>
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> messages
-#<Atom@5350fc57: {"pjerkan" [{:message "hi", :sender "dunja"}], "zika" [{:message "hi", :sender "mika"}]}>
-clj꞉tools-methods-project.specialist-chat꞉> (show-all-messages "pjerkan")
-[{:message "hi", :sender "dunja"}]
-clj꞉tools-methods-project.specialist-chat꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> (show-all-messages "")
-nil
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat_test.clj
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-all-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/send-message
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-#'tools-methods-project.specialist-chat/show-all-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; 
-; FAIL User wants to send the message at (specialist_chat_test.clj:7)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}
-;             {:message "woo"
-;              :sender "dunja"
-;              :timestamp "2024-11-23T18:11:34.073470453"}]}
-; Diffs: in ["pjerkan" 1] map contained key: :timestamp, but not expected.
-; 
-; FAIL User wants to send the message at (specialist_chat_test.clj:8)
-; Expected:
-; {"pjerkan" [{:message "hi" :sender "dunja"} {:message "woo" :sender "dunja"}]
-;  "zika" [{:message "hello" :sender "mika"}]}
-; Actual:
-; {"pjerkan" [{:message "hi" :sender "dunja"}
-;             {:message "woo"
-;              :sender "dunja"
-;              :timestamp "2024-11-23T18:11:34.073470453"}]
-;  "zika" ({:message "hello"
-;           :sender "mika"
-;           :timestamp "2024-11-23T18:11:34.085538115"})}
-; Diffs: in ["pjerkan" 1] map contained key: :timestamp, but not expected.
-;               in ["zika" 0] map contained key: :timestamp, but not expected.
-false
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-true
-clj꞉tools-methods-project.specialist-chat-test꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-all-messages
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: project.clj
-; 
-; ; clj  user 
-; Syntax error compiling at (project.clj:1:1).
-; Unable to resolve symbol: defproject in this context
-; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉user꞉> 
-; Evaluating file: specialist_chat.clj
-; 
-; ; clj  tools-methods-project.specialist-chat 
-; Execution error (FileNotFoundException) at tools-methods-project.specialist-chat/eval20248$loading (specialist_chat.clj:1).
-; Could not locate ring/adapter/jetty__init.class, ring/adapter/jetty.clj or ring/adapter/jetty.cljc on classpath.
-; Evaluation of file specialist_chat.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.specialist-chat꞉> 
-; Evaluating file: project.clj
-; 
-; ; clj  user 
-; Syntax error compiling at (project.clj:1:1).
-; Unable to resolve symbol: defproject in this context
-; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉user꞉> 
-; Evaluating file: project.clj
-; 
-; Syntax error compiling at (project.clj:1:1).
-; Unable to resolve symbol: defproject in this context
-; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉user꞉> 
-; Evaluating file: project.clj
-; 
-; Syntax error compiling at (project.clj:1:1).
-; Unable to resolve symbol: defproject in this context
-; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉user꞉> 
-; Evaluating file: specialist_chat.clj
-#'tools-methods-project.specialist-chat/show-all-messages
+#<Atom@1b94a736: 
+  {"Dunja"
+   [{:message "woo", :sender "Zika"}
+    {:message "Hi Dunja!", :sender "Pera"}
+    {:message "What do you think?", :sender "Pera"}
+    {:message "That's interesting!", :sender "Pera"}
+    {:message "What’s your dream job?", :sender "Pera"}
+    {:message "What’s your dream job?", :sender "Pera"}
+    {:message "How about a game of chess?", :sender "Pera"}
+    {:message "Do you like to read?", :sender "Pera"}
+    {:message "What's the most exciting thing that's happened to you this week?", :sender "Pera"}],
+   "Pera"
+   [{:message "hi", :sender "Mika"}
+    {:message "Hi Pera!", :sender "Dunja"}
+    {:message "Have you seen any good movies lately?", :sender "Dunja"}
+    {:message "That's interesting!", :sender "Dunja"}
+    {:message "That's interesting!", :sender "Dunja"}
+    {:message "What’s your dream job?", :sender "Dunja"}
+    {:message "What’s the best advice you’ve ever received?", :sender "Dunja"}
+    {:message "Hello there!", :sender "Dunja"}
+    {:message "How do you feel about the news today?", :sender "Dunja"}
+    {:message "Do you believe in aliens?", :sender "Dunja"}]}>
 clj꞉tools-methods-project.specialist-chat꞉> 
