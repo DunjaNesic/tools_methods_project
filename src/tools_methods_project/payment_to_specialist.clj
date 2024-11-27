@@ -26,7 +26,3 @@
 ;; prosiriti svoj rad sa refovima atomima,
 ;; da nam to bude kao neka "mini baza", da dodamo validatore,
 ;; implementirati neku sinhronizaciju 
-;; pogledati clojure jdbc, odnosno next jdbc, upit vraca sekvencu mapa,
-;; ne moramo da pravimo svoje klase i da ih mapiramo nego bukv odmah dobijemo tu mapu
-
-

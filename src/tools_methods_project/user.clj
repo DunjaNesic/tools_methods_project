@@ -16,14 +16,22 @@
       (catch Exception e
         {:status :error, :message (.getMessage e)}))))
 
+(def sessions (atom {}))
+
 (defn login-patient [email password]
   (let [query "SELECT * FROM PATIENT WHERE email = ?"
         result (jdbc/execute! db/datasource [query email])]
     (if-let [patient (first result)]
       (let [stored-password (:patient/password patient)]
         (if (hashers/check password stored-password)
-          {:status :success, :message "Login successful", :patient patient}
+          (do
+            (swap! sessions assoc email (assoc patient :status :online))
+            {:status :success, :message "Login successful", :patient patient})
           {:status :error, :message "Invalid password"}))
       {:status :error, :message "Email not found"})))
+
+(defn logout-patient [email]
+  (swap! sessions dissoc email)
+  {:status :success, :message "Logged out successfully"})
 
 ;; Not sure how to write tests for this
