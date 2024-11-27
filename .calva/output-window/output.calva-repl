@@ -1,39 +1,243 @@
-; Evaluating file: diagnoses_probability.clj
-#'tools-methods-project.diagnoses-probability/decision-tree-probability
-clj꞉tools-methods-project.diagnoses-probability꞉> 
-; Evaluating file: diagnoses_probability.clj
-#'tools-methods-project.diagnoses-probability/decision-tree-probability
-clj꞉tools-methods-project.diagnoses-probability꞉> (decision-tree-probability ["fever"])
-{"Flu" 0.5, "COVID-19" 0.3, "Malaria" 0.15, "Dengue" 0.05}
-clj꞉tools-methods-project.diagnoses-probability꞉> (calculate-probabilities ["fever"])
-{"Flu" 0.5, "COVID-19" 0.3, "Malaria" 0.15, "Dengue" 0.05}
-clj꞉tools-methods-project.diagnoses-probability꞉> (calculate-probabilities ["dunja"])
-{}
-clj꞉tools-methods-project.diagnoses-probability꞉> (decision-tree-probability ["dunja"])
-{"Unknown" 1.0}
-clj꞉tools-methods-project.diagnoses-probability꞉> 
-; Evaluating file: diagnoses_probability.clj
-#'tools-methods-project.diagnoses-probability/decision-tree-probability
-clj꞉tools-methods-project.diagnoses-probability꞉> (calculate-probabilities ["dunja"])
-; Execution error (IllegalArgumentException) at tools-methods-project.diagnoses-probability/calculate-probabilities (diagnoses_probability.clj:22).
-; Don't know how to create ISeq from: java.lang.Long
-clj꞉tools-methods-project.diagnoses-probability꞉> 
-; Evaluating file: diagnoses_probability.clj
-#'tools-methods-project.diagnoses-probability/decision-tree-probability
-clj꞉tools-methods-project.diagnoses-probability꞉> (decision-tree-probability ["dunja"])
-{"Unknown" 1.0}
-clj꞉tools-methods-project.diagnoses-probability꞉> (decision-tree-probability ["fever" "headache" "chest pain"])
-{"Angina" 0.03333333333333334,
- "Dengue" 0.01666666666666667,
- "Malaria" 0.05,
- "Heart Attack" 0.23333333333333336,
- "Flu" 0.16666666666666669,
- "GERD" 0.05,
- "Panic Attack" 0.01666666666666667,
- "Tension Headache" 0.08333333333333334,
- "Migraine" 0.2,
- "Sinusitis" 0.013333333333333336,
- "Cluster Headache" 0.03333333333333334,
- "COVID-19" 0.1,
- "Brain cancer" 0.003333333333333334}
-clj꞉tools-methods-project.diagnoses-probability꞉> 
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+clj꞉undefined꞉> 
+; Starting Jack-in: (cd /home/dunja/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:36505 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: user.clj
+; 
+; ; clj  tools-methods-project.user 
+; SLF4J: No SLF4J providers were found.
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+; Syntax error compiling at (src/tools_methods_project/user.clj:21:16).
+; No such var: jdbc/as-unqualified-lower-maps
+; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 1, :email "sandra@gmail.com", :password "sandra"}
+ #:patient{:id 2, :email "dunja@gmail.com", :password "dunja"}]
+clj꞉tools-methods-project.user꞉> (register-patient "sara@gmail.com" "sara")
+{:status :success, :message "Patient registered successfully"}
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 1, :email "sandra@gmail.com", :password "sandra"}
+ #:patient{:id 2, :email "dunja@gmail.com", :password "dunja"}
+ #:patient{:id 3,
+           :email "sara@gmail.com",
+           :password
+           "bcrypt+sha512$08ea0f776b8b0612ac2c9ece0879f892$12$1352bb45d22670c25ae207cfaafc6b2ea43c1cb6fb52ac4c"}]
+clj꞉tools-methods-project.user꞉> (login-patient "sandra@gmail.com" "sandra")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (login-patient "sara@gmail.com" "sara")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (login-patient "fcds" "fdsd")
+{:status :error, :message "Email not found"}
+clj꞉tools-methods-project.user꞉> (register-patient "sandra@gmail.com" "sandra")
+{:status :success, :message "Patient registered successfully"}
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}]
+clj꞉tools-methods-project.user꞉> (login-patient "sandra@gmail.com" "sandra")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}]
+clj꞉tools-methods-project.user꞉> (register-patient "aaa@gmail.com" "aaa")
+; Registering patient with hashed password: bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a
+{:status :success, :message "Patient registered successfully"}
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; Stored password hash: nil
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> DESCRIBE PATIENT;
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1:8491).
+; Unable to resolve symbol: PATIENT in this context
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; aaa: #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; Stored password hash: nil
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; aaa: #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; nil
+; Stored password hash: nil
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; aaa: #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; nil
+; Stored password hash: nil
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; Patient map: #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; nil
+; Stored password hash: nil
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (register-patient "bbb@gmail.com" "bbb")
+; Registering patient with hashed password: bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf
+{:status :success, :message "Patient registered successfully"}
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; Patient map: #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+; nil
+; Stored password hash: nil
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
+ #:patient{:id 6,
+           :email "bbb@gmail.com",
+           :password
+           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}]
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; #:patient{:id 5, :email aaa@gmail.com, :password bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a}
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+; Retrieved password hash: bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a
+{:status :success,
+ :message "Login successful",
+ :patient
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "aaa")
+{:status :success,
+ :message "Login successful",
+ :patient
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}}
+clj꞉tools-methods-project.user꞉> (login-patient "aaa@gmail.com" "bbb")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (login-patient "bbb@gmail.com" "bbb")
+{:status :success,
+ :message "Login successful",
+ :patient
+ #:patient{:id 6,
+           :email "bbb@gmail.com",
+           :password
+           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}}
+clj꞉tools-methods-project.user꞉> (login-patient "aafdsa@gmail.com" "aaa")
+{:status :error, :message "Email not found"}
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
+ #:patient{:id 6,
+           :email "bbb@gmail.com",
+           :password
+           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}]
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: db.clj
+#'tools-methods-project.db/datasource
+clj꞉tools-methods-project.db꞉> (get-a)
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+; Execution error (PSQLException) at org.postgresql.core.v3.ConnectionFactoryImpl/doAuthentication (ConnectionFactoryImpl.java:659).
+; FATAL: password authentication failed for user "postgres"
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: db.clj
+#'tools-methods-project.db/datasource
+clj꞉tools-methods-project.db꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/login-patient
+clj꞉tools-methods-project.user꞉> 

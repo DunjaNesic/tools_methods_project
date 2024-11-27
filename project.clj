@@ -7,7 +7,11 @@
                  [org.clojure/core.async "1.6.681"]
                  [metosin/reitit "0.7.2"]
                  [ring/ring-core "1.13.0"]
-                 [ring/ring-jetty-adapter "1.13.0"]]
+                 [ring/ring-jetty-adapter "1.13.0"]
+                 [org.clojure/java.jdbc "0.7.12"]
+                 [seancorfield/next.jdbc "1.2.659"]
+                 [org.postgresql/postgresql "42.5.0"]
+                 [buddy/buddy-hashers "2.0.167"]]
   :profiles {:dev {:dependencies [[midje "1.10.10" :exclusions [org.clojure/clojure]]]
                    :plugins [[lein-midje "3.2.1"]]}}
   :repl-options {:init-ns tools-methods-project.core})
