@@ -34,4 +34,4 @@
   (swap! sessions dissoc email)
   {:status :success, :message "Logged out successfully"})
 
-;; Not sure how to write tests for this
+;; sqlite npr, neka embedded baza koja ce da popuni podatke itd

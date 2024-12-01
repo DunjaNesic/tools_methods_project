@@ -1,7 +1,8 @@
 (ns tools-methods-project.core
   (:require
    [clojure.math :as math]
-   [clojure.string :as string]))
+   [clojure.string :as string]
+   [criterium.core :refer [quick-bench]]))
 
 ;;Korisnik zeli da na osnovu svojih simptoma dobije moguce dijagnoze DONE
 ;;Korisnik zeli da na osnovu svojih simptoma dobije savet kojim bi sve specijalistima trebalo da se obrati DONE
@@ -265,4 +266,107 @@
 
 (println (color-coefficient "red" "blue"))
 (println (color-coefficient "red" "yellow"))
-(println (color-coefficient "red" "red"))  
+(println (color-coefficient "red" "red"))
+
+(defn group-by-type [items]
+  (vals (group-by type items)))
+
+(defn group-by-type2 [items]
+  (vals
+   (reduce
+    (fn [acc e]
+      (let [item-type (type e)]
+        (update acc item-type #(conj (or % []) e))))
+    {}
+    items)))
+
+(def s
+  (take 100000 (repeatedly #(rand-int 2000))))
+
+(count s)
+
+(time (group-by-type s))
+
+
+(def a
+  (into-array s))
+
+(time (group-by-type a))
+
+(def f1
+  (fn [col]
+    (loop [typeset (set (map type col)) result []]
+      (if (empty? typeset)
+        result
+        (recur (rest typeset) (conj result (filter #(= (type %) (first typeset)) col)))))))
+
+(def f2
+  (fn [c]
+    (vals (group-by class c))))
+
+(def f3
+  (fn [xs]
+    (set (map (fn [t] (filter #(= (type %) t) xs)) (distinct (map type xs))))))
+
+(def f4
+  (fn [l]
+    (map reverse
+         (vals
+          (loop [l (apply list l) nl {}]
+            (if-not (seq l)
+              nl
+              (recur (pop l) (assoc nl (type (first l)) (conj (nl (type (first l))) (first l))))))))))
+
+(def f5
+  (fn [coll]
+    (loop [c coll m {}]
+      (if (empty? c) (vals m)
+          (recur (rest c)
+                 (let [v (first c) t (type v)]
+                   (assoc m t
+                          (conj (get m t []) v))))))))
+
+(def f6
+  (fn [coll]
+    (let [types (set (map type coll))]
+      (map (fn [t] (filter #(= t (type %)) coll))
+           types))))
+
+(def f7
+  (fn [s]
+    (vals (reduce #(assoc %1 (type %2) (conj (get %1 (type %2) []) %2)) {} s))))
+
+(def f8
+  #(loop [xs % result {}]
+     (let [f (first xs) t (type f)]
+       (if (empty? xs)
+         (map reverse (vals result))
+         (recur (rest xs) (assoc result t (conj (result t) f)))))))
+
+(def sample-data [1 2 3 "hello" "world" :keyword1 :keyword2 true false 4.5 6.7 nil [1 2] '(3 4)])
+
+;; (println "Benchmarking f1:")
+;; (quick-bench (f1 sample-data))
+
+;; (println "Benchmarking f2:")
+;; (quick-bench (f2 sample-data))
+
+;; (println "Benchmarking f3:")
+;; (quick-bench (f3 sample-data))
+
+;; (println "Benchmarking f4:")
+;; (quick-bench (f4 sample-data))
+
+;; (println "Benchmarking f5:")
+;; (quick-bench (f5 sample-data))
+
+;; (println "Benchmarking f6:")
+;; (quick-bench (f6 sample-data))
+
+;; (println "Benchmarking f7:")
+;; (quick-bench (f7 sample-data))
+
+;; (println "Benchmarking f8:")
+;; (quick-bench (f8 sample-data))
+
+;; domaci: isprobati clojure goes fast projektice i ubaciti u nas projekat ukoliko je pogodno
