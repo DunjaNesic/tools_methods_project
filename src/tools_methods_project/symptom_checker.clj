@@ -64,11 +64,22 @@
   [diagnoses]
   (distinct (map #(get disease-specialist-map %) diagnoses)))
 
+(def valid-symptom?
+  (fn [symptom]
+    (contains? symptom-disease-map symptom)))
+
+(defn validate-symptoms
+  [symptoms]
+  (every? valid-symptom? symptoms))
+
 (defn check-symptoms
   "Accepting symptoms and calling functions for diagnoses and specialists."
   [symptoms]
-  (history/add-to-history symptoms)
-  (let [diagnoses (predict-diagnoses symptoms)
-        specialists (recommend-specialists diagnoses)]
-    {:diagnoses diagnoses
-     :specialists specialists}))
+  (if (validate-symptoms symptoms)
+    (do
+      (history/add-to-history symptoms)
+      (let [diagnoses (predict-diagnoses symptoms)
+            specialists (recommend-specialists diagnoses)]
+        {:diagnoses diagnoses
+         :specialists specialists}))
+    {:error "Invalid symptoms provided. Please check your input."}))

@@ -370,3 +370,23 @@
 ;; (quick-bench (f8 sample-data))
 
 ;; domaci: isprobati clojure goes fast projektice i ubaciti u nas projekat ukoliko je pogodno
+
+(defrecord Layer [x w y])
+
+(defn evaluate [^Layer l]
+  (let [x (:x l)
+        w (:w l)
+        y (map (fn [row]
+                 (reduce + (map * row x)))
+               w)]
+    (assoc l :y y)))
+
+(def input-x [2 3 1])
+(def weights-w [[0.3 0.1 0.4]
+                [0.4 0.6 0.2]])
+
+(def layer-instance (Layer. input-x weights-w nil))
+
+(def result (evaluate layer-instance))
+
+(println "Rezultati y:" (:y result))
