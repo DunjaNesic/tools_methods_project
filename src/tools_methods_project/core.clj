@@ -387,6 +387,89 @@
 
 (def layer-instance (Layer. input-x weights-w nil))
 
-(def result (evaluate layer-instance))
+;; (def result (evaluate layer-instance))
 
-(println "Rezultati y:" (:y result))
+;; (println "Rezultati y:" (:y result))
+
+(defn dot
+  [x y]
+  (reduce + 0 (mapv * x y)))
+
+(defn mv [x w]
+  (mapv (partial dot x) w))
+
+(defn random-vector [size]
+  (vec (repeatedly size #(rand-int 10))))
+
+(defn random-matrix [rows cols]
+  (vec (repeatedly rows #(random-vector cols))))
+
+(quick-bench (mv (random-vector 7) (random-matrix 10 10)))
+
+(defn relu [x]
+  (mapv (fn [e]
+          (if (< 0 e)
+            e
+            0)) x))
+
+(defn evaluate [w x]
+  (relu (mv w x)))
+
+(set! *warn-on-reflection* true)
+(set! *unchecked-math* :warn-on-boxed)
+
+;; (+ (10.0) 2)
+
+;; (println "Matrica je 10 puta 10")
+;; (quick-bench (evaluate (random-vector 10) (random-matrix 10 10)))
+;; (println "Matrica je 100 puta 100")
+;; (quick-bench (evaluate (random-vector 10) (random-matrix 100 100)))
+;; (println "Matrica je 1000 puta 1000")
+;; (quick-bench (evaluate (random-vector 10) (random-matrix 1000 1000)))
+
+(def gf (into-array (repeat 10 0)))
+
+;; radilo je i dot sa nizovima ali preko sekvenci! znaci pretvori u sekvencu prvo pa pristupa preko tog interfejsa
+(defn adot
+  [^floats x ^floats y]
+  (areduce x i acc 0.0
+           (+ acc (* (aget x i) (aget y i)))))
+
+;; (def x1 (float-array [1.0 2.0 3.0]))
+;; (def y1 (float-array [4.0 5.0 6.0]))
+
+;; (def x2 (int-array [1 2 3]))
+;; (def y2 (int-array [4 5 6]))
+
+;; (println (adot x1 y1))
+;; (println (dot x2 y2))
+
+;; (println (dot x1 y1))
+;; (println (adot x2 y2))
+
+(def x1 (float-array (mapv float (range 100))))
+(def y1 (float-array (mapv float (range 100))))
+
+(quick-bench (adot x1 y1))
+(quick-bench (dot x1 y1))
+
+(defrecord Layer [x w])
+
+(def input-x [2 3 1])
+(def weights-w [[0.3 0.1 0.4]
+                [0.4 0.6 0.2]])
+
+(def layer-instance (Layer. input-x weights-w nil))
+
+;; (defrecord Layer [x w])
+
+;; (defn neural-network [input-x num-layers num-neurons]
+;;   (for [i (range num-layers)]
+;;     (let [weights-w (make-array Float/TYPE num-neurons num-neurons)]
+;;       (Layer. input-x weights-w))))
+
+;; (def input-x (float-array 100))
+;; (def num-layers 5)
+;; (def num-neurons 100)
+
+;; (def layers (neural-network input-x num-layers num-neurons))
