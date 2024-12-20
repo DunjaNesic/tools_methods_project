@@ -1,6 +1,6 @@
 (ns tools-methods-project.toxic-group-chat-test
   (:require [midje.sweet :refer :all]
-            [tools-methods-project.toxic-group-chat :refer :all]
+            [tools-methods-project.use-cases.toxic-group-chat :refer :all]
             [tools-methods-project.user :refer [sessions]]
             [clojure.core.async :as a]))
 

@@ -1,4 +1,4 @@
-(ns tools-methods-project.personalized-treatment)
+(ns tools-methods-project.use-cases.personalized-treatment)
 
 (def medical-condition-recommendations
   {"diabetes" {:diet ["Avoid sugar" "Include whole grains"]
@@ -37,9 +37,3 @@
   (let [{:keys [medical-conditions lifestyle genetic-markers]} user-data]
     (generate-recommendations medical-conditions lifestyle genetic-markers)))
 
-(def user-data
-  {:medical-conditions ["diabetes" "hypertension"]
-   :lifestyle "sedentary"
-   :genetic-markers ["APOE-e4"]})
-
-(def recommendations (recommend-treatment user-data))

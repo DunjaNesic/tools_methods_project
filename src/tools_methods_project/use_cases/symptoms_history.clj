@@ -1,4 +1,4 @@
-(ns tools-methods-project.symptoms-history)
+(ns tools-methods-project.use-cases.symptoms-history)
 
 (def symptom-history (atom []))
 

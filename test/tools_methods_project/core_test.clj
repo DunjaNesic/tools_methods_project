@@ -21,12 +21,14 @@
 ;;        (facts "about `my function`"
 ;;               (fact "it should not return 3"
 ;;                     (my-function) =not=> 3))
-
+;; dunja
 ;;        (fact "default value is returned for empty sequences"
 ;;              (first-element [] :default) => :default
 ;;              (first-element '() :default) => :default
 ;;              (first-element nil :default) => :default
 ;;              (first-element (filter even? [1 3 5]) :default) => :default))
+
+;;lalala
 
 (fact "dot test"
       ;; (dot [1 2 3] [4 5 6]) => 32

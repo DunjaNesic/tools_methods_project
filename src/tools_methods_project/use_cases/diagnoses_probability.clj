@@ -1,4 +1,4 @@
-(ns tools-methods-project.diagnoses-probability)
+(ns tools-methods-project.use-cases.diagnoses-probability)
 
 (def symptom-disease-map-probs
   {"fever" {"Flu" 0.5, "COVID-19" 0.3, "Malaria" 0.15, "Dengue" 0.05}

@@ -1,5 +1,5 @@
-(ns tools-methods-project.symptom-checker
-  (:require [tools-methods-project.symptoms-history :as history]))
+(ns tools-methods-project.use-cases.symptom-checker
+  (:require [tools-methods-project.use-cases.symptoms-history :as history]))
 
 ;;until I integrate with AI
 (def symptom-disease-map

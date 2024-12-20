@@ -1,5 +1,5 @@
 (ns tools-methods-project.healthcare-chatbot-test
-  (:require [tools-methods-project.healthcare-chatbot :refer :all]
+  (:require [tools-methods-project.use-cases.healthcare-chatbot :refer :all]
             [midje.sweet :refer :all]))
 
 (facts "User wants help from chatbot"

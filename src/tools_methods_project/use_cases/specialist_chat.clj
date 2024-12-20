@@ -1,4 +1,4 @@
-(ns tools-methods-project.specialist-chat
+(ns tools-methods-project.use-cases.specialist-chat
   (:require [clojure.core.async
              :as a
              :refer [>! <! >!! <!! go chan buffer close! thread

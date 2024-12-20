@@ -1,4 +1,4 @@
-(ns tools-methods-project.healthcare-chatbot)
+(ns tools-methods-project.use-cases.healthcare-chatbot)
 
 ;;until I integrate app with database
 (def faq-db

@@ -1,4 +1,4 @@
-(ns tools-methods-project.toxic-group-chat
+(ns tools-methods-project.use-cases.toxic-group-chat
   (:require [clojure.core.async :as a]
             [tools-methods-project.user :refer [sessions]]))
 

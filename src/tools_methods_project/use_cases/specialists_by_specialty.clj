@@ -1,4 +1,4 @@
-(ns tools-methods-project.specialists-by-specialty)
+(ns tools-methods-project.use-cases.specialists-by-specialty)
 
 (def specialists
   {"Andjela Mircetic" "General Practitioner"

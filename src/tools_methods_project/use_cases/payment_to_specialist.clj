@@ -1,4 +1,4 @@
-(ns tools-methods-project.payment-to-specialist)
+(ns tools-methods-project.use-cases.payment-to-specialist)
 
 (def accountA (atom 200))
 (def accountB (atom 100))

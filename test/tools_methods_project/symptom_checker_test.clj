@@ -1,6 +1,6 @@
 (ns tools-methods-project.symptom-checker-test
   (:require
-   [tools-methods-project.symptom-checker :refer :all]
+   [tools-methods-project.use-cases.symptom-checker :refer :all]
    [midje.sweet :refer :all]))
 
 (facts "User wants to get some diagnosis predictions"

@@ -1,6 +1,6 @@
 (ns tools-methods-project.symptoms-history-test
   (:require [midje.sweet :refer :all]
-            [tools-methods-project.symptoms-history :refer :all]))
+            [tools-methods-project.use-cases.symptoms-history :refer :all]))
 
 (fact "User want to clear symptoms history"
       (add-to-history ["fever"])

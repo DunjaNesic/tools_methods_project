@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:46791 ...
+; Using host:port 127.0.0.1:39403 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,32 +48,121 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉tools-methods-project.core꞉> 
 ; Jack-in done.
 clj꞉tools-methods-project.core꞉> 
-#'tools-methods-project.core/adot
-clj꞉tools-methods-project.core꞉> 
-; Syntax error compiling at (src/tools_methods_project/core.clj:407:1).
-; Unable to resolve symbol: quick-bench in this context
-clj꞉tools-methods-project.core꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  user 
+; Syntax error reading source at (src/tools_methods_project/routes.clj:4:91).
+; Unmatched delimiter: )
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉user꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+#'tools-methods-project.routes/app
+clj꞉tools-methods-project.routes꞉> 
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (app {:uri "/" :request-method :get})
+{:status 200, :body "Welcome to the Tools&Methods Project!"}
+clj꞉tools-methods-project.routes꞉> (app {:uri "/recommendations" :request-method :post})
+; Execution error (IllegalArgumentException) at tools-methods-project.personalized-treatment-handler/personalized-treatment (personalized_treatment_handler.clj:7).
+; Cannot open <nil> as a Reader.
+clj꞉tools-methods-project.routes꞉> (app {:uri "/" :request-method :get})
+{:status 200, :body "Welcome to the Tools&Methods Project!"}
+clj꞉tools-methods-project.routes꞉> (run-jetty app {:port 3000 :join? false})
+#object[org.eclipse.jetty.server.Server 0x42de6548 "Server@42de6548{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment_service.clj
+#'tools-methods-project.services.personalized-treatment-service/recommend-treatment
+clj꞉tools-methods-project.services.personalized-treatment-service꞉> 
+; Evaluating file: personalized_treatment_service.clj
+#'tools-methods-project.services.personalized-treatment-service/recommend-treatment
+clj꞉tools-methods-project.services.personalized-treatment-service꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+; 
+; ; clj  tools-methods-project.personalized-treatment-handler 
+; Syntax error compiling at (src/tools_methods_project/personalized_treatment_handler.clj:7:32).
+; No such var: service/recommend-treatment
+; Evaluation of file personalized_treatment_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+; 
+; Execution error (IllegalStateException) at tools-methods-project.personalized-treatment-handler/eval13222$loading (personalized_treatment_handler.clj:1).
+; Alias service already exists in namespace tools-methods-project.personalized-treatment-handler, aliasing tools-methods-project.services.recommendation-service
+; Evaluation of file personalized_treatment_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+; 
+; Execution error (IllegalStateException) at tools-methods-project.personalized-treatment-handler/eval13231$loading (personalized_treatment_handler.clj:1).
+; Alias service already exists in namespace tools-methods-project.personalized-treatment-handler, aliasing tools-methods-project.services.recommendation-service
+; Evaluation of file personalized_treatment_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+; Execution error (IllegalStateException) at tools-methods-project.personalized-treatment-handler/eval13237$loading (form-init10273063672237484700.clj:1).
+; Alias service already exists in namespace tools-methods-project.personalized-treatment-handler, aliasing tools-methods-project.services.recommendation-service
+; 
+; Syntax error compiling at (src/tools_methods_project/personalized_treatment_handler.clj:7:32).
+; No such var: service/recommend-treatment
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+#'tools-methods-project.services.personalized-treatment-service/recommend-treatment
+clj꞉tools-methods-project.services.personalized-treatment-service꞉> 
+; Execution error (IllegalStateException) at tools-methods-project.personalized-treatment-handler/eval13270$loading (form-init10273063672237484700.clj:1).
+; Alias service already exists in namespace tools-methods-project.personalized-treatment-handler, aliasing tools-methods-project.services.recommendation-service
+; 
+; Syntax error compiling at (src/tools_methods_project/personalized_treatment_handler.clj:7:32).
+; No such var: service/recommend-treatment
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+#'tools-methods-project.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (.stop server)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:125:36).
+; Unable to resolve symbol: server in this context
+clj꞉tools-methods-project.routes꞉> (defonce server (run-server my-handler {:port 8080}))
+
+; Syntax error compiling at (.calva/output-window/output.calva-repl:128:52).
+; Unable to resolve symbol: run-server in this context
+clj꞉tools-methods-project.routes꞉> (defonce server (run-jetty app {:port 3000 :join? false}))
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉tools-methods-project.routes꞉> (.stop server)
+; Execution error (IllegalArgumentException) at tools-methods-project.routes/eval13337 (form-init10273063672237484700.clj:135).
+; No matching field found: stop for class clojure.lang.Var$Unbound
+clj꞉tools-methods-project.routes꞉> (defonce server (run-jetty app {:port 3000 :join? false}))
+
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉tools-methods-project.routes꞉> (defonce server (run-jetty app {:port 3030 :join? false}))
+#'tools-methods-project.routes/server
+clj꞉tools-methods-project.routes꞉> (.stop server)
 nil
-clj꞉tools-methods-project.core꞉> 
-; Evaluation count : 10086 in 6 samples of 1681 calls.
-;              Execution time mean : 65.511640 µs
-;     Execution time std-deviation : 7.415940 µs
-;    Execution time lower quantile : 56.906597 µs ( 2.5%)
-;    Execution time upper quantile : 74.587168 µs (97.5%)
-;                    Overhead used : 8.985837 ns
-:warn-on-boxed
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.handlers.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.handlers.personalized-treatment-handler꞉> 
+; Evaluating file: routes.clj
 ; 
-; Boxed math warning, /home/dunja/project/tools_methods_project/src/tools_methods_project/core.clj:411:15 - call: public static boolean clojure.lang.Numbers.lt(long,java.lang.Object).
-clj꞉tools-methods-project.core꞉> 
-; Evaluation count : 13386 in 6 samples of 2231 calls.
-;              Execution time mean : 46.705056 µs
-;     Execution time std-deviation : 1.274476 µs
-;    Execution time lower quantile : 45.351618 µs ( 2.5%)
-;    Execution time upper quantile : 48.097036 µs (97.5%)
-;                    Overhead used : 8.985837 ns
-:warn-on-boxed
-; 
-; Boxed math warning, /home/dunja/project/tools_methods_project/src/tools_methods_project/core.clj:411:15 - call: public static boolean clojure.lang.Numbers.lt(long,java.lang.Object).
-clj꞉tools-methods-project.core꞉> 
-true
-clj꞉tools-methods-project.core-test꞉> 
+; ; clj  tools-methods-project.routes 
+; Execution error (IllegalStateException) at tools-methods-project.routes/eval13402$loading (routes.clj:1).
+; personalized-treatment already refers to: #'tools-methods-project.personalized-treatment-handler/personalized-treatment in namespace: tools-methods-project.routes
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment_service.clj
+#'tools-methods-project.services.personalized-treatment-service/user-data
+clj꞉tools-methods-project.services.personalized-treatment-service꞉> 
+; Evaluating file: personalized_treatment_service.clj
+#'tools-methods-project.services.personalized-treatment-service/recommend-treatment
+clj꞉tools-methods-project.services.personalized-treatment-service꞉> 

@@ -1,5 +1,5 @@
 (ns tools-methods-project.payment-to-specialist-test
-  (:require [tools-methods-project.payment-to-specialist :refer :all]
+  (:require [tools-methods-project.use-cases.payment-to-specialist :refer :all]
             [midje.sweet :refer :all]))
 
 (fact "User wants to transfer money from accountA to accountB"

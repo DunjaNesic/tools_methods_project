@@ -1,6 +1,7 @@
 (ns tools-methods-project.routes
   (:require
-   [tools-methods-project.personalized-treatment-handler :refer [personalized-treatment]]))
+   [ring.adapter.jetty :refer [run-jetty]]
+   [tools-methods-project.handlers.personalized-treatment-handler :refer [personalized-treatment]]))
 
 (defn app [request]
   (case (:uri request)
@@ -8,3 +9,6 @@
     "/recommendations" (if (= (:request-method request) :post)
                          (personalized-treatment request)
                          {:status 405 :body "Method Not Allowed"})))
+(defn -main []
+  (println "Starting server on http://localhost:3000")
+  (run-jetty app {:port 3000 :join? false}))

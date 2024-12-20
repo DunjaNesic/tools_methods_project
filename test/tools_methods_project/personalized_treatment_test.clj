@@ -1,6 +1,6 @@
 (ns tools-methods-project.personalized-treatment-test
   (:require
-   [tools-methods-project.personalized-treatment :refer :all]
+   [tools-methods-project.use-cases.personalized-treatment :refer :all]
    [midje.sweet :refer :all]))
 
 (facts "User wants to get personalized treatment"
