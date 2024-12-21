@@ -14,7 +14,13 @@
                  [org.postgresql/postgresql "42.5.0"]
                  [buddy/buddy-hashers "2.0.167"]
                  [criterium "0.4.6"]
-                 [com.clojure-goes-fast/clj-async-profiler "1.5.1"]]
+                 [com.clojure-goes-fast/clj-async-profiler "1.5.1"]
+                 [org.clojure/data.json "2.5.1"]
+                 [org.clojure/data.csv "1.1.0"]
+                 [org.deeplearning4j/deeplearning4j-core "1.0.0-M2.1"]
+                 [org.nd4j/nd4j-native-platform "1.0.0-M2.1"]
+                 [org.deeplearning4j/deeplearning4j-datasets "1.0.0-M2.1"]
+                 [org.nd4j/nd4j-common "1.0.0-M2"]]
   :profiles {:dev {:dependencies [[midje "1.10.10" :exclusions [org.clojure/clojure]]]
                    :plugins [[lein-midje "3.2.1"]]}}
   :repl-options {:init-ns tools-methods-project.core})

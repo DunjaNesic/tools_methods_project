@@ -268,82 +268,82 @@
 (println (color-coefficient "red" "yellow"))
 (println (color-coefficient "red" "red"))
 
-(defn group-by-type [items]
-  (vals (group-by type items)))
+;; (defn group-by-type [items]
+;;   (vals (group-by type items)))
 
-(defn group-by-type2 [items]
-  (vals
-   (reduce
-    (fn [acc e]
-      (let [item-type (type e)]
-        (update acc item-type #(conj (or % []) e))))
-    {}
-    items)))
+;; (defn group-by-type2 [items]
+;;   (vals
+;;    (reduce
+;;     (fn [acc e]
+;;       (let [item-type (type e)]
+;;         (update acc item-type #(conj (or % []) e))))
+;;     {}
+;;     items)))
 
-(def s
-  (take 100000 (repeatedly #(rand-int 2000))))
+;; (def s
+;;   (take 100000 (repeatedly #(rand-int 2000))))
 
-(count s)
+;; (count s)
 
-(time (group-by-type s))
+;; (time (group-by-type s))
 
 
-(def a
-  (into-array s))
+;; (def a
+;;   (into-array s))
 
-(time (group-by-type a))
+;; (time (group-by-type a))
 
-(def f1
-  (fn [col]
-    (loop [typeset (set (map type col)) result []]
-      (if (empty? typeset)
-        result
-        (recur (rest typeset) (conj result (filter #(= (type %) (first typeset)) col)))))))
+;; (def f1
+;;   (fn [col]
+;;     (loop [typeset (set (map type col)) result []]
+;;       (if (empty? typeset)
+;;         result
+;;         (recur (rest typeset) (conj result (filter #(= (type %) (first typeset)) col)))))))
 
-(def f2
-  (fn [c]
-    (vals (group-by class c))))
+;; (def f2
+;;   (fn [c]
+;;     (vals (group-by class c))))
 
-(def f3
-  (fn [xs]
-    (set (map (fn [t] (filter #(= (type %) t) xs)) (distinct (map type xs))))))
+;; (def f3
+;;   (fn [xs]
+;;     (set (map (fn [t] (filter #(= (type %) t) xs)) (distinct (map type xs))))))
 
-(def f4
-  (fn [l]
-    (map reverse
-         (vals
-          (loop [l (apply list l) nl {}]
-            (if-not (seq l)
-              nl
-              (recur (pop l) (assoc nl (type (first l)) (conj (nl (type (first l))) (first l))))))))))
+;; (def f4
+;;   (fn [l]
+;;     (map reverse
+;;          (vals
+;;           (loop [l (apply list l) nl {}]
+;;             (if-not (seq l)
+;;               nl
+;;               (recur (pop l) (assoc nl (type (first l)) (conj (nl (type (first l))) (first l))))))))))
 
-(def f5
-  (fn [coll]
-    (loop [c coll m {}]
-      (if (empty? c) (vals m)
-          (recur (rest c)
-                 (let [v (first c) t (type v)]
-                   (assoc m t
-                          (conj (get m t []) v))))))))
+;; (def f5
+;;   (fn [coll]
+;;     (loop [c coll m {}]
+;;       (if (empty? c) (vals m)
+;;           (recur (rest c)
+;;                  (let [v (first c) t (type v)]
+;;                    (assoc m t
+;;                           (conj (get m t []) v))))))))
 
-(def f6
-  (fn [coll]
-    (let [types (set (map type coll))]
-      (map (fn [t] (filter #(= t (type %)) coll))
-           types))))
+;; (def f6
+;;   (fn [coll]
+;;     (let [types (set (map type coll))]
+;;       (map (fn [t] (filter #(= t (type %)) coll))
+;;            types))))
 
-(def f7
-  (fn [s]
-    (vals (reduce #(assoc %1 (type %2) (conj (get %1 (type %2) []) %2)) {} s))))
+;; (def f7
+;;   (fn [s]
+;;     (vals (reduce #(assoc %1 (type %2) (conj (get %1 (type %2) []) %2)) {} s))))
 
-(def f8
-  #(loop [xs % result {}]
-     (let [f (first xs) t (type f)]
-       (if (empty? xs)
-         (map reverse (vals result))
-         (recur (rest xs) (assoc result t (conj (result t) f)))))))
+;; (def f8
+;;   #(loop [xs % result {}]
+;;      (let [f (first xs) t (type f)]
+;;        (if (empty? xs)
+;;          (map reverse (vals result))
+;;          (recur (rest xs) (assoc result t (conj (result t) f)))))))
 
-(def sample-data [1 2 3 "hello" "world" :keyword1 :keyword2 true false 4.5 6.7 nil [1 2] '(3 4)])
+;; (def sample-data [1 2 3 "hello" "world" :keyword1 :keyword2 true false 4.5 6.7 nil [1 2] '(3 4)])
 
 ;; (println "Benchmarking f1:")
 ;; (quick-bench (f1 sample-data))
@@ -371,52 +371,52 @@
 
 ;; domaci: isprobati clojure goes fast projektice i ubaciti u nas projekat ukoliko je pogodno
 
-(defrecord Layer [x w y])
+;; (defrecord Layer [x w y])
 
-(defn evaluate [^Layer l]
-  (let [x (:x l)
-        w (:w l)
-        y (map (fn [row]
-                 (reduce + (map * row x)))
-               w)]
-    (assoc l :y y)))
+;; (defn evaluate [^Layer l]
+;;   (let [x (:x l)
+;;         w (:w l)
+;;         y (map (fn [row]
+;;                  (reduce + (map * row x)))
+;;                w)]
+;;     (assoc l :y y)))
 
-(def input-x [2 3 1])
-(def weights-w [[0.3 0.1 0.4]
-                [0.4 0.6 0.2]])
+;; (def input-x [2 3 1])
+;; (def weights-w [[0.3 0.1 0.4]
+;;                 [0.4 0.6 0.2]])
 
-(def layer-instance (Layer. input-x weights-w nil))
+;; (def layer-instance (Layer. input-x weights-w nil))
 
 ;; (def result (evaluate layer-instance))
 
 ;; (println "Rezultati y:" (:y result))
 
-(defn dot
-  [x y]
-  (reduce + 0 (mapv * x y)))
+;; (defn dot
+;;   [x y]
+;;   (reduce + 0 (mapv * x y)))
 
-(defn mv [x w]
-  (mapv (partial dot x) w))
+;; (defn mv [x w]
+;;   (mapv (partial dot x) w))
 
-(defn random-vector [size]
-  (vec (repeatedly size #(rand-int 10))))
+;; (defn random-vector [size]
+;;   (vec (repeatedly size #(rand-int 10))))
 
-(defn random-matrix [rows cols]
-  (vec (repeatedly rows #(random-vector cols))))
+;; (defn random-matrix [rows cols]
+;;   (vec (repeatedly rows #(random-vector cols))))
 
-(quick-bench (mv (random-vector 7) (random-matrix 10 10)))
+;; (quick-bench (mv (random-vector 7) (random-matrix 10 10)))
 
-(defn relu [x]
-  (mapv (fn [e]
-          (if (< 0 e)
-            e
-            0)) x))
+;; (defn relu [x]
+;;   (mapv (fn [e]
+;;           (if (< 0 e)
+;;             e
+;;             0)) x))
 
-(defn evaluate [w x]
-  (relu (mv w x)))
+;; (defn evaluate [w x]
+;;   (relu (mv w x)))
 
-(set! *warn-on-reflection* true)
-(set! *unchecked-math* :warn-on-boxed)
+;; (set! *warn-on-reflection* true)
+;; (set! *unchecked-math* :warn-on-boxed)
 
 ;; (+ (10.0) 2)
 
@@ -427,13 +427,13 @@
 ;; (println "Matrica je 1000 puta 1000")
 ;; (quick-bench (evaluate (random-vector 10) (random-matrix 1000 1000)))
 
-(def gf (into-array (repeat 10 0)))
+;; (def gf (into-array (repeat 10 0)))
 
-;; radilo je i dot sa nizovima ali preko sekvenci! znaci pretvori u sekvencu prvo pa pristupa preko tog interfejsa
-(defn adot
-  [^floats x ^floats y]
-  (areduce x i acc 0.0
-           (+ acc (* (aget x i) (aget y i)))))
+;; ;; radilo je i dot sa nizovima ali preko sekvenci! znaci pretvori u sekvencu prvo pa pristupa preko tog interfejsa
+;; (defn adot
+;;   [^floats x ^floats y]
+;;   (areduce x i acc 0.0
+;;            (+ acc (* (aget x i) (aget y i)))))
 
 ;; (def x1 (float-array [1.0 2.0 3.0]))
 ;; (def y1 (float-array [4.0 5.0 6.0]))
@@ -447,19 +447,19 @@
 ;; (println (dot x1 y1))
 ;; (println (adot x2 y2))
 
-(def x1 (float-array (mapv float (range 100))))
-(def y1 (float-array (mapv float (range 100))))
+;; (def x1 (float-array (mapv float (range 100))))
+;; (def y1 (float-array (mapv float (range 100))))
 
-(quick-bench (adot x1 y1))
-(quick-bench (dot x1 y1))
+;; (quick-bench (adot x1 y1))
+;; (quick-bench (dot x1 y1))
 
-(defrecord Layer [x w])
+;; (defrecord Layer [x w])
 
-(def input-x [2 3 1])
-(def weights-w [[0.3 0.1 0.4]
-                [0.4 0.6 0.2]])
+;; (def input-x [2 3 1])
+;; (def weights-w [[0.3 0.1 0.4]
+;;                 [0.4 0.6 0.2]])
 
-(def layer-instance (Layer. input-x weights-w nil))
+;; (def layer-instance (Layer. input-x weights-w nil))
 
 ;; (defrecord Layer [x w])
 

@@ -1,7 +1,6 @@
 (ns tools-methods-project.use-cases.symptom-checker
   (:require [tools-methods-project.use-cases.symptoms-history :as history]))
 
-;;until I integrate with AI
 (def symptom-disease-map
   {"fever" ["Flu" "COVID-19" "Malaria" "Dengue"]
    "cough" ["Bronchitis" "COVID-19" "Pneumonia" "Tuberculosis"]
