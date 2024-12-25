@@ -1,13 +1,33 @@
-(ns tools-methods-project.use-cases.healthcare-chatbot)
+(ns tools-methods-project.use-cases.healthcare-chatbot
+  (:require [clojure.string :as str]
+            [clojure.set :as set]
+            [tools-methods-project.helpers.json-data :as json]))
 
-;;until I integrate app with database
-(def faq-db
-  {"What is flu?" "Flu is a viral infection that attacks your respiratory system."
-   "How do I treat a headache?" "For mild headaches, rest, hydration, and over-the-counter pain relievers can help."
-   "What are the symptoms of COVID-19?" "Common symptoms include fever, cough, and difficulty breathing."
-   "What medications are safe during pregnancy?" "Consult a doctor for personalized advice, but avoid self-medicating."})
+(defn normalize [text]
+  (-> text
+      (str/lower-case)
+      (str/replace #"[^\w\s]" "")))
 
-(defn answer-faq
-  "Retrieves an answer from the FAQ database"
-  [question]
-  (get faq-db question "I'm sorry, I don't have an answer to that question."))
+(defn match-question
+  [faqs input-question]
+  (let [normalized-input (normalize input-question)
+        similarity (fn [q1 q2]
+                     (count (set/intersection
+                             (set (str/split (normalize q1) #"\s+"))
+                             (set (str/split (normalize q2) #"\s+")))))
+        scored-faqs (map #(assoc % :score (similarity (:question %) normalized-input)) faqs)
+        best-match (first (sort-by :score > scored-faqs))]
+    (if (and best-match (> (:score best-match) 0))
+      best-match
+      nil)))
+
+(defn find-answer-nlp
+  "Finds the answer using fuzzy matching"
+  [faqs input-question]
+  (let [matched (match-question faqs input-question)]
+    (if matched
+      (:answer matched)
+      "I'm sorry, I don't have an answer to that question")))
+
+;;nprr
+(find-answer-nlp json/faqs "Medications while I have pregnancy?")

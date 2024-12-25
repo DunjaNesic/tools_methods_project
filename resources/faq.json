@@ -1,0 +1,194 @@
+[
+    {
+        "question": "What is flu?",
+        "answer": "Flu is a viral infection that attacks your respiratory system."
+    },
+    {
+        "question": "How do I treat a headache?",
+        "answer": "For mild headaches, rest, hydration, and over-the-counter pain relievers can help."
+    },
+    {
+        "question": "What are the symptoms of COVID-19?",
+        "answer": "Common symptoms include fever, cough, and difficulty breathing."
+    },
+    {
+        "question": "What medications are safe during pregnancy?",
+        "answer": "Consult a doctor for personalized advice, but avoid self-medicating."
+    },
+    {
+        "question": "What are the symptoms of a heart attack?",
+        "answer": "Symptoms include chest pain, shortness of breath, and nausea."
+    },
+    {
+        "question": "What should I do if I feel dizzy?",
+        "answer": "Sit or lie down, stay hydrated, and consult a doctor if it persists."
+    },
+    {
+        "question": "How can I prevent diabetes?",
+        "answer": "Maintain a healthy diet, exercise regularly, and monitor blood sugar levels."
+    },
+    {
+        "question": "What causes high blood pressure?",
+        "answer": "Causes include stress, poor diet, lack of exercise, and genetics."
+    },
+    {
+        "question": "How do I improve my sleep quality?",
+        "answer": "Maintain a consistent sleep schedule, avoid caffeine before bed, and create a comfortable sleep environment."
+    },
+    {
+        "question": "What are the benefits of regular exercise?",
+        "answer": "Exercise improves cardiovascular health, boosts mood, and strengthens muscles and bones."
+    },
+    {
+        "question": "How do I treat a sore throat?",
+        "answer": "Gargle with warm salt water, stay hydrated, and use throat lozenges."
+    },
+    {
+        "question": "What are the symptoms of dehydration?",
+        "answer": "Symptoms include dry mouth, fatigue, dizziness, and dark-colored urine."
+    },
+    {
+        "question": "What is a balanced diet?",
+        "answer": "A balanced diet includes fruits, vegetables, lean proteins, whole grains, and healthy fats."
+    },
+    {
+        "question": "How do I know if I have an allergy?",
+        "answer": "Symptoms include sneezing, itching, swelling, and difficulty breathing. Consult an allergist for testing."
+    },
+    {
+        "question": "What is the best way to lose weight?",
+        "answer": "Combine a healthy diet with regular exercise and maintain a calorie deficit."
+    },
+    {
+        "question": "How often should I visit the dentist?",
+        "answer": "It is recommended to visit the dentist every six months for a check-up and cleaning."
+    },
+    {
+        "question": "What are the symptoms of anxiety?",
+        "answer": "Symptoms include excessive worry, restlessness, rapid heartbeat, and difficulty concentrating."
+    },
+    {
+        "question": "How do I manage stress effectively?",
+        "answer": "Practice relaxation techniques, exercise, and maintain a healthy work-life balance."
+    },
+    {
+        "question": "What is the best way to quit smoking?",
+        "answer": "Consider nicotine replacement therapy, join support groups, and consult a doctor for assistance."
+    },
+    {
+        "question": "How can I boost my immune system?",
+        "answer": "Eat a nutritious diet, exercise, get enough sleep, and reduce stress."
+    },
+    {
+        "question": "What is the difference between a cold and the flu?",
+        "answer": "Colds are usually milder, with symptoms like a runny nose and sore throat. The flu causes fever, body aches, and fatigue."
+    },
+    {
+        "question": "What are the signs of depression?",
+        "answer": "Symptoms include persistent sadness, loss of interest, fatigue, and changes in appetite or sleep."
+    },
+    {
+        "question": "How do I treat a stomach ache?",
+        "answer": "Rest, drink clear fluids, and avoid heavy or spicy foods."
+    },
+    {
+        "question": "What is the normal body temperature?",
+        "answer": "The normal body temperature is around 98.6°F (37°C)."
+    },
+    {
+        "question": "How do I treat a minor burn?",
+        "answer": "Cool the burn with running water, apply aloe vera, and cover it with a clean bandage."
+    },
+    {
+        "question": "What are the symptoms of food poisoning?",
+        "answer": "Symptoms include nausea, vomiting, diarrhea, and stomach cramps."
+    },
+    {
+        "question": "How do I prevent back pain?",
+        "answer": "Maintain good posture, exercise regularly, and avoid heavy lifting."
+    },
+    {
+        "question": "What is a healthy BMI range?",
+        "answer": "A healthy BMI ranges from 18.5 to 24.9."
+    },
+    {
+        "question": "How can I reduce cholesterol levels?",
+        "answer": "Eat a heart-healthy diet, exercise regularly, and avoid trans fats."
+    },
+    {
+        "question": "What is the best way to treat acne?",
+        "answer": "Wash your face regularly, use non-comedogenic products, and consult a dermatologist for severe cases."
+    },
+    {
+        "question": "What are the symptoms of an ear infection?",
+        "answer": "Symptoms include ear pain, fever, and difficulty hearing."
+    },
+    {
+        "question": "How do I prevent kidney stones?",
+        "answer": "Drink plenty of water, limit salt intake, and avoid foods high in oxalates."
+    },
+    {
+        "question": "What is the difference between Type 1 and Type 2 diabetes?",
+        "answer": "Type 1 is an autoimmune condition, while Type 2 is often related to lifestyle and genetics."
+    },
+    {
+        "question": "How do I treat constipation?",
+        "answer": "Increase fiber intake, drink more water, and exercise regularly."
+    },
+    {
+        "question": "What are the symptoms of a stroke?",
+        "answer": "Symptoms include sudden numbness, confusion, difficulty speaking, and loss of balance."
+    },
+    {
+        "question": "How do I prevent migraines?",
+        "answer": "Identify triggers, manage stress, and maintain a regular sleep schedule."
+    },
+    {
+        "question": "What are the benefits of drinking water?",
+        "answer": "Water helps maintain hydration, supports digestion, and regulates body temperature."
+    },
+    {
+        "question": "How do I treat a sprained ankle?",
+        "answer": "Use the RICE method: Rest, Ice, Compression, and Elevation."
+    },
+    {
+        "question": "What is the difference between a viral and bacterial infection?",
+        "answer": "Bacterial infections are treated with antibiotics, while viral infections usually resolve on their own."
+    },
+    {
+        "question": "How do I protect my skin from the sun?",
+        "answer": "Wear sunscreen, seek shade, and wear protective clothing."
+    },
+    {
+        "question": "What are the signs of dehydration in children?",
+        "answer": "Symptoms include dry mouth, no tears when crying, and decreased urination."
+    },
+    {
+        "question": "How do I treat seasonal allergies?",
+        "answer": "Use antihistamines, avoid allergens, and keep windows closed during high pollen times."
+    },
+    {
+        "question": "What are the symptoms of asthma?",
+        "answer": "Symptoms include wheezing, shortness of breath, and chest tightness."
+    },
+    {
+        "question": "How do I prevent the spread of germs?",
+        "answer": "Wash hands regularly, cover your mouth when sneezing, and avoid close contact with sick people."
+    },
+    {
+        "question": "What are the benefits of eating fruits and vegetables?",
+        "answer": "They provide essential vitamins, minerals, and antioxidants."
+    },
+    {
+        "question": "How do I treat a fever?",
+        "answer": "Rest, stay hydrated, and use fever-reducing medications like acetaminophen."
+    },
+    {
+        "question": "What are the symptoms of an allergic reaction?",
+        "answer": "Symptoms include hives, swelling, and difficulty breathing."
+    },
+    {
+        "question": "How do I prevent infections after a cut or wound?",
+        "answer": "Clean the wound, apply an antibiotic ointment, and cover it with a bandage."
+    }
+]
