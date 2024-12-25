@@ -1,1 +1,0 @@
-(ns tools-methods-project.diagnosis-probability-test)

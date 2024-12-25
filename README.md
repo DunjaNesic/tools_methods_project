@@ -32,7 +32,7 @@ After that, I came up with the idea that it would be nice for the user to always
 
 Additionally, I realized it would be important to provide the probability of potential illnesses. For example, it wouldn’t be ideal for the user to receive a diagnosis like either migraines or brain cancer just based on the symptom "headache". So, I implemented this feature on a basic level as well.
     
-
+On Kaggle, I found a CSV file containing symptoms and potential disease diagnoses, and I used it instead of the hardcoded symptoms and diagnoses I had at the very beginning. Honestly, I struggled a lot with this because I tried various approaches and spent about three days just writing and deleting my code. I experimented with various methods, including neural networks and decision trees, but ultimately didn't apply any machine learning algorithms. Despite the frustration, I learned a lot through all the trial and error, even if it cost me a lot of patience. I also got closer to Clojure community since I have spent quite a bit of time on Reddit and Stack Overflow.
 
 ## License
 

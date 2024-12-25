@@ -1,17 +1,26 @@
 (ns tools-methods-project.use-cases.symptom-checker
-  (:require [tools-methods-project.use-cases.symptoms-history :as history]))
+  (:require [tools-methods-project.use-cases.symptoms-history :as history]
+            [tools-methods-project.helpers.csv-data :as csv]))
+
+(defn build-symptom-disease-map
+  "Creating a map of symptoms with associated diseases from a CSV file"
+  [data symptom-keys label-key]
+  (reduce (fn [acc row]
+            (reduce (fn [inner-acc symptom]
+                      (let [value (get row symptom "0")
+                            disease (get row label-key)]
+                        (if (and disease (= value "1"))
+                          (update inner-acc symptom
+                                  (fnil conj #{})
+                                  disease)
+                          inner-acc)))
+                    acc
+                    symptom-keys))
+          {}
+          data))
 
 (def symptom-disease-map
-  {"fever" ["Flu" "COVID-19" "Malaria" "Dengue"]
-   "cough" ["Bronchitis" "COVID-19" "Pneumonia" "Tuberculosis"]
-   "headache" ["Migraine" "Tension Headache" "Cluster Headache" "Sinusitis" "Brain cancer"]
-   "chest pain" ["Heart Attack" "GERD" "Angina" "Panic Attack"]
-   "fatigue" ["Anemia" "Hypothyroidism" "Chronic Fatigue Syndrome" "Depression"]
-   "sore throat" ["Strep Throat" "Flu" "COVID-19" "Tonsillitis"]
-   "shortness of breath" ["Asthma" "COPD" "COVID-19" "Pneumonia"]
-   "rash" ["Allergy" "Chickenpox" "Measles" "Eczema"]
-   "abdominal pain" ["Appendicitis" "IBS" "Gastritis" "Gallstones"]
-   "dizziness" ["Vertigo" "Low Blood Pressure" "Dehydration" "Anemia"]})
+  (build-symptom-disease-map csv/test-data csv/symptom-keys :prognosis))
 
 
 (def disease-specialist-map
@@ -52,16 +61,22 @@
    "Dehydration" "General Practitioner"})
 
 ;;(get map key default-value)
+
 (defn predict-diagnoses
-  "Predicting possible diagnoses based on symptoms"
   [symptoms]
-  (let [diagnoses (mapcat #(get symptom-disease-map % []) symptoms)]
-    (distinct diagnoses)))
+  (let [disease-counts (frequencies (mapcat #(get symptom-disease-map % []) symptoms))]
+    (if (empty? disease-counts)
+      {"Unknown" 1.0}
+      (let [total (reduce + (vals disease-counts))]
+        (into {}
+              (map (fn [[disease count]]
+                     [disease (/ count total)])
+                   disease-counts))))))
 
 (defn recommend-specialists
   "Recommending specialist based on diagnoses"
   [diagnoses]
-  (distinct (map #(get disease-specialist-map %) diagnoses)))
+  (distinct (remove nil? (map #(get disease-specialist-map %) (keys diagnoses)))))
 
 (def valid-symptom?
   (fn [symptom]
@@ -82,3 +97,6 @@
         {:diagnoses diagnoses
          :specialists specialists}))
     {:error "Invalid symptoms provided. Please check your input."}))
+
+;;(check-symptoms [:back_pain :mood_swings])
+;;(check-symptoms [:continuous_sneezing :shivering :chills :cough :watering_from_eyes])
