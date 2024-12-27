@@ -1,0 +1,25 @@
+{:medical-condition-recommendations
+ {"diabetes" {:diet ["Avoid sugar" "Include whole grains"]
+              :exercise ["Light cardio" "Yoga"]
+              :medications ["Metformin"]}
+
+  "hypertension" {:diet ["Reduce salt" "Eat potassium-rich foods"]
+                  :exercise ["Walking" "Swimming"]
+                  :medications ["ACE inhibitors" "Beta-blockers"]}
+
+  "obesity" {:diet ["Low-carb diet" "Increase protein intake"]
+             :exercise ["High-intensity interval training" "Strength training"]
+             :medications ["Orlistat"]}}
+
+ :lifestyle-recommendations
+ {"sedentary" {:diet ["Reduce calorie intake" "Add fruits and vegetables"]
+               :exercise ["Start with short walks" "Simple stretches"]}
+
+  "active" {:diet ["Maintain a balanced diet" "Increase protein post-workout"]
+            :exercise ["Focus on strength training" "Endurance exercises"]}}
+
+ :genetic-marker-recommendations
+ {"APOE-e4" {:diet ["Increase omega-3 intake" "Reduce saturated fats"]
+             :exercise ["Regular cardio" "Brain-stimulating activities"]}
+
+  "MTHFR" {:diet ["Supplement folate" "Avoid processed foods"]}}}

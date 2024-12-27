@@ -1,39 +1,41 @@
-(ns tools-methods-project.use-cases.personalized-treatment)
+(ns tools-methods-project.use-cases.personalized-treatment
+  (:require [clojure.edn :as edn]))
 
-(def medical-condition-recommendations
-  {"diabetes" {:diet ["Avoid sugar" "Include whole grains"]
-               :exercise ["Light cardio" "Yoga"]
-               :medications ["Metformin"]}
-   "hypertension" {:diet ["Reduce salt" "Eat potassium-rich foods"]
-                   :exercise ["Walking" "Swimming"]
-                   :medications ["ACE inhibitors" "Beta-blockers"]}
-   "obesity" {:diet ["Low-carb diet" "Increase protein intake"]
-              :exercise ["High-intensity interval training" "Strength training"]
-              :medications ["Orlistat"]}})
+(def recommendations (edn/read-string (slurp "/home/dunja/project/tools_methods_project/resources/recommendations.edn")))
+(def medical-condition-recommendations (:medical-condition-recommendations recommendations))
+(def lifestyle-recommendations (:lifestyle-recommendations recommendations))
+(def genetic-marker-recommendations (:genetic-marker-recommendations recommendations))
 
-(def lifestyle-recommendations
-  {"sedentary" {:diet ["Reduce calorie intake" "Add fruits and vegetables"]
-                :exercise ["Start with short walks" "Simple stretches"]}
-   "active" {:diet ["Maintain a balanced diet" "Increase protein post-workout"]
-             :exercise ["Focus on strength training" "Endurance exercises"]}})
+(defn merge-recommendations [categories & sources]
+  (reduce (fn [acc category]
+            (assoc acc category
+                   (distinct (mapcat #(get % category []) (apply concat sources)))))
+          {}
+          categories))
 
-(def genetic-marker-recommendations
-  {"APOE-e4" {:diet ["Increase omega-3 intake" "Reduce saturated fats"]
-              :exercise ["Regular cardio" "Brain-stimulating activities"]}
-   "MTHFR" {:diet ["Supplement folate" "Avoid processed foods"]}})
+(defn validate-input
+  [input valid-options]
+  (if (and input (not (every? (set valid-options) input)))
+    (throw (ex-info "Invalid input detected. Please write your input nicely and without any typos" {:input input}))
+    input))
 
-;;(get map key default-value)
 (defn generate-recommendations
   [medical-conditions lifestyle genetic-markers]
-  (let [medical-rec (map #(get medical-condition-recommendations % {}) medical-conditions)
-        lifestyle-rec (get lifestyle-recommendations lifestyle {})
-        genetic-rec (map #(get genetic-marker-recommendations % {}) genetic-markers)] {:diet (distinct (mapcat :diet (concat medical-rec [lifestyle-rec] genetic-rec)))
-                                                                                       :exercise (distinct (mapcat :exercise (concat medical-rec [lifestyle-rec] genetic-rec)))
-                                                                                       :medications (distinct (mapcat :medications medical-rec))}))
+  (let [categories [:diet :exercise :medications]
+        medical-rec (map #(get medical-condition-recommendations % {}) medical-conditions)
+        lifestyle-rec (if lifestyle
+                        (get lifestyle-recommendations lifestyle {})
+                        {})
+        genetic-rec (map #(get genetic-marker-recommendations % {}) genetic-markers)]
+    (merge-recommendations categories
+                           (concat medical-rec [lifestyle-rec] genetic-rec))))
+
 
 (defn recommend-treatment
-  "Generating a personalized treatment plan"
   [user-data]
   (let [{:keys [medical-conditions lifestyle genetic-markers]} user-data]
+    (validate-input medical-conditions (keys medical-condition-recommendations))
+    (when (some? lifestyle)
+      (validate-input [lifestyle] (keys lifestyle-recommendations)))
+    (validate-input genetic-markers (keys genetic-marker-recommendations))
     (generate-recommendations medical-conditions lifestyle genetic-markers)))
-

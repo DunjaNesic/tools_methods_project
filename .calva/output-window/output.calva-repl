@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:42359 ...
+; Using host:port 127.0.0.1:43479 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,137 +48,335 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉tools-methods-project.core꞉> 
 ; Jack-in done.
 clj꞉tools-methods-project.core꞉> 
-; Evaluating file: json_data.clj
-#'tools-methods-project.helpers.json-data/faqs
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: project.clj
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:56:36).
+; Unable to resolve symbol: main in this context
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x41ca47fe "Server@41ca47fe{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment.clj
 ; 
-; ; clj  user 
-; Syntax error compiling at (project.clj:1:1).
-; Unable to resolve symbol: defproject in this context
-; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉user꞉> 
-; Evaluating file: user.clj
-#'tools-methods-project.user/logout-patient
-clj꞉tools-methods-project.user꞉> 
-; Evaluating file: user.clj
-; 
-; Execution error (FileNotFoundException) at tools-methods-project.user/eval15328$loading (user.clj:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.user꞉> 
-; Evaluating file: user.clj
-; 
-; Execution error (FileNotFoundException) at tools-methods-project.user/eval15337$loading (user.clj:1).
-; Could not locate honey/sql/helpers__init.class, honey/sql/helpers.clj or honey/sql/helpers.cljc on classpath.
-; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.user꞉> 
-; Evaluating file: user.clj
-#'tools-methods-project.user/logout-patient
-clj꞉tools-methods-project.user꞉> (get-all-patients)
-[#:patient{:id 4,
-           :email "sandra@gmail.com",
-           :password
-           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
- #:patient{:id 5,
-           :email "aaa@gmail.com",
-           :password
-           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
- #:patient{:id 6,
-           :email "bbb@gmail.com",
-           :password
-           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}
- #:patient{:id 7,
-           :email "test@gmail.com",
-           :password
-           "bcrypt+sha512$7104800b33c52eccda35ea8dbdcbeb16$12$3190f96811aaaaea30c0e5b3a45329a3d81cb0d0ffd2c3d5"}]
-clj꞉tools-methods-project.user꞉> 
-; Evaluating file: user.clj
-; 
-; Execution error (FileNotFoundException) at tools-methods-project.user/eval15366$loading (user.clj:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.user꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "Leiningen" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
+; ; clj  tools-methods-project.use-cases.personalized-treatment 
+; Execution error (FileNotFoundException) at java.io.FileInputStream/open0 (FileInputStream.java:-2).
+; recommendations.edn (No such file or directory)
+; Evaluation of file personalized_treatment.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes" "hypertension"]
+   :lifestyle "sedentary"
+   :genetic-markers ["APOE-e4"]})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ClassCastException) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:18).
+; class clojure.lang.APersistentMap$KeySeq cannot be cast to class clojure.lang.IFn (clojure.lang.APersistentMap$KeySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes" "hypertension"]
+   :lifestyle "sedentary"
+   :genetic-markers ["APOE-e4"]})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (sample-user-data)
+; Execution error (ArityException) at tools-methods-project.use-cases.personalized-treatment/eval18549 (form-init10444751945245934100.clj:103).
+; Wrong number of args (0) passed to: clojure.lang.PersistentArrayMap
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> sample-user-data
+{:medical-conditions ["diabetes" "hypertension"], :lifestyle "sedentary", :genetic-markers ["APOE-e4"]}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> recommendations
+{:medical-condition-recommendations
+ {"diabetes"
+  {:diet ["Avoid sugar" "Include whole grains"], :exercise ["Light cardio" "Yoga"], :medications ["Metformin"]},
+  "hypertension"
+  {:diet ["Reduce salt" "Eat potassium-rich foods"],
+   :exercise ["Walking" "Swimming"],
+   :medications ["ACE inhibitors" "Beta-blockers"]},
+  "obesity"
+  {:diet ["Low-carb diet" "Increase protein intake"],
+   :exercise ["High-intensity interval training" "Strength training"],
+   :medications ["Orlistat"]}},
+ :lifestyle-recommendations
+ {"sedentary"
+  {:diet ["Reduce calorie intake" "Add fruits and vegetables"],
+   :exercise ["Start with short walks" "Simple stretches"]},
+  "active"
+  {:diet ["Maintain a balanced diet" "Increase protein post-workout"],
+   :exercise ["Focus on strength training" "Endurance exercises"]}},
+ :genetic-marker-recommendations
+ {"APOE-e4"
+  {:diet ["Increase omega-3 intake" "Reduce saturated fats"],
+   :exercise ["Regular cardio" "Brain-stimulating activities"]},
+  "MTHFR" {:diet ["Supplement folate" "Avoid processed foods"]}}}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> medical-condition-recommendations
+{"diabetes"
+ {:diet ["Avoid sugar" "Include whole grains"], :exercise ["Light cardio" "Yoga"], :medications ["Metformin"]},
+ "hypertension"
+ {:diet ["Reduce salt" "Eat potassium-rich foods"],
+  :exercise ["Walking" "Swimming"],
+  :medications ["ACE inhibitors" "Beta-blockers"]},
+ "obesity"
+ {:diet ["Low-carb diet" "Increase protein intake"],
+  :exercise ["High-intensity interval training" "Strength training"],
+  :medications ["Orlistat"]}}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> lifestyle-recommendations
+{"sedentary"
+ {:diet ["Reduce calorie intake" "Add fruits and vegetables"],
+  :exercise ["Start with short walks" "Simple stretches"]},
+ "active"
+ {:diet ["Maintain a balanced diet" "Increase protein post-workout"],
+  :exercise ["Focus on strength training" "Endurance exercises"]}}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> sample-user-data
+{:medical-conditions ["diabetes" "hypertension"], :lifestyle "sedentary", :genetic-markers ["APOE-e4"]}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment :medical-conditions ["dunja"])
+; Execution error (ArityException) at tools-methods-project.use-cases.personalized-treatment/eval18551 (form-init10444751945245934100.clj:152).
+; Wrong number of args (2) passed to: tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample {:medical-conditions "dunja"})
+#'tools-methods-project.use-cases.personalized-treatment/sample
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (generate-recommendations sample-user-data)
+; Execution error (ArityException) at tools-methods-project.use-cases.personalized-treatment/eval18586 (form-init10444751945245934100.clj:166).
+; Wrong number of args (1) passed to: tools-methods-project.use-cases.personalized-treatment/generate-recommendations
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> sample-user-data
+{:medical-conditions ["diabetes" "hypertension"], :lifestyle "sedentary", :genetic-markers ["APOE-e4"]}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def categories [:diet :exercise :medications])
 
-; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:34757 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉tools-methods-project.core꞉> 
-nil
-clj꞉tools-methods-project.user꞉> 
-; Jack-in done.
-clj꞉tools-methods-project.user꞉> 
-; Evaluating file: user.clj
-#'tools-methods-project.user/logout-patient
-clj꞉tools-methods-project.user꞉> (get-all-patients)
-[#:patient{:id 4,
-           :email "sandra@gmail.com",
-           :password
-           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
- #:patient{:id 5,
-           :email "aaa@gmail.com",
-           :password
-           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
- #:patient{:id 6,
-           :email "bbb@gmail.com",
-           :password
-           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}
- #:patient{:id 7,
-           :email "test@gmail.com",
-           :password
-           "bcrypt+sha512$7104800b33c52eccda35ea8dbdcbeb16$12$3190f96811aaaaea30c0e5b3a45329a3d81cb0d0ffd2c3d5"}]
-clj꞉tools-methods-project.user꞉> (register-patient "dzoni@gmail.com" "dzoni")
-{:status :success, :message "Patient registered successfully"}
-clj꞉tools-methods-project.user꞉> (get-all-patients)
-[#:patient{:id 4,
-           :email "sandra@gmail.com",
-           :password
-           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
- #:patient{:id 5,
-           :email "aaa@gmail.com",
-           :password
-           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
- #:patient{:id 6,
-           :email "bbb@gmail.com",
-           :password
-           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}
- #:patient{:id 7,
-           :email "test@gmail.com",
-           :password
-           "bcrypt+sha512$7104800b33c52eccda35ea8dbdcbeb16$12$3190f96811aaaaea30c0e5b3a45329a3d81cb0d0ffd2c3d5"}
- #:patient{:id 8,
-           :email "dzoni@gmail.com",
-           :password
-           "bcrypt+sha512$e8103ea777bcbd84be144a9208516317$12$b2c0455fa86a62fa7fc6a0378df9ff9d18e4d01a60128c1f"}]
-clj꞉tools-methods-project.user꞉> (login-patient "dzoni@gmail.com" "dzoni")
-{:status :success,
- :message "Login successful",
- :patient
- #:patient{:id 8,
-           :email "dzoni@gmail.com",
-           :password
-           "bcrypt+sha512$e8103ea777bcbd84be144a9208516317$12$b2c0455fa86a62fa7fc6a0378df9ff9d18e4d01a60128c1f"}}
-clj꞉tools-methods-project.user꞉> (login-patient "dzoni@gmail.com" "dnfdj")
-{:status :error, :message "Invalid password"}
-clj꞉tools-methods-project.user꞉> (login-patient "dzoni@gmail.com" "dnfdj")
-{:status :error, :message "Invalid password"}
-clj꞉tools-methods-project.user꞉> (login-patient "sandra@gmail.com" "sandra")
-{:status :success,
- :message "Login successful",
- :patient
- #:patient{:id 4,
-           :email "sandra@gmail.com",
-           :password
-           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}}
-clj꞉tools-methods-project.user꞉> (logout-patient "sandra@gmail.com")
-{:status :success, :message "Logged out successfully"}
-clj꞉tools-methods-project.user꞉> 
+
+(def source1 {:diet ["Avoid sugar" "Include whole grains"]
+              :exercise ["Light cardio"]
+              :medications ["Metformin"]})
+
+(def source2 {:diet ["Avoid sugar" "Eat potassium-rich foods"]
+              :exercise ["Swimming"]
+              :medications ["ACE inhibitors"]})
+
+(def source3 {:diet ["Increase protein intake"]
+              :exercise ["Yoga"]
+              :medications ["Beta-blockers"]})
+
+(merge-recommendations categories source1 source2 source3)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:187:1).
+; Unable to resolve symbol: categories in this context
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def categories [:diet :exercise :medications])
+#'tools-methods-project.use-cases.personalized-treatment/categories
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def source1 {:diet ["Avoid sugar" "Include whole grains"]
+              :exercise ["Light cardio"]
+              :medications ["Metformin"]})
+
+#'tools-methods-project.use-cases.personalized-treatment/source1
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def source2 {:diet ["Avoid sugar" "Eat potassium-rich foods"]
+              :exercise ["Swimming"]
+              :medications ["ACE inhibitors"]})
+#'tools-methods-project.use-cases.personalized-treatment/source2
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def source3 {:diet ["Increase protein intake"]
+              :exercise ["Yoga"]
+              :medications ["Beta-blockers"]})
+#'tools-methods-project.use-cases.personalized-treatment/source3
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (merge-recommendations categories source1 source2 source3)
+{:diet ("Avoid sugar" "Include whole grains" "Eat potassium-rich foods" "Increase protein intake"),
+ :exercise ("Light cardio" "Swimming" "Yoga"),
+ :medications ("Metformin" "ACE inhibitors" "Beta-blockers")}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> sample-user-data
+{:medical-conditions ["diabetes" "hypertension"], :lifestyle "sedentary", :genetic-markers ["APOE-e4"]}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes" "hypertension"]
+   :lifestyle "sedentary"
+   :genetic-markers ["APOE-e4"]})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (keys medical-condition-recommendations)
+("diabetes" "hypertension" "obesity")
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (keys lifestyle-recommendations)
+
+("sedentary" "active")
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (keys genetic-marker-recommendations)
+
+("APOE-e4" "MTHFR")
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (validate-input ["diabetes" "hypertension"] (keys medical-condition-recommendations))
+["diabetes" "hypertension"]
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (validate-input ["sedentary"] (keys lifestyle-recommendations))
+
+["sedentary"]
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (validate-input ["APOE-e4"] (keys genetic-marker-recommendations))
+
+["APOE-e4"]
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Medical Recommendations: ({:diet [Avoid sugar Include whole grains], :exercise [Light cardio Yoga], :medications [Metformin]} {:diet [Reduce salt Eat potassium-rich foods], :exercise [Walking Swimming], :medications [ACE inhibitors Beta-blockers]})
+; Lifestyle Recommendations: {:diet [Reduce calorie intake Add fruits and vegetables], :exercise [Start with short walks Simple stretches]}
+; Genetic Recommendations: ({:diet [Increase omega-3 intake Reduce saturated fats], :exercise [Regular cardio Brain-stimulating activities]})
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Medical Recommendations: ({:diet [Avoid sugar Include whole grains], :exercise [Light cardio Yoga], :medications [Metformin]} {:diet [Reduce salt Eat potassium-rich foods], :exercise [Walking Swimming], :medications [ACE inhibitors Beta-blockers]})
+; Lifestyle Recommendations: {:diet [Reduce calorie intake Add fruits and vegetables], :exercise [Start with short walks Simple stretches]}
+; Genetic Recommendations: ({:diet [Increase omega-3 intake Reduce saturated fats], :exercise [Regular cardio Brain-stimulating activities]})
+{:diet
+ ("Avoid sugar"
+  "Include whole grains"
+  "Reduce salt"
+  "Eat potassium-rich foods"
+  "Reduce calorie intake"
+  "Add fruits and vegetables"
+  "Increase omega-3 intake"
+  "Reduce saturated fats"),
+ :exercise
+ ("Light cardio"
+  "Yoga"
+  "Walking"
+  "Swimming"
+  "Start with short walks"
+  "Simple stretches"
+  "Regular cardio"
+  "Brain-stimulating activities"),
+ :medications ("Metformin" "ACE inhibitors" "Beta-blockers")}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes" "hypertension"]})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:20).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes" "hypertension"]
+   :lifestyle ""
+   :genetic-markers [""]})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:20).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes"]
+   :genetic-markers []})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes" "hypertension"]
+   :lifestyle "sedentary"
+   :genetic-markers ["APOE-e4"]})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet
+ ("Avoid sugar"
+  "Include whole grains"
+  "Reduce salt"
+  "Eat potassium-rich foods"
+  "Reduce calorie intake"
+  "Add fruits and vegetables"
+  "Increase omega-3 intake"
+  "Reduce saturated fats"),
+ :exercise
+ ("Light cardio"
+  "Yoga"
+  "Walking"
+  "Swimming"
+  "Start with short walks"
+  "Simple stretches"
+  "Regular cardio"
+  "Brain-stimulating activities"),
+ :medications ("Metformin" "ACE inhibitors" "Beta-blockers")}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes"]
+   :genetic-markers []})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes"]
+   :lifestyle nil
+   :genetic-markers []})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+; Execution error (ExceptionInfo) at tools-methods-project.use-cases.personalized-treatment/validate-input (personalized_treatment.clj:19).
+; Invalid input detected. Please write your input nicely and without any typos
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet ("Avoid sugar" "Include whole grains"), :exercise ("Light cardio" "Yoga"), :medications ("Metformin")}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions []
+   :lifestyle nil
+   :genetic-markers []})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions []
+   :genetic-markers []})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet (), :exercise (), :medications ()}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (def sample-user-data
+  {:medical-conditions ["diabetes"]
+   :genetic-markers []})
+#'tools-methods-project.use-cases.personalized-treatment/sample-user-data
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> (recommend-treatment sample-user-data)
+{:diet ("Avoid sugar" "Include whole grains"), :exercise ("Light cardio" "Yoga"), :medications ("Metformin")}
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
