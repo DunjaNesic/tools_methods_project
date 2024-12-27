@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:41809 ...
+; Using host:port 127.0.0.1:42359 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -46,184 +46,139 @@ clj꞉tools-methods-project.core꞉> 
 "Please see https://calva.io/output/#about-stdout-in-the-repl-window
 about why stdout printed to this file is prepended with `;` to be line comments."
 clj꞉tools-methods-project.core꞉> 
-nil
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
 ; Jack-in done.
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-#'tools-methods-project.use-cases.healthcare-chatbot/find-answer-nlp
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-#'tools-methods-project.use-cases.healthcare-chatbot/faqs
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-#'tools-methods-project.helpers.json-data/load-faqs
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-; 
-; ; clj  tools-methods-project.use-cases.healthcare-chatbot 
-; Execution error (IllegalArgumentException) at tools-methods-project.helpers.json-data/load-faqs (form-init5624250269866563578.clj:7).
-; Cannot open <nil> as a Reader.
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-; 
-; Execution error (IllegalArgumentException) at tools-methods-project.helpers.json-data/load-faqs (form-init5624250269866563578.clj:7).
-; Cannot open <nil> as a Reader.
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: json_data.clj
-#'tools-methods-project.helpers.json-data/load-faqs
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: healthcare_chatbot.clj
-; 
-; ; clj  tools-methods-project.use-cases.healthcare-chatbot 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: json_data.clj
-#'tools-methods-project.helpers.json-data/load-faqs
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: healthcare_chatbot.clj
-; 
-; ; clj  tools-methods-project.use-cases.healthcare-chatbot 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-; 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: json_data.clj
-#'tools-methods-project.helpers.json-data/load-faqs
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: healthcare_chatbot.clj
-; 
-; ; clj  tools-methods-project.use-cases.healthcare-chatbot 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> (slurp "/home/dunja/project/tools_methods_project/resources/faq.json")
-"[\n    {\n        \"question\": \"What is flu?\",\n        \"answer\": \"Flu is a viral infection that attacks your respiratory system.\"\n    },\n    {\n        \"question\": \"How do I treat a headache?\",\n        \"answer\": \"For mild headaches, rest, hydration, and over-the-counter pain relievers can help.\"\n    },\n    {\n        \"question\": \"What are the symptoms of COVID-19?\",\n        \"answer\": \"Common symptoms include fever, cough, and difficulty breathing.\"\n    },\n    {\n        \"question\": \"What medications are safe during pregnancy?\",\n        \"answer\": \"Consult a doctor for personalized advice, but avoid self-medicating.\"\n    },\n    {\n        \"question\": \"What are the symptoms of a heart attack?\",\n        \"answer\": \"Symptoms include chest pain, shortness of breath, and nausea.\"\n    },\n    {\n        \"question\": \"What should I do if I feel dizzy?\",\n        \"answer\": \"Sit or lie down, stay hydrated, and consult a doctor if it persists.\"\n    },\n    {\n        \"question\": \"How can I prevent diabetes?\",\n        \"answer\": \"Maintain a healthy diet, exercise regularly, and monitor blood sugar levels.\"\n    },\n    {\n        \"question\": \"What causes high blood pressure?\",\n        \"answer\": \"Causes include stress, poor diet, lack of exercise, and genetics.\"\n    },\n    {\n        \"question\": \"How do I improve my sleep quality?\",\n        \"answer\": \"Maintain a consistent sleep schedule, avoid caffeine before bed, and create a comfortable sleep environment.\"\n    },\n    {\n        \"question\": \"What are the benefits of regular exercise?\",\n        \"answer\": \"Exercise improves cardiovascular health, boosts mood, and strengthens muscles and bones.\"\n    },\n    {\n        \"question\": \"How do I treat a sore throat?\",\n        \"answer\": \"Gargle with warm salt water, stay hydrated, and use throat lozenges.\"\n    },\n    {\n        \"question\": \"What are the symptoms of dehydration?\",\n        \"answer\": \"Symptoms include dry mouth, fatigue, dizziness, and dark-colored urine.\"\n    },\n    {\n        \"question\": \"What is a balanced diet?\",\n        \"answer\": \"A balanced diet includes fruits, vegetables, lean proteins, whole grains, and healthy fats.\"\n    },\n    {\n        \"question\": \"How do I know if I have an allergy?\",\n        \"answer\": \"Symptoms include sneezing, itching, swelling, and difficulty breathing. Consult an allergist for testing.\"\n    },\n    {\n        \"question\": \"What is the best way to lose weight?\",\n        \"answer\": \"Combine a healthy diet with regular exercise and maintain a calorie deficit.\"\n    },\n    {\n        \"question\": \"How often should I visit the dentist?\",\n        \"answer\": \"It is recommended to visit the dentist every six months for a check-up and cleaning.\"\n    },\n    {\n        \"question\": \"What are the symptoms of anxiety?\",\n        \"answer\": \"Symptoms include excessive worry, restlessness, rapid heartbeat, and difficulty concentrating.\"\n    },\n    {\n        \"question\": \"How do I manage stress effectively?\",\n        \"answer\": \"Practice relaxation techniques, exercise, and maintain a healthy work-life balance.\"\n    },\n    {\n        \"question\": \"What is the best way to quit smoking?\",\n        \"answer\": \"Consider nicotine replacement therapy, join support groups, and consult a doctor for assistance.\"\n    },\n    {\n        \"question\": \"How can I boost my immune system?\",\n        \"answer\": \"Eat a nutritious diet, exercise, get enough sleep, and reduce stress.\"\n    },\n    {\n        \"question\": \"What is the difference between a cold and the flu?\",\n        \"answer\": \"Colds are usually milder, with symptoms like a runny nose and sore throat. The flu causes fever, body aches, and fatigue.\"\n    },\n    {\n        \"question\": \"What are the signs of depression?\",\n        \"answer\": \"Symptoms include persistent sadness, loss of interest, fatigue, and changes in appetite or sleep.\"\n    },\n    {\n        \"question\": \"How do I treat a stomach ache?\",\n        \"answer\": \"Rest, drink clear fluids, and avoid heavy or spicy foods.\"\n    },\n    {\n        \"question\": \"What is the normal body temperature?\",\n        \"answer\": \"The normal body temperature is around 98.6°F (37°C).\"\n    },\n    {\n        \"question\": \"How do I treat a minor burn?\",\n        \"answer\": \"Cool the burn with running water, apply aloe vera, and cover it with a clean bandage.\"\n    },\n    {\n        \"question\": \"What are the symptoms of food poisoning?\",\n        \"answer\": \"Symptoms include nausea, vomiting, diarrhea, and stomach cramps.\"\n    },\n    {\n        \"question\": \"How do I prevent back pain?\",\n        \"answer\": \"Maintain good posture, exercise regularly, and avoid heavy lifting.\"\n    },\n    {\n        \"question\": \"What is a healthy BMI range?\",\n        \"answer\": \"A healthy BMI ranges from 18.5 to 24.9.\"\n    },\n    {\n        \"question\": \"How can I reduce cholesterol levels?\",\n        \"answer\": \"Eat a heart-healthy diet, exercise regularly, and avoid trans fats.\"\n    },\n    {\n        \"question\": \"What is the best way to treat acne?\",\n        \"answer\": \"Wash your face regularly, use non-comedogenic products, and consult a dermatologist for severe cases.\"\n    },\n    {\n        \"question\": \"What are the symptoms of an ear infection?\",\n        \"answer\": \"Symptoms include ear pain, fever, and difficulty hearing.\"\n    },\n    {\n        \"question\": \"How do I prevent kidney stones?\",\n        \"answer\": \"Drink plenty of water, limit salt intake, and avoid foods high in oxalates.\"\n    },\n    {\n        \"question\": \"What is the difference between Type 1 and Type 2 diabetes?\",\n        \"answer\": \"Type 1 is an autoimmune condition, while Type 2 is often related to lifestyle and genetics.\"\n    },\n    {\n        \"question\": \"How do I treat constipation?\",\n        \"answer\": \"Increase fiber intake, drink more water, and exercise regularly.\"\n    },\n    {\n        \"question\": \"What are the symptoms of a stroke?\",\n        \"answer\": \"Symptoms include sudden numbness, confusion, difficulty speaking, and loss of balance.\"\n    },\n    {\n        \"question\": \"How do I prevent migraines?\",\n        \"answer\": \"Identify triggers, manage stress, and maintain a regular sleep schedule.\"\n    },\n    {\n        \"question\": \"What are the benefits of drinking water?\",\n        \"answer\": \"Water helps maintain hydration, supports digestion, and regulates body temperature.\"\n    },\n    {\n        \"question\": \"How do I treat a sprained ankle?\",\n        \"answer\": \"Use the RICE method: Rest, Ice, Compression, and Elevation.\"\n    },\n    {\n        \"question\": \"What is the difference between a viral and bacterial infection?\",\n        \"answer\": \"Bacterial infections are treated with antibiotics, while viral infections usually resolve on their own.\"\n    },\n    {\n        \"question\": \"How do I protect my skin from the sun?\",\n        \"answer\": \"Wear sunscreen, seek shade, and wear protective clothing.\"\n    },\n    {\n        \"question\": \"What are the signs of dehydration in children?\",\n        \"answer\": \"Symptoms include dry mouth, no tears when crying, and decreased urination.\"\n    },\n    {\n        \"question\": \"How do I treat seasonal allergies?\",\n        \"answer\": \"Use antihistamines, avoid allergens, and keep windows closed during high pollen times.\"\n    },\n    {\n        \"question\": \"What are the symptoms of asthma?\",\n        \"answer\": \"Symptoms include wheezing, shortness of breath, and chest tightness.\"\n    },\n    {\n        \"question\": \"How do I prevent the spread of germs?\",\n        \"answer\": \"Wash hands regularly, cover your mouth when sneezing, and avoid close contact with sick people.\"\n    },\n    {\n        \"question\": \"What are the benefits of eating fruits and vegetables?\",\n        \"answer\": \"They provide essential vitamins, minerals, and antioxidants.\"\n    },\n    {\n        \"question\": \"How do I treat a fever?\",\n        \"answer\": \"Rest, stay hydrated, and use fever-reducing medications like acetaminophen.\"\n    },\n    {\n        \"question\": \"What are the symptoms of an allergic reaction?\",\n        \"answer\": \"Symptoms include hives, swelling, and difficulty breathing.\"\n    },\n    {\n        \"question\": \"How do I prevent infections after a cut or wound?\",\n        \"answer\": \"Clean the wound, apply an antibiotic ointment, and cover it with a bandage.\"\n    }\n]"
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
+clj꞉tools-methods-project.core꞉> 
 ; Evaluating file: json_data.clj
 #'tools-methods-project.helpers.json-data/faqs
 clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: healthcare_chatbot.clj
+; Evaluating file: project.clj
 ; 
-; ; clj  tools-methods-project.use-cases.healthcare-chatbot 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-; Evaluation of file healthcare_chatbot.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-#'tools-methods-project.helpers.json-data/faqs
-clj꞉tools-methods-project.helpers.json-data꞉> (print (take 2 faqs))
-; (; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-clj꞉tools-methods-project.helpers.json-data꞉> 
-Evaluating file: json_data.clj
+; ; clj  user 
+; Syntax error compiling at (project.clj:1:1).
+; Unable to resolve symbol: defproject in this context
+; Evaluation of file project.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-patient
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
 ; 
-; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:121).
-; Stream closed
-; (; Evaluation of file json_data.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉tools-methods-project.helpers.json-data꞉> 
-Evaluating file: json_data.clj
-#'tools-methods-project.helpers.json-data/faqs
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: json_data.clj
-#'tools-methods-project.helpers.json-data/faqs
-clj꞉tools-methods-project.helpers.json-data꞉> (print (take 2 faqs))
-; ({:question What is flu?, :answer Flu is a viral infection that attacks your respiratory system.} {:question How do I treat a headache?, :answer For mild headaches, rest, hydration, and over-the-counter pain relievers can help.})
+; Execution error (FileNotFoundException) at tools-methods-project.user/eval15328$loading (user.clj:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+; 
+; Execution error (FileNotFoundException) at tools-methods-project.user/eval15337$loading (user.clj:1).
+; Could not locate honey/sql/helpers__init.class, honey/sql/helpers.clj or honey/sql/helpers.cljc on classpath.
+; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-patient
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
+ #:patient{:id 6,
+           :email "bbb@gmail.com",
+           :password
+           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}
+ #:patient{:id 7,
+           :email "test@gmail.com",
+           :password
+           "bcrypt+sha512$7104800b33c52eccda35ea8dbdcbeb16$12$3190f96811aaaaea30c0e5b3a45329a3d81cb0d0ffd2c3d5"}]
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+; 
+; Execution error (FileNotFoundException) at tools-methods-project.user/eval15366$loading (user.clj:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+; Evaluation of file user.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:34757 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
 nil
-clj꞉tools-methods-project.helpers.json-data꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Symptoms include sneezing, itching, swelling, and difficulty breathing. Consult an allergist for testing."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"I'm sorry, I don't have an answer to that question."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"For mild headaches, rest, hydration, and over-the-counter pain relievers can help."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Flu is a viral infection that attacks your respiratory system."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-"For mild headaches, rest, hydration, and over-the-counter pain relievers can help."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Syntax error compiling at (src/tools_methods_project/use_cases/healthcare_chatbot.clj:1:8491).
-; Unable to resolve symbol: pregnancy? in this context
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Symptoms include sneezing, itching, swelling, and difficulty breathing. Consult an allergist for testing."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-"Consult a doctor for personalized advice, but avoid self-medicating."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Consult a doctor for personalized advice, but avoid self-medicating."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
-; Evaluating file: healthcare_chatbot.clj
-"Consult a doctor for personalized advice, but avoid self-medicating."
-clj꞉tools-methods-project.use-cases.healthcare-chatbot꞉> 
+clj꞉tools-methods-project.core꞉> 
+nil
+clj꞉tools-methods-project.user꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-patient
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
+ #:patient{:id 6,
+           :email "bbb@gmail.com",
+           :password
+           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}
+ #:patient{:id 7,
+           :email "test@gmail.com",
+           :password
+           "bcrypt+sha512$7104800b33c52eccda35ea8dbdcbeb16$12$3190f96811aaaaea30c0e5b3a45329a3d81cb0d0ffd2c3d5"}]
+clj꞉tools-methods-project.user꞉> (register-patient "dzoni@gmail.com" "dzoni")
+{:status :success, :message "Patient registered successfully"}
+clj꞉tools-methods-project.user꞉> (get-all-patients)
+[#:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}
+ #:patient{:id 5,
+           :email "aaa@gmail.com",
+           :password
+           "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a"}
+ #:patient{:id 6,
+           :email "bbb@gmail.com",
+           :password
+           "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf"}
+ #:patient{:id 7,
+           :email "test@gmail.com",
+           :password
+           "bcrypt+sha512$7104800b33c52eccda35ea8dbdcbeb16$12$3190f96811aaaaea30c0e5b3a45329a3d81cb0d0ffd2c3d5"}
+ #:patient{:id 8,
+           :email "dzoni@gmail.com",
+           :password
+           "bcrypt+sha512$e8103ea777bcbd84be144a9208516317$12$b2c0455fa86a62fa7fc6a0378df9ff9d18e4d01a60128c1f"}]
+clj꞉tools-methods-project.user꞉> (login-patient "dzoni@gmail.com" "dzoni")
+{:status :success,
+ :message "Login successful",
+ :patient
+ #:patient{:id 8,
+           :email "dzoni@gmail.com",
+           :password
+           "bcrypt+sha512$e8103ea777bcbd84be144a9208516317$12$b2c0455fa86a62fa7fc6a0378df9ff9d18e4d01a60128c1f"}}
+clj꞉tools-methods-project.user꞉> (login-patient "dzoni@gmail.com" "dnfdj")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (login-patient "dzoni@gmail.com" "dnfdj")
+{:status :error, :message "Invalid password"}
+clj꞉tools-methods-project.user꞉> (login-patient "sandra@gmail.com" "sandra")
+{:status :success,
+ :message "Login successful",
+ :patient
+ #:patient{:id 4,
+           :email "sandra@gmail.com",
+           :password
+           "bcrypt+sha512$5417ed304b0a7a7e9c0690002d31b113$12$2f147f98efaae2b49eb599d74197bb341da2e309299b0729"}}
+clj꞉tools-methods-project.user꞉> (logout-patient "sandra@gmail.com")
+{:status :success, :message "Logged out successfully"}
+clj꞉tools-methods-project.user꞉> 
