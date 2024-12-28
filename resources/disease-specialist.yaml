@@ -1,0 +1,62 @@
+specialists:
+  - name: "Infectious Disease Specialist"
+    diseases:
+      - "COVID-19"
+      - "Malaria"
+      - "Dengue"
+  - name: "Pulmonologist"
+    diseases:
+      - "Bronchitis"
+      - "Pneumonia"
+      - "Tuberculosis"
+      - "Asthma"
+      - "COPD"
+  - name: "Neurologist"
+    diseases:
+      - "Migraine"
+      - "Brain Cancer"
+      - "Cluster Headache"
+      - "Vertigo"
+  - name: "General Practitioner"
+    diseases:
+      - "Flu"
+      - "Tension Headache"
+      - "Chronic Fatigue Syndrome"
+      - "Dehydration"
+  - name: "ENT Specialist"
+    diseases:
+      - "Sinusitis"
+      - "Strep Throat"
+      - "Tonsillitis"
+  - name: "Cardiologist"
+    diseases:
+      - "Heart Attack"
+      - "Angina"
+      - "Low Blood Pressure"
+  - name: "Gastroenterologist"
+    diseases:
+      - "GERD"
+      - "IBS"
+      - "Gastritis"
+      - "Gallstones"
+  - name: "Psychiatrist"
+    diseases:
+      - "Panic Attack"
+      - "Depression"
+  - name: "Hematologist"
+    diseases:
+      - "Anemia"
+  - name: "Endocrinologist"
+    diseases:
+      - "Hypothyroidism"
+  - name: "Surgeon"
+    diseases:
+      - "Appendicitis"
+  - name: "Allergist"
+    diseases:
+      - "Allergy"
+  - name: "Dermatologist"
+    diseases:
+      - "Chickenpox"
+      - "Measles"
+      - "Eczema"

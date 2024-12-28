@@ -1,17 +1,14 @@
-(ns tools-methods-project.use-cases.specialists-by-specialty)
-
-(def specialists
-  {"Andjela Mircetic" "General Practitioner"
-   "Petar Nikodijevic" "Infectious Disease Specialist"
-   "Mladen Mijailovic" "Pulmologist"
-   "Dunja Nesic" "Neurologist"
-   "Sara Djokic" "Neurologist"
-   "Sandra Kovacevic" "Cardiologist"
-   "Iva Djokovic" "Gastroenterologist"})
+(ns tools-methods-project.use-cases.specialists-by-specialty
+  (:require [tools-methods-project.db :refer [datasource]]
+            [next.jdbc :as jdbc]
+            [honey.sql :as sql]))
 
 (defn get-specialists-by-specialty
   [specialty]
-  (filter #(= (val %) specialty) specialists))
+  (let [query (sql/format {:select [:name :specialty]
+                           :from   [:specialist]
+                           :where  [:= :specialty specialty]})]
+    (jdbc/execute! datasource query)))
 
 (doseq [specialist (get-specialists-by-specialty "Neurologist")]
-  (println (key specialist)))
+  (println specialist))

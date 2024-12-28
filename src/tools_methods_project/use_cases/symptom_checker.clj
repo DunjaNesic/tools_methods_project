@@ -1,6 +1,8 @@
 (ns tools-methods-project.use-cases.symptom-checker
   (:require [tools-methods-project.use-cases.symptoms-history :as history]
-            [tools-methods-project.helpers.csv-data :as csv]))
+            [tools-methods-project.helpers.csv-data :as csv]
+            [clj-yaml.core :as yaml]
+            [clojure.java.io :as io]))
 
 (defn build-symptom-disease-map
   "Creating a map of symptoms with associated diseases from a CSV file"
@@ -23,42 +25,20 @@
   (build-symptom-disease-map csv/test-data csv/symptom-keys :prognosis))
 
 
+(defn load-disease-specialist-map
+  "Loads the disease-specialist map from a YAML file."
+  [yaml-file]
+  (let [parsed-yaml (yaml/parse-string (slurp (io/resource yaml-file)))]
+    (reduce (fn [acc {:keys [name diseases]}]
+              (reduce (fn [inner-acc disease]
+                        (assoc inner-acc disease name))
+                      acc
+                      diseases))
+            {}
+            (:specialists parsed-yaml))))
+
 (def disease-specialist-map
-  {"Flu" "General Practitioner"
-   "COVID-19" "Infectious Disease Specialist"
-   "Malaria" "Infectious Disease Specialist"
-   "Dengue" "Infectious Disease Specialist"
-   "Bronchitis" "Pulmonologist"
-   "Pneumonia" "Pulmonologist"
-   "Tuberculosis" "Pulmonologist"
-   "Migraine" "Neurologist"
-   "Brain cancer" "Neurologist"
-   "Tension Headache" "General Practitioner"
-   "Cluster Headache" "Neurologist"
-   "Sinusitis" "ENT Specialist"
-   "Heart Attack" "Cardiologist"
-   "GERD" "Gastroenterologist"
-   "Angina" "Cardiologist"
-   "Panic Attack" "Psychiatrist"
-   "Anemia" "Hematologist"
-   "Hypothyroidism" "Endocrinologist"
-   "Chronic Fatigue Syndrome" "General Practitioner"
-   "Depression" "Psychiatrist"
-   "Strep Throat" "ENT Specialist"
-   "Tonsillitis" "ENT Specialist"
-   "Asthma" "Pulmonologist"
-   "COPD" "Pulmonologist"
-   "Allergy" "Allergist"
-   "Chickenpox" "Dermatologist"
-   "Measles" "Infectious Disease Specialist"
-   "Eczema" "Dermatologist"
-   "Appendicitis" "Surgeon"
-   "IBS" "Gastroenterologist"
-   "Gastritis" "Gastroenterologist"
-   "Gallstones" "Gastroenterologist"
-   "Vertigo" "Neurologist"
-   "Low Blood Pressure" "Cardiologist"
-   "Dehydration" "General Practitioner"})
+  (load-disease-specialist-map "disease-specialist.yaml"))
 
 ;;(get map key default-value)
 
@@ -98,5 +78,5 @@
          :specialists specialists}))
     {:error "Invalid symptoms provided. Please check your input."}))
 
-;;(check-symptoms [:back_pain :mood_swings])
-;;(check-symptoms [:continuous_sneezing :shivering :chills :cough :watering_from_eyes])
+;; (check-symptoms [:back_pain :mood_swings])
+;; (check-symptoms [:continuous_sneezing :shivering :chills :cough :watering_from_eyes])
