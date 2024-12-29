@@ -23,3 +23,86 @@ clj꞉tools-methods-project.use-cases.symptom-checker꞉> 
 ; Evaluating file: symptom_checker.clj
 #'tools-methods-project.use-cases.symptom-checker/check-symptoms
 clj꞉tools-methods-project.use-cases.symptom-checker꞉> 
+; Evaluating file: symptom_checker_handler.clj
+#'tools-methods-project.handlers.symptom-checker-handler/check-symptoms-handler
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval11744$loading (routes.clj:1).
+; personalized-treatment does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval12293$loading (routes.clj:1).
+; personalized-treatment does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> (-main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:44:36).
+; Unable to resolve symbol: -main in this context
+clj꞉tools-methods-project.routes꞉> -main
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1:8492).
+; Unable to resolve symbol: -main in this context
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval13614$loading (routes.clj:1).
+; personalized-treatment does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Syntax error compiling at (src/tools_methods_project/routes.clj:20:3).
+; Unable to resolve symbol: app in this context
+clj꞉tools-methods-project.routes꞉> 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval13620$loading (form-init16810956757837010391.clj:1).
+; personalized-treatment does not exist
+clj꞉tools-methods-project.routes꞉> 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval13626$loading (form-init16810956757837010391.clj:1).
+; personalized-treatment does not exist
+clj꞉tools-methods-project.routes꞉> 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval13632$loading (form-init16810956757837010391.clj:1).
+; personalized-treatment does not exist
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval13641$loading (routes.clj:1).
+; personalized-treatment does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval13650$loading (routes.clj:1).
+; personalized-treatment does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> (require 'tools-methods-project.handlers.personalized-treatment-handler :reload)
+
+nil
+clj꞉tools-methods-project.routes꞉> 
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+nil
+clj꞉tools-methods-project.routes꞉> 
+#'tools-methods-project.routes/app
+clj꞉tools-methods-project.routes꞉> 
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x10a3f60d "Server@10a3f60d{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: symptom_checker.clj
+#'tools-methods-project.use-cases.symptom-checker/check-symptoms
+clj꞉tools-methods-project.use-cases.symptom-checker꞉> (println "Symptom-Disease Map:" symptom-disease-map)
+; Symptom-Disease Map: {:skin_peeling #{Fungal infection Psoriasis}, :yellow_urine #{Hepatitis B}, :lack_of_concentration #{Hypertension }, :shivering #{Allergy}, :joint_pain #{Osteoarthristis Dengue Psoriasis hepatitis A Hepatitis D Hepatitis E}, :swelling_joints #{Osteoarthristis Arthritis}, :burning_micturition #{Urinary tract infection Drug Reaction}, :irritability #{Hyperthyroidism Hypothyroidism Migraine Hypoglycemia}, :neck_pain #{Osteoarthristis Cervical spondylosis}, :throat_irritation #{Common Cold}, :swollen_blood_vessels #{Varicose veins}, :muscle_pain #{Dengue Malaria hepatitis A Common Cold}, :family_history #{Fungal infection Bronchial Asthma Hepatitis C}, :mild_fever #{hepatitis A Tuberculosis Chicken pox}, :continuous_feel_of_urine #{Urinary tract infection}, :bloody_stool #{Dimorphic hemmorhoids(piles)}, :acidity #{GERD Migraine}, :dark_urine #{Jaundice hepatitis A Hepatitis D Hepatitis E Hepatitis B}, :cough #{Bronchial Asthma Common Cold GERD Tuberculosis Pneumonia}, :polyuria #{Diabetes }, :skin_rash #{Dengue Fungal infection Psoriasis Acne Impetigo Chicken pox Drug Reaction}, :irregular_sugar_level #{Diabetes }, :vomiting #{Dengue Malaria Jaundice hepatitis A Hepatitis D Hepatitis E Alcoholic hepatitis Gastroenteritis Chronic cholestasis (vertigo) Paroymsal  Positional Vertigo GERD Tuberculosis Paralysis (brain hemorrhage) Heart attack Peptic ulcer diseae Typhoid Hypoglycemia}, :restlessness #{Diabetes  Hyperthyroidism}, :abdominal_pain #{Jaundice hepatitis A Hepatitis D Hepatitis E Alcoholic hepatitis Chronic cholestasis Hepatitis B Peptic ulcer diseae Typhoid}, :nausea #{Dengue Malaria hepatitis A Hepatitis D Hepatitis E Chronic cholestasis (vertigo) Paroymsal  Positional Vertigo Hepatitis C Typhoid Hypoglycemia}, :red_spots_over_body #{Dengue Fungal infection Chicken pox}, :increased_appetite #{Diabetes }, :fatigue #{Dengue Varicose veins Bronchial Asthma Jaundice Hepatitis D Hepatitis E Diabetes  Hyperthyroidism Common Cold Hepatitis C Hepatitis B Tuberculosis Typhoid Hypothyroidism Pneumonia Chicken pox Hypoglycemia}, :sunken_eyes #{Gastroenteritis}, :blister #{Impetigo}, :yellowing_of_eyes #{hepatitis A Hepatitis D Hepatitis E Chronic cholestasis Hepatitis C Hepatitis B Tuberculosis}, :palpitations #{Hypoglycemia}, :pus_filled_pimples #{Acne}, :loss_of_smell #{Common Cold}, :enlarged_thyroid #{Hypothyroidism}, :weakness_of_one_body_side #{Paralysis (brain hemorrhage)}, :rusty_sputum #{Pneumonia}, :blackheads #{Acne}, :movement_stiffness #{Arthritis}, :depression #{Hypothyroidism Migraine}, :muscle_wasting #{AIDS}, :silver_like_dusting #{Psoriasis}, :altered_sensorium #{Paralysis (brain hemorrhage)}, :chest_pain #{Common Cold GERD Tuberculosis Heart attack Pneumonia Hypertension }, :itching #{Fungal infection Jaundice Chronic cholestasis Hepatitis B Chicken pox Drug Reaction}, :diarrhoea #{Malaria hepatitis A Gastroenteritis Hyperthyroidism Typhoid}, :dehydration #{Gastroenteritis}, :lethargy #{Diabetes  Hepatitis B Hypothyroidism Chicken pox}, :back_pain #{Dengue Cervical spondylosis}, :drying_and_tingling_lips #{Hypoglycemia}, :yellowish_skin #{Jaundice hepatitis A Hepatitis D Hepatitis E Alcoholic hepatitis Chronic cholestasis Hepatitis C Hepatitis B}, :ulcers_on_tongue #{GERD}, :malaise #{Dengue Common Cold Hepatitis B Tuberculosis Pneumonia Chicken pox}, :unsteadiness #{(vertigo) Paroymsal  Positional Vertigo}, :continuous_sneezing #{Common Cold Allergy}, :stomach_pain #{GERD Drug Reaction}, :swollen_extremeties #{Hypothyroidism}, :swelled_lymph_nodes #{Common Cold Tuberculosis Chicken pox}, :swollen_legs #{Varicose veins}, :cramps #{Varicose veins}, :dischromic _patches #{Fungal infection}, :high_fever #{Dengue Malaria Bronchial Asthma Jaundice Hepatitis E Common Cold Tuberculosis Impetigo Typhoid Pneumonia Chicken pox AIDS}, :distention_of_abdomen #{Alcoholic hepatitis}, :stiff_neck #{Migraine Arthritis}, :dizziness #{Cervical spondylosis Hypothyroidism Hypertension }, :small_dents_in_nails #{Psoriasis}, :foul_smell_of urine #{Urinary tract infection}, :nodal_skin_eruptions #{Fungal infection}, :blood_in_sputum #{Tuberculosis}, :fast_heart_rate #{Hyperthyroidism Pneumonia}, :redness_of_eyes #{Common Cold}, :indigestion #{Peptic ulcer diseae Migraine}, :red_sore_around_nose #{Fungal infection Impetigo}, :scurring #{Acne}, :patches_in_throat #{AIDS}, :bladder_discomfort #{Urinary tract infection}, :weakness_in_limbs #{Cervical spondylosis}, :chills #{Dengue Malaria Common Cold Tuberculosis Typhoid Pneumonia Allergy}, :stomach_bleeding #{Hepatitis E}, :loss_of_appetite #{Dengue hepatitis A Hepatitis D Hepatitis E Chronic cholestasis Hepatitis C Hepatitis B Tuberculosis Peptic ulcer diseae Chicken pox}, :prominent_veins_on_calf #{Varicose veins}, :puffy_face_and_eyes #{Hypothyroidism}, :mood_swings #{Hyperthyroidism Hypothyroidism}, :sinus_pressure #{Common Cold}, :receiving_unsterile_injections #{Hepatitis B}, :receiving_blood_transfusion #{Hepatitis B}, :mucoid_sputum #{Bronchial Asthma}, :pain_behind_the_eyes #{Dengue}, :swelling_of_stomach #{Alcoholic hepatitis}, :knee_pain #{Osteoarthristis}, :toxic_look_(typhos) #{Typhoid}, :extra_marital_contacts #{AIDS}, :belly_pain #{Typhoid}, :constipation #{Dimorphic hemmorhoids(piles) Typhoid}, :irritation_in_anus #{Dimorphic hemmorhoids(piles)}, :watering_from_eyes #{Allergy}, :blurred_and_distorted_vision #{Diabetes  Migraine Hypoglycemia}, :bruising #{Varicose veins}, :internal_itching #{Peptic ulcer diseae}, :yellow_crust_ooze #{Impetigo}, :obesity #{Varicose veins Diabetes }, :congestion #{Common Cold}, :sweating #{Malaria Hyperthyroidism Tuberculosis Heart attack Pneumonia Hypoglycemia}, :history_of_alcohol_consumption #{Alcoholic hepatitis}, :spinning_movements #{(vertigo) Paroymsal  Positional Vertigo}, :fluid_overload #{Alcoholic hepatitis}, :brittle_nails #{Hypothyroidism}, :hip_joint_pain #{Osteoarthristis}, :coma #{Hepatitis E}, :loss_of_balance #{Cervical spondylosis (vertigo) Paroymsal  Positional Vertigo Hypertension }, :breathlessness #{Bronchial Asthma Tuberculosis Heart attack Pneumonia}, :weight_gain #{Hypothyroidism}, :phlegm #{Common Cold Tuberculosis Pneumonia}, :headache #{Dengue Malaria (vertigo) Paroymsal  Positional Vertigo Common Cold Paralysis (brain hemorrhage) Typhoid Chicken pox Migraine Hypoglycemia Hypertension }, :cold_hands_and_feets #{Hypothyroidism}, :abnormal_menstruation #{Hyperthyroidism Hypothyroidism}, :painful_walking #{Osteoarthristis Arthritis}, :excessive_hunger #{Diabetes  Hyperthyroidism Migraine Hypoglycemia}, :anxiety #{Hypoglycemia}, :acute_liver_failure #{Hepatitis E}, :runny_nose #{Common Cold}, :spotting_ urination #{Drug Reaction}, :inflammatory_nails #{Psoriasis}, :pain_during_bowel_movements #{Dimorphic hemmorhoids(piles)}, :muscle_weakness #{Hyperthyroidism Arthritis}, :pain_in_anal_region #{Dimorphic hemmorhoids(piles)}, :weight_loss #{Jaundice Diabetes  Hyperthyroidism Tuberculosis}, :slurred_speech #{Hypoglycemia}, :passage_of_gases #{Peptic ulcer diseae}, :visual_disturbances #{Migraine}}
+nil
+clj꞉tools-methods-project.use-cases.symptom-checker꞉> 
+; Evaluating file: symptom_checker_handler.clj
+#'tools-methods-project.handlers.symptom-checker-handler/check-symptoms-handler
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
