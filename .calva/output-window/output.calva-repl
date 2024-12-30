@@ -113,3 +113,125 @@ clj꞉tools-methods-project.use-cases.specialist-chat꞉> 
 ; Evaluating file: specialist_chat_handler.clj
 #'tools-methods-project.handlers.specialist-chat-handler/specialist-chat-handler
 clj꞉tools-methods-project.handlers.specialist-chat-handler꞉> 
+; Evaluating file: toxic_group_chat.clj
+; User bbb@gmail.com received message: Hello from aaa@gmail.com
+; Unauthorized user sandra@gmail.com attempted to send a message!
+; Group Chat Messages: [{:sender aaa@gmail.com, :message Hello from aaa@gmail.com}]
+nil
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (show-group-messages)
+[{:sender "aaa@gmail.com", :message "Hello from aaa@gmail.com"}]
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: toxic_group_chat_test.clj
+; Run `(doc midje)` for Midje usage.
+nil
+clj꞉tools-methods-project.toxic-group-chat-test꞉> 
+; Evaluating file: group_chat_handler.clj
+#'tools-methods-project.handlers.group-chat-handler/group-chat-handler
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Syntax error compiling at (src/tools_methods_project/routes.clj:25:28).
+; No such namespace: json
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+nil
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Syntax error compiling at (src/tools_methods_project/routes.clj:25:28).
+; No such namespace: json
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Syntax error compiling at (src/tools_methods_project/routes.clj:25:28).
+; No such namespace: json
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: group_chat_handler.clj
+#'tools-methods-project.handlers.group-chat-handler/group-chat-handler
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; Evaluating file: group_chat_handler.clj
+#'tools-methods-project.handlers.group-chat-handler/group-chat-handler
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (require '[tools-methods-project.use-cases.toxic-group-chat :as group])
+nil
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (require '[tools-methods-project.user :refer [sessions]])
+nil
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (swap! sessions assoc "aaa@gmail.com" {:status :online})
+(swap! sessions assoc "bbb@gmail.com" {:status :online})
+(swap! sessions assoc "ccc@gmail.com" {:status :offline})
+{"aaa@gmail.com"
+ {:patient/id 5,
+  :patient/email "aaa@gmail.com",
+  :patient/password
+  "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a",
+  :status :online},
+ "bbb@gmail.com"
+ {:patient/id 6,
+  :patient/email "bbb@gmail.com",
+  :patient/password
+  "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf",
+  :status :online},
+ "ccc@gmail.com" {:status :offline}}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (group/join-group "aaa@gmail.com")
+{:domain-status :success, :message "aaa@gmail.com joined group chat!"}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (group/join-group "bbb@gmail.com")
+{:domain-status :success, :message "bbb@gmail.com joined group chat!"}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (group/broadcast-message "aaa@gmail.com" "Hello from AAA!") 
+; User bbb@gmail.com received message: aaa@gmail.com says: Hello from AAA!
+{:domain-status :success, :message "Broadcasted message from aaa@gmail.com"}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (group/show-group-messages)
+[{:sender "aaa@gmail.com", :message "Hello from AAA!", :timestamp 1735521203253, :timestamp-str "2024-12-30 02:13:23"}]
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (swap! sessions assoc "ccc@gmail.com" {:status :online})
+{"aaa@gmail.com"
+ {:patient/id 5,
+  :patient/email "aaa@gmail.com",
+  :patient/password
+  "bcrypt+sha512$ca042c08c42fd73f29ce8d7d911f777b$12$f1e5b8373eb4ab81cced2613f86f974e913bdaf63cd00a2a",
+  :status :online},
+ "bbb@gmail.com"
+ {:patient/id 6,
+  :patient/email "bbb@gmail.com",
+  :patient/password
+  "bcrypt+sha512$aa6db0eac16358dfcd1c7c88dbd91f4f$12$e32e9d66cd9132e0a533421d70eaf053c2ef646c86b44ebf",
+  :status :online},
+ "ccc@gmail.com" {:status :online}}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (group/join-group "ccc@gmail.com")
+{:domain-status :success, :message "ccc@gmail.com joined group chat!"}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> (group/broadcast-message "aaa@gmail.com" "Hello from BBB!") 
+; User bbb@gmail.com received message: aaa@gmail.com says: Hello from BBB!
+; User ccc@gmail.com received message: aaa@gmail.com says: Hello from BBB!
+{:domain-status :success, :message "Broadcasted message from aaa@gmail.com"}
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: toxic_group_chat.clj
+#'tools-methods-project.use-cases.toxic-group-chat/show-group-messages
+clj꞉tools-methods-project.use-cases.toxic-group-chat꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x2a4ae6e4 "Server@2a4ae6e4{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
