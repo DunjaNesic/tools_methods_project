@@ -19,3 +19,4 @@ clj꞉tools-methods-project.core꞉> 
 ; [2024-12-30 02:36:07] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
 {:start-time 1735522567004, :end-time 1735522567006, :cost 30.0}
 clj꞉tools-methods-project.use-cases.payment-to-specialist꞉> 
+clj꞉undefined꞉> 

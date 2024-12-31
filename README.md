@@ -4,15 +4,15 @@ A Clojure project designed for symptom checking, diagnosing health conditions, a
 
 ## User stories
 
-User wants to receive possible diagnoses based on their symptoms.
-User wants to receive advice on which specialists they should consult based on their symptoms.
-User wants to see a list of specific specialist doctors ranked by certain priorities (e.g., location/price).
-User wants the ability to chat with a chosen doctor.
-User wants assistance in the form of a chatbot.
-User wants to receive probabilities for the suggested diagnoses.
-User wants to receive personalized treatment recommendations based on genetic predispositions, lifestyle, and previously diagnosed conditions.
-User wants to track the history of their symptoms over time.
-User wants to chat with other people that have similar diagnoses.
+- User wants to receive possible diagnoses based on their symptoms.
+- User wants to receive advice on which specialists they should consult based on their symptoms.
+- User wants to see a list of specific specialist doctors ranked by certain priorities (e.g., location/price).
+- User wants the ability to chat with a chosen doctor.
+- User wants assistance in the form of a chatbot.
+- User wants to receive probabilities for the suggested diagnoses.
+- User wants to receive personalized treatment recommendations based on genetic predispositions, lifestyle, and previously diagnosed conditions.
+- User wants to track the history of their symptoms over time.
+- User wants to chat with other people that have similar diagnoses.
 
 ## My experience doing this project
 
@@ -33,6 +33,8 @@ After that, I came up with the idea that it would be nice for the user to always
 Additionally, I realized it would be important to provide the probability of potential illnesses. For example, it wouldn’t be ideal for the user to receive a diagnosis like either migraines or brain cancer just based on the symptom "headache". So, I implemented this feature on a basic level as well.
     
 On Kaggle, I found a CSV file containing symptoms and potential disease diagnoses, and I used it instead of the hardcoded symptoms and diagnoses I had at the very beginning. Honestly, I struggled a lot with this because I tried various approaches and spent about three days just writing and deleting my code. I experimented with various methods, including neural networks and decision trees, but ultimately didn't apply any machine learning algorithms. Despite the frustration, I learned a lot through all the trial and error, even if it cost me a lot of patience. I also got closer to Clojure community since I have spent quite a bit of time on Reddit and Stack Overflow.
+
+Working on this project was very interesting and useful for me because, I’m not used to starting a project without first planning everything out in detail. This was the first time I began with the implementation of the smallest unit needed to realize a user story, and then built upon that code, adding new features, improving the old implementation, and so on. This project was a great starting point for stepping out of existing frameworks and my comfort zone.
 
 
 ## License
