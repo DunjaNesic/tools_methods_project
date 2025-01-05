@@ -1,3 +1,264 @@
-; Evaluating file: symptom_checker_handler.clj
-#'tools-methods-project.handlers.symptom-checker-handler/check-symptoms-handler
-clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:33831 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x621b8861 "Server@621b8861{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Syntax error compiling at (src/tools_methods_project/routes.clj:43:21).
+; Unable to resolve symbol: specialist-handler in this context
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:36365 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:specialist{:name Dunja Nesic, :specialty Neurologist}
+; #:specialist{:name Sara Djokic, :specialty Neurologist}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x9a496f8 "Server@9a496f8{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: specialist_handler.clj
+; 
+; ; clj  tools-methods-project.handlers.specialist-handler 
+; Execution error (IllegalAccessError) at tools-methods-project.handlers.specialist-handler/eval27867$loading (specialist_handler.clj:1).
+; cheshire does not exist
+; Evaluation of file specialist_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:36243 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:specialist{:name Dunja Nesic, :specialty Neurologist}
+; #:specialist{:name Sara Djokic, :specialty Neurologist}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x3cb451ff "Server@3cb451ff{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; {:status 200, :headers {}, :body {"error":"Specialty is required"}} #function[ring.util.response/response]
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; nil
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 31cb87d0-9b28-41a2-be1b-2d3f5a422142, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 043201af-3de5-4333-a78f-e591f6cf989b, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je specialty=Neurologist
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 2482a253-f399-4284-ab10-a4fe11dc2ee4, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 9f0a03c6-d4b2-45ad-ae9f-558747964ee0, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 37b00bb9-ced6-4ef8-ab3f-8cc7f53d07ab, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je nil
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 2e0e0331-5a75-4b70-bb4d-47fbf78de1d2, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; specijalnost je specialty=Neurologist
+; Request: {:ssl-client-cert nil, :protocol HTTP/1.1, :remote-addr [0:0:0:0:0:0:0:1], :headers {accept */*, user-agent PostmanRuntime/7.37.3, connection keep-alive, postman-token 7062d03b-5fd1-485a-be6c-7c1615d6c768, host localhost:3000, accept-encoding gzip, deflate, br}, :server-port 3000, :content-length nil, :content-type nil, :character-encoding nil, :uri /specialist, :server-name localhost, :query-string specialty=Neurologist, :body #object[org.eclipse.jetty.server.HttpInput 0x25142fd1 HttpInput@622079953 cs=HttpChannelState@6016b517{s=HANDLING rs=BLOCKING os=OPEN is=IDLE awp=false se=false i=true al=0} cp=org.eclipse.jetty.server.BlockingContentProducer@2d922cf8 eof=false], :scheme :http, :request-method :get}
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je Neurologist
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je Neurologist
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je Neurologist
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+#'tools-methods-project.handlers.specialist-handler/parse-query-params
+clj꞉tools-methods-project.handlers.specialist-handler꞉> (def kveri )
+; specijalnost je Neurologist
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; specijalnost je Neurologist
+; specijalnost je neurologist
+; specijalnost je Pulmonologist
+; specijalnost je Pulmologist
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/specialist-handler
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
