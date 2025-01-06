@@ -7,7 +7,7 @@
    [tools-methods-project.handlers.group-chat-handler :refer [group-chat-handler]]
    [tools-methods-project.handlers.chatbot-handler :refer [chatbot-handler]]
    [tools-methods-project.handlers.specialist-handler :refer [specialist-handler]]
-   [tools-methods-project.handlers.login-handler :refer [handle-login]]
+   [tools-methods-project.handlers.user-handler :refer [handle-login handle-register handle-logout]]
    [tools-methods-project.handlers.specialist-chat-handler :refer [specialist-chat-handler]]))
 
 (defn cors-response [response]
@@ -47,6 +47,12 @@
     "/login" (if (= (:request-method request) :post)
                (handle-login request)
                {:status 405 :body "Method Not Allowed"})
+    "/register" (if (= (:request-method request) :post)
+                  (handle-register request)
+                  {:status 405 :body "Method Not Allowed"})
+    "/logout" (if (= (:request-method request) :post)
+                (handle-logout request)
+                {:status 405 :body "Method Not Allowed"})
     {:status 404 :body "Not Found"}))
 
 (defn -main []
