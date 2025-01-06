@@ -5,8 +5,8 @@
 
 (defn get-specialists-by-specialty
   [specialty]
-  (let [query (sql/format {:select [:name :specialty]
-                           :from   [:specialist]
+  (let [query (sql/format {:select [:*]
+                           :from   [:userr]
                            :where  [:= :specialty specialty]})]
     (jdbc/execute! datasource query)))
 

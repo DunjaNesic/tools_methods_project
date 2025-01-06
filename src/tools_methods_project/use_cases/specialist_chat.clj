@@ -1,6 +1,6 @@
 (ns tools-methods-project.use-cases.specialist-chat
   (:require [clojure.core.async :as a :refer [>! <! go chan close!]]
-            [tools-methods-project.user :refer [sessions login-patient]])
+            [tools-methods-project.user :refer [sessions login-user]])
   (:import (java.time Instant ZoneId ZonedDateTime)
            (java.time.format DateTimeFormatter)))
 
@@ -88,8 +88,8 @@
   (send-message "Hi there!" user1 user2)
   (send-message "Hello!" user2 user1))
 
-(login-patient "aaa@gmail.com" "aaa")
-(login-patient "bbb@gmail.com" "bbb")
+(login-user "aaa@gmail.com" "aaa")
+(login-user "bbb@gmail.com" "bbb")
 
 ;; (simulate-chat "aaa@gmail.com" "bbb@gmail.com")
 

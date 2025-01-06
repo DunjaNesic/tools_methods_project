@@ -4,37 +4,46 @@
             [buddy.hashers :as hashers]
             [honey.sql :as sql]))
 
-(defn get-all-patients []
-  (let [query (sql/format {:select [:*] :from [:PATIENT]})]
+(defn get-all-specialists []
+  (let [query (sql/format {:select [:*]
+                           :from [:USERR]
+                           :where [:= :user_type "specialist"]})]
     (jdbc/execute! db/datasource query)))
 
-(defn register-patient [email password]
+(defn register-user [email password name user-type specialty]
   (let [hashed-password (hashers/derive password)
-        query (sql/format {:insert-into :PATIENT
-                           :columns [:email :password]
-                           :values [[email hashed-password]]})]
+        columns [:email :password :name :user_type]
+        values [email hashed-password name user-type]
+
+        [columns values] (if (= user-type "specialist")
+                           [(conj columns :specialty) (conj values specialty)]
+                           [columns values])
+        query (sql/format {:insert-into :USERR
+                           :columns columns
+                           :values [values]})]
     (try
       (jdbc/execute! db/datasource query)
-      {:status :success, :message "Patient registered successfully"}
+      {:status :success, :message "User registered successfully"}
       (catch Exception e
         {:status :error, :message (.getMessage e)}))))
 
+
 (def sessions (atom {}))
 
-(defn login-patient [email password]
+(defn login-user [email password]
   (let [query (sql/format {:select [:*]
-                           :from [:PATIENT]
+                           :from [:USERR]
                            :where [:= :email email]})
         result (jdbc/execute! db/datasource query)]
-    (if-let [patient (first result)]
-      (let [stored-password (:patient/password patient)]
+    (if-let [user (first result)]
+      (let [stored-password (:userr/password user)]
         (if (hashers/check password stored-password)
           (do
-            (swap! sessions assoc email (assoc patient :status :online))
-            {:status :success, :message "Login successful", :patient patient})
+            (swap! sessions assoc email (assoc user :status :online))
+            {:status :success, :message "Login successful", :user user})
           {:status :error, :message "Invalid password"}))
       {:status :error, :message "Email not found"})))
 
-(defn logout-patient [email]
+(defn logout-user [email]
   (swap! sessions dissoc email)
   {:status :success, :message "Logged out successfully"})

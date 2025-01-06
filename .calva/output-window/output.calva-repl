@@ -64,3 +64,220 @@ clj꞉tools-methods-project.routes꞉> (-main)
 ; Starting server on http://localhost:3000
 #object[org.eclipse.jetty.server.Server 0x2851b558 "Server@2851b558{STARTED}[11.0.24,sto=0]"]
 clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: symptom_checker.clj
+#'tools-methods-project.use-cases.symptom-checker/check-symptoms
+clj꞉tools-methods-project.use-cases.symptom-checker꞉> (check-symptoms [:back_pain :mood_swings])
+{:diagnoses {"Dengue" 1/4, "Cervical spondylosis" 1/4, "Hyperthyroidism" 1/4, "Hypothyroidism" 1/4},
+ :specialists ("Infectious Disease Specialist" "Endocrinologist")}
+clj꞉tools-methods-project.use-cases.symptom-checker꞉> 
+; Evaluating file: symptoms_history_test.clj
+; Run `(doc midje)` for Midje usage.
+nil
+clj꞉tools-methods-project.symptoms-history-test꞉> 
+; Evaluating file: symptoms_history.clj
+; 
+; ; clj  tools-methods-project.use-cases.symptoms-history 
+; Execution error (FileNotFoundException) at tools-methods-project.use-cases.symptoms-history/eval35515$loading (symptoms_history.clj:1).
+; Could not locate honeysql/core__init.class, honeysql/core.clj or honeysql/core.cljc on classpath.
+; Evaluation of file symptoms_history.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptoms_history.clj
+; 
+; Execution error (FileNotFoundException) at tools-methods-project.use-cases.symptoms-history/eval35524$loading (symptoms_history.clj:1).
+; Could not locate honeysql/core__init.class, honeysql/core.clj or honeysql/core.cljc on classpath.
+; Evaluation of file symptoms_history.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptom_checker.clj
+#'tools-methods-project.use-cases.symptom-checker/check-symptoms
+clj꞉tools-methods-project.use-cases.symptom-checker꞉> 
+; Evaluating file: symptoms_history.clj
+; 
+; ; clj  tools-methods-project.use-cases.symptoms-history 
+; Execution error (FileNotFoundException) at tools-methods-project.use-cases.symptoms-history/eval35576$loading (symptoms_history.clj:1).
+; Could not locate honeysql/core__init.class, honeysql/core.clj or honeysql/core.cljc on classpath.
+; Evaluation of file symptoms_history.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptoms_history.clj
+; 
+; Execution error (FileNotFoundException) at tools-methods-project.use-cases.symptoms-history/eval35585$loading (symptoms_history.clj:1).
+; Could not locate honeysql/helpers__init.class, honeysql/helpers.clj or honeysql/helpers.cljc on classpath.
+; Evaluation of file symptoms_history.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptoms_history.clj
+; 
+; Syntax error compiling at (src/tools_methods_project/use_cases/symptoms_history.clj:27:19).
+; No such namespace: h
+; Evaluation of file symptoms_history.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptoms_history.clj
+; 
+; Syntax error compiling at (src/tools_methods_project/use_cases/symptoms_history.clj:60:19).
+; No such namespace: h
+; Evaluation of file symptoms_history.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptoms_history.clj
+#'tools-methods-project.use-cases.symptoms-history/clear-history
+clj꞉tools-methods-project.use-cases.symptoms-history꞉> 
+; Evaluating file: symptom_checker_handler.clj
+#'tools-methods-project.handlers.symptom-checker-handler/check-symptoms-handler
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:45095 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Execution error (IllegalAccessError) at tools-methods-project.use-cases.specialist-chat/eval27749$loading (specialist_chat.clj:1).
+; login-patient does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> (-main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:161:36).
+; Unable to resolve symbol: -main in this context
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: specialist_chat.clj
+; 
+; ; clj  tools-methods-project.use-cases.specialist-chat 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2676).
+; ERROR: column "email" does not exist
+;   Position: 26
+; Evaluation of file specialist_chat.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.specialist-chat꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x3ba1afdc "Server@3ba1afdc{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:44175 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:specialist{:name Dunja Nesic, :specialty Neurologist}
+; #:specialist{:name Sara Djokic, :specialty Neurologist}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x3c6ff0e3 "Server@3c6ff0e3{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user.clj
+#'tools-methods-project.user/logout-user
+clj꞉tools-methods-project.user꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-get-all-specialists
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/handle-get-all-specialists
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:46499 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x4ab1c63f "Server@4ab1c63f{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: specialists_by_specialty.clj
+; 
+; ; clj  tools-methods-project.use-cases.specialists-by-specialty 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2676).
+; ERROR: zero-length delimited identifier at or near """"
+;   Position: 8
+; Evaluation of file specialists_by_specialty.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.specialists-by-specialty꞉> 
+; Evaluating file: specialists_by_specialty.clj
+; 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2676).
+; ERROR: zero-length delimited identifier at or near """"
+;   Position: 8
+; Evaluation of file specialists_by_specialty.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.use-cases.specialists-by-specialty꞉> 
+; Evaluating file: specialists_by_specialty.clj
+nil
+clj꞉tools-methods-project.use-cases.specialists-by-specialty꞉> 

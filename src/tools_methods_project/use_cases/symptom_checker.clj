@@ -68,10 +68,10 @@
 
 (defn check-symptoms
   "Accepting symptoms and calling functions for diagnoses and specialists."
-  [symptoms]
+  [symptoms user-id]
   (if (validate-symptoms symptoms)
     (do
-      (history/add-to-history symptoms)
+      (history/add-to-history symptoms user-id)
       (let [diagnoses (predict-diagnoses symptoms)
             specialists (recommend-specialists diagnoses)]
         {:diagnoses diagnoses

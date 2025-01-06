@@ -4,10 +4,11 @@
 
 (defn check-symptoms-handler [request]
   (let [body (json/read-str (slurp (:body request)) :key-fn keyword)
-        symptoms (:symptoms body)]
+        symptoms (:symptoms body)
+        user-id (:user-id body)]
     (if symptoms
       (let [keyword-symptoms (map keyword symptoms)
-            result (checker/check-symptoms keyword-symptoms)]
+            result (checker/check-symptoms keyword-symptoms user-id)]
         {:status 200
          :headers {"Content-Type" "application/json"}
          :body (json/write-str result)})

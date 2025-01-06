@@ -6,7 +6,7 @@
    [tools-methods-project.handlers.symptom-checker-handler :refer [check-symptoms-handler]]
    [tools-methods-project.handlers.group-chat-handler :refer [group-chat-handler]]
    [tools-methods-project.handlers.chatbot-handler :refer [chatbot-handler]]
-   [tools-methods-project.handlers.specialist-handler :refer [specialist-handler]]
+   [tools-methods-project.handlers.specialist-handler :refer [specialist-handler handle-get-all-specialists]]
    [tools-methods-project.handlers.user-handler :refer [handle-login handle-register handle-logout]]
    [tools-methods-project.handlers.specialist-chat-handler :refer [specialist-chat-handler]]))
 
@@ -44,6 +44,9 @@
     "/specialist" (if (= (:request-method request) :get)
                     (specialist-handler request)
                     {:status 405 :body "Method Not Allowed"})
+    "/specialists" (if (= (:request-method request) :get)
+                     (handle-get-all-specialists)
+                     {:status 405 :body "Method Not Allowed"})
     "/login" (if (= (:request-method request) :post)
                (handle-login request)
                {:status 405 :body "Method Not Allowed"})

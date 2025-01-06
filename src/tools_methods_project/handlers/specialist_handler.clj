@@ -2,6 +2,7 @@
   (:require [tools-methods-project.use-cases.specialists-by-specialty :refer [get-specialists-by-specialty]]
             [ring.util.response :refer [response header]]
             [clojure.string :as str]
+            [tools-methods-project.user :refer [get-all-specialists]]
             [cheshire.core :refer [generate-string]]))
 
 (defn parse-query-params [query-string]
@@ -20,3 +21,10 @@
       (-> (response (generate-string {:error "Specialty is required"}))
           (header "Content-Type" "application/json")
           (assoc :status 400)))))
+
+(defn handle-get-all-specialists []
+  (let [specialists (get-all-specialists)]
+    {:status 200
+     :headers {"Content-Type" "application/json"}
+     :body (generate-string {:status "success"
+                             :specialists specialists})}))
