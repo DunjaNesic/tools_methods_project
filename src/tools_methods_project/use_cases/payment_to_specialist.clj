@@ -1,5 +1,4 @@
 (ns tools-methods-project.use-cases.payment-to-specialist
-  (:require [clojure.string :as str])
   (:import (java.time Instant ZoneId ZonedDateTime)
            (java.time.format DateTimeFormatter)))
 
@@ -43,6 +42,10 @@
         zdt       (ZonedDateTime/ofInstant now (ZoneId/systemDefault))]
     (.format zdt formatter)))
 
+(defn show-chat-session
+  [user-email specialist-email]
+  (get @chat-sessions [user-email specialist-email]))
+
 (defn start-paid-chat
   [user-email specialist-email]
   (dosync
@@ -70,15 +73,10 @@
      (alter chat-sessions assoc [user-email specialist-email] updated-session)
      (println (str "[" (formatted-now) "] Ended chat for user: " user-email " with specialist: "
                    specialist-email ". Duration = " duration-minutes " min, cost = " total-cost " RSD."))
+     (println "Chat session details: " (show-chat-session user-email specialist-email))
      {:domain-status :success
       :cost          total-cost
       :message       (str "You owe " total-cost " RSD for " duration-minutes " minute(s) of chatting.")})))
 
-
-(defn show-chat-session
-  [user-email specialist-email]
-  (get @chat-sessions [user-email specialist-email]))
-
 (start-paid-chat "aaa@gmail.com" "drHouse@gmail.com")
 (end-paid-chat "aaa@gmail.com" "drHouse@gmail.com")
-(show-chat-session "aaa@gmail.com" "drHouse@gmail.com")

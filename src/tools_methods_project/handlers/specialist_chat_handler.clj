@@ -1,5 +1,6 @@
 (ns tools-methods-project.handlers.specialist-chat-handler
   (:require [cheshire.core :as cheshire]
+            [tools-methods-project.use-cases.payment-to-specialist :as payment]
             [tools-methods-project.use-cases.specialist-chat :as chat]))
 
 (defn specialist-chat-handler [request]
@@ -49,6 +50,36 @@
         {:status 400
          :headers {"Content-Type" "application/json"}
          :body (cheshire/encode {:error "Sender and receiver are required to show messages."})})
+
+      "start-charging"
+      (if (and sender receiver)
+        (let [result (payment/start-paid-chat sender receiver)]
+          (case (:domain-status result)
+            :success {:status 200
+                      :headers {"Content-Type" "application/json"}
+                      :body (cheshire/encode {:message (:message result)})}
+            :error   {:status 400
+                      :headers {"Content-Type" "application/json"}
+                      :body (cheshire/encode {:error (:message result)})}))
+        {:status 400
+         :headers {"Content-Type" "application/json"}
+         :body (cheshire/encode {:error "Sender and receiver are required to start charging."})})
+
+      "stop-charging"
+      (if (and sender receiver)
+        (let [result (payment/end-paid-chat sender receiver)]
+          (case (:domain-status result)
+            :success {:status 200
+                      :headers {"Content-Type" "application/json"}
+                      :body (cheshire/encode {:message (:message result)
+                                              :cost    (:cost result)})}
+            :error   {:status 400
+                      :headers {"Content-Type" "application/json"}
+                      :body (cheshire/encode {:error (:message result)})}))
+        {:status 400
+         :headers {"Content-Type" "application/json"}
+         :body (cheshire/encode {:error "Sender and receiver are required to stop charging."})})
+
 
       {:status 400
        :headers {"Content-Type" "application/json"}

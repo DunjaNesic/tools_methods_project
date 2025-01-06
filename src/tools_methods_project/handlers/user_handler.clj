@@ -13,7 +13,7 @@
        :headers {"Content-Type" "application/json"}
        :body (cheshire/generate-string {:status "success"
                                         :message (:message login-response)
-                                        :user (select-keys (:user login-response) [:userr/email :userr/id])})}
+                                        :user (select-keys (:user login-response) [:userr/email :userr/id :userr/user_type])})}
       {:status 401
        :headers {"Content-Type" "application/json"}
        :body (cheshire/generate-string {:status "error"
