@@ -1,25 +1,61 @@
 {:medical-condition-recommendations
- {"diabetes" {:diet ["Avoid sugar" "Include whole grains"]
-              :exercise ["Light cardio" "Yoga"]
-              :medications ["Metformin"]}
+ {"diabetes" {:diet ["Avoid sugar" "Include whole grains" "Eat fiber-rich foods" "Limit processed carbs"]
+              :exercise ["Light cardio" "Yoga" "Strength training"]
+              :medications ["Metformin" "Insulin" "GLP-1 receptor agonists"]}
 
-  "hypertension" {:diet ["Reduce salt" "Eat potassium-rich foods"]
-                  :exercise ["Walking" "Swimming"]
-                  :medications ["ACE inhibitors" "Beta-blockers"]}
+  "hypertension" {:diet ["Reduce salt" "Eat potassium-rich foods" "Include leafy greens" "Limit alcohol"]
+                  :exercise ["Walking" "Swimming" "Cycling"]
+                  :medications ["ACE inhibitors" "Beta-blockers" "Diuretics"]}
 
-  "obesity" {:diet ["Low-carb diet" "Increase protein intake"]
-             :exercise ["High-intensity interval training" "Strength training"]
-             :medications ["Orlistat"]}}
+  "obesity" {:diet ["Low-carb diet" "Increase protein intake" "Avoid sugary snacks" "Eat small frequent meals"]
+             :exercise ["High-intensity interval training" "Strength training" "Walking"]
+             :medications ["Orlistat" "Phentermine" "GLP-1 agonists"]}
+
+  "hyperlipidemia" {:diet ["Reduce saturated fats" "Increase fiber intake" "Eat healthy fats (avocados, olive oil)"]
+                    :exercise ["Cardio" "Strength training"]
+                    :medications ["Statins" "Fibrates" "Niacin"]}
+
+  "asthma" {:diet ["Avoid food allergens" "Increase vitamin C intake" "Drink plenty of water"]
+            :exercise ["Breathing exercises" "Swimming"]
+            :medications ["Inhalers" "Corticosteroids" "Leukotriene modifiers"]}
+
+  "arthritis" {:diet ["Anti-inflammatory foods (turmeric, ginger)" "Omega-3 fatty acids"]
+               :exercise ["Low-impact exercises" "Yoga" "Swimming"]
+               :medications ["NSAIDs" "Corticosteroids" "Disease-modifying antirheumatic drugs (DMARDs)"]}
+
+  "osteoporosis" {:diet ["Increase calcium intake" "Vitamin D supplementation" "Limit alcohol and caffeine"]
+                  :exercise ["Weight-bearing exercises" "Strength training" "Balance exercises"]
+                  :medications ["Bisphosphonates" "Selective estrogen receptor modulators (SERMs)"]}
+
+  "anemia" {:diet ["Increase iron-rich foods" "Eat vitamin C with iron-rich foods" "Increase folic acid intake"]
+            :exercise ["Low-impact exercises"]
+            :medications ["Iron supplements" "Vitamin B12 supplements" "Folic acid supplements"]}}
 
  :lifestyle-recommendations
- {"sedentary" {:diet ["Reduce calorie intake" "Add fruits and vegetables"]
-               :exercise ["Start with short walks" "Simple stretches"]}
+ {"sedentary" {:diet ["Reduce calorie intake" "Add fruits and vegetables" "Avoid processed foods"]
+               :exercise ["Start with short walks" "Simple stretches" "Gentle yoga"]}
 
-  "active" {:diet ["Maintain a balanced diet" "Increase protein post-workout"]
-            :exercise ["Focus on strength training" "Endurance exercises"]}}
+  "active" {:diet ["Maintain a balanced diet" "Increase protein post-workout" "Eat more complex carbs"]
+            :exercise ["Focus on strength training" "Endurance exercises" "HIIT"]}}
 
  :genetic-marker-recommendations
- {"APOE-e4" {:diet ["Increase omega-3 intake" "Reduce saturated fats"]
-             :exercise ["Regular cardio" "Brain-stimulating activities"]}
+ {"APOE-e4" {:diet ["Increase omega-3 intake" "Reduce saturated fats" "Eat plenty of fruits and vegetables"]
+             :exercise ["Regular cardio" "Brain-stimulating activities" "Strength training"]}
 
-  "MTHFR" {:diet ["Supplement folate" "Avoid processed foods"]}}}
+  "MTHFR" {:diet ["Supplement folate" "Avoid processed foods" "Increase leafy greens"]
+           :exercise ["Moderate exercise" "Aerobic activities"]}
+
+  "BRCA1/BRCA2" {:diet ["Increase antioxidant-rich foods" "Limit alcohol intake" "Increase fiber intake"]
+                 :exercise ["Strength training" "Cardio" "Weight-bearing activities"]}
+
+  "CYP1A2" {:diet ["Avoid excess caffeine" "Eat cruciferous vegetables"]
+            :exercise ["Moderate exercise" "Yoga" "Pilates"]}
+
+  "LCT" {:diet ["Avoid dairy products or include lactose-free alternatives" "Increase vitamin D intake"]
+         :exercise ["Low-impact exercises" "Yoga"]}
+
+  "FTO" {:diet ["Control portion sizes" "Avoid high-calorie foods" "Increase water intake"]
+         :exercise ["High-intensity interval training (HIIT)" "Strength training"]}
+
+  "COMT" {:diet ["Increase antioxidant-rich foods" "Consume foods rich in magnesium"]
+          :exercise ["Mindful exercises" "Breathing techniques" "Low-intensity cardio"]}}}
