@@ -20,19 +20,28 @@
                                         :message (:message login-response)})})))
 
 (defn handle-register [request]
-  (let [body (slurp (:body request))
-        {:keys [email password name user_type specialty]} (cheshire/parse-string body true)]
-    (if (and email password name user_type
-             (or (not= user_type "specialist") specialty))
-      (let [result (register-user email password name user_type specialty)]
-        {:status 200
+  (try
+    (let [body (slurp (:body request))
+          {:keys [email password name user_type specialty]} (cheshire/parse-string body true)]
+      (if (and email password name user_type
+               (or (not= user_type "specialist") specialty))
+        (let [result (register-user email password name user_type specialty)]
+          (if (= (:status result) :success)
+            {:status 200
+             :headers {"Content-Type" "application/json"}
+             :body (cheshire/generate-string result)}
+            {:status 400
+             :headers {"Content-Type" "application/json"}
+             :body (cheshire/generate-string result)}))
+        {:status 400
          :headers {"Content-Type" "application/json"}
-         :body (cheshire/generate-string result)})
-      {:status 400
+         :body (cheshire/generate-string {:status "error"
+                                          :message "Invalid input. Missing required fields."})}))
+    (catch Exception e
+      {:status 500
        :headers {"Content-Type" "application/json"}
        :body (cheshire/generate-string {:status "error"
-                                        :message "Invalid input. Missing required fields."})})))
-
+                                        :message (.getMessage e)})})))
 
 (defn handle-logout [request]
   (let [body (slurp (:body request))

@@ -1,3 +1,141 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:44699 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉tools-methods-project.core꞉> 
 ; Evaluating file: routes.clj
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; [2025-01-08 01:07:53] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-01-08 01:07:53] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1736294873009, :end-time 1736294873011, :cost 30.0}
 #'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x94626a6 "Server@94626a6{STARTED}[11.0.24,sto=0]"]
 clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:38239 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; [2025-01-08 05:02:29] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-01-08 05:02:29] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1736308949623, :end-time 1736308949625, :cost 30.0}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x4c655a8e "Server@4c655a8e{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:34671 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: user_handler.clj
+; 
+; ; clj  tools-methods-project.handlers.user-handler 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 12, :email fffvf@gmail.com, :password bcrypt+sha512$f959ee116c28b0ad5a8967c17b4d7dac$12$f88571be4c40c622a230a301980f84be489b5f80ab940878, :name Aaddfdscd, :user_type specialist, :specialty Neurologist}
+; [2025-01-08 05:18:57] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-01-08 05:18:57] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1736309937691, :end-time 1736309937700, :cost 30.0}
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x2aff0014 "Server@2aff0014{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
