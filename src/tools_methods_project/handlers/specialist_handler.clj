@@ -16,7 +16,8 @@
     ;; (println "specijalnost je" specialty)
     (if specialty
       (let [specialists (get-specialists-by-specialty specialty)]
-        (-> (response (generate-string specialists))
+        (-> (response (generate-string {:status "success"
+                                        :specialists specialists}))
             (header "Content-Type" "application/json")))
       (-> (response (generate-string {:error "Specialty is required"}))
           (header "Content-Type" "application/json")

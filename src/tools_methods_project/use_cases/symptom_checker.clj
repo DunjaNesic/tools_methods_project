@@ -74,9 +74,12 @@
       (history/add-to-history symptoms user-id)
       (let [diagnoses (predict-diagnoses symptoms)
             specialists (recommend-specialists diagnoses)]
-        {:diagnoses diagnoses
+        {:status :success
+         :diagnoses diagnoses
          :specialists specialists}))
-    {:error "Invalid symptoms provided. Please check your input."}))
+    {:status :error
+     :message "Invalid symptoms provided. Please check your input."}))
+
 
 ;; (check-symptoms [:back_pain :mood_swings])
 ;; (check-symptoms [:continuous_sneezing :shivering :chills :cough :watering_from_eyes])

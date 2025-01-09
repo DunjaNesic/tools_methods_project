@@ -1,21 +1,32 @@
 (ns tools-methods-project.handlers.symptom-checker-handler
   (:require [tools-methods-project.use-cases.symptom-checker :as checker]
             [tools-methods-project.use-cases.symptoms-history :as history]
+            [cheshire.core :as cheshire]
             [clojure.data.json :as json]))
 
 (defn check-symptoms-handler [request]
-  (let [body (json/read-str (slurp (:body request)) :key-fn keyword)
-        symptoms (:symptoms body)
-        user-id (:user-id body)]
-    (if symptoms
-      (let [keyword-symptoms (map keyword symptoms)
-            result (checker/check-symptoms keyword-symptoms user-id)]
-        {:status 200
+  (try
+    (let [body (slurp (:body request))
+          {:keys [symptoms user-id]} (cheshire/parse-string body true)]
+      (if symptoms
+        (let [keyword-symptoms (map keyword symptoms)
+              result (checker/check-symptoms keyword-symptoms user-id)]
+          (if (= (:status result) :success)
+            {:status 200
+             :headers {"Content-Type" "application/json"}
+             :body (cheshire/generate-string result)}
+            {:status 400
+             :headers {"Content-Type" "application/json"}
+             :body (cheshire/generate-string result)}))
+        {:status 400
          :headers {"Content-Type" "application/json"}
-         :body (json/write-str result)})
-      {:status 400
+         :body (cheshire/generate-string {:status "error"
+                                          :message "Invalid input. Missing required fields."})}))
+    (catch Exception e
+      {:status 500
        :headers {"Content-Type" "application/json"}
-       :body (json/write-str {:error "No symptoms provided."})})))
+       :body (cheshire/generate-string {:status "error"
+                                        :message (.getMessage e)})})))
 
 
 (defn symptoms-history-handler [request]
