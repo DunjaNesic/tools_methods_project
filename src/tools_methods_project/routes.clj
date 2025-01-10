@@ -56,7 +56,7 @@
     "/logout" (if (= (:request-method request) :post)
                 (handle-logout request)
                 {:status 405 :body "Method Not Allowed"})
-    "/history" (if (= (:request-method request) :get)
+    "/history" (if (= (:request-method request) :post)
                  (symptoms-history-handler request)
                  {:status 405 :body "Method Not Allowed"})
     {:status 404 :body "Not Found"}))

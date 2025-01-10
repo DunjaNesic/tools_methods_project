@@ -33,9 +33,16 @@
 
 (defn recommend-treatment
   [user-data]
-  (let [{:keys [medical-conditions lifestyle genetic-markers]} user-data]
-    (validate-input medical-conditions (keys medical-condition-recommendations))
-    (when (some? lifestyle)
-      (validate-input [lifestyle] (keys lifestyle-recommendations)))
-    (validate-input genetic-markers (keys genetic-marker-recommendations))
-    (generate-recommendations medical-conditions lifestyle genetic-markers)))
+  (try
+    (let [{:keys [medical-conditions lifestyle genetic-markers]} user-data]
+
+      (validate-input medical-conditions (keys medical-condition-recommendations))
+      (when (some? lifestyle)
+        (validate-input [lifestyle] (keys lifestyle-recommendations)))
+      (validate-input genetic-markers (keys genetic-marker-recommendations))
+
+      (merge {:status :success}
+             (generate-recommendations medical-conditions lifestyle genetic-markers)))
+    (catch Exception e
+      {:status :error
+       :message (.getMessage e)})))
