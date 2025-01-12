@@ -64,6 +64,9 @@
 
     (sort-by :timestamp (concat msgs-person2->person1 msgs-person1->person2))))
 
+(defn fetch-new-messages [receiver last-checked-timestamp]
+  (let [all-messages (get @messages receiver [])]
+    (filter #(> (:timestamp %) last-checked-timestamp) all-messages)))
 
 (defn chat-participant
   "nisam bas sig dal ce ovo da mi treba al aj"

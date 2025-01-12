@@ -6,7 +6,7 @@
 (defn specialist-chat-handler [request]
   (let [body        (slurp (:body request))
         parsed-body (cheshire/parse-string body true)
-        {:keys [action sender receiver message]} parsed-body]
+        {:keys [action sender receiver message last-checked-timestamp]} parsed-body]
     (case action
 
       "start"
@@ -50,6 +50,17 @@
         {:status 400
          :headers {"Content-Type" "application/json"}
          :body (cheshire/encode {:error "Sender and receiver are required to show messages."})})
+
+      "fetch-new-messages"
+      (if (and receiver last-checked-timestamp)
+        (let [last-checked-timestamp (Long/parseLong last-checked-timestamp)
+              msgs                   (chat/fetch-new-messages receiver last-checked-timestamp)]
+          {:status 200
+           :headers {"Content-Type" "application/json"}
+           :body (cheshire/encode {:messages msgs})})
+        {:status 400
+         :headers {"Content-Type" "application/json"}
+         :body (cheshire/encode {:error "Receiver and last-checked-timestamp are required to fetch new messages."})})
 
       "start-charging"
       (if (and sender receiver)

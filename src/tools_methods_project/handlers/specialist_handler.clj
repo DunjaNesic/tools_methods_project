@@ -2,7 +2,7 @@
   (:require [tools-methods-project.use-cases.specialists-by-specialty :refer [get-specialists-by-specialty]]
             [ring.util.response :refer [response header]]
             [clojure.string :as str]
-            [tools-methods-project.user :refer [get-all-specialists]]
+            [tools-methods-project.user :refer [get-all-specialists get-all-patients]]
             [cheshire.core :refer [generate-string]]))
 
 (defn parse-query-params [query-string]
@@ -29,3 +29,10 @@
      :headers {"Content-Type" "application/json"}
      :body (generate-string {:status "success"
                              :specialists specialists})}))
+
+(defn handle-get-all-patients []
+  (let [patients (get-all-patients)]
+    {:status 200
+     :headers {"Content-Type" "application/json"}
+     :body (generate-string {:status "success"
+                             :patients patients})}))

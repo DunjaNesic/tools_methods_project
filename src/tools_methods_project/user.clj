@@ -10,6 +10,12 @@
                            :where [:= :user_type "specialist"]})]
     (jdbc/execute! db/datasource query)))
 
+(defn get-all-patients []
+  (let [query (sql/format {:select [:*]
+                           :from [:USERR]
+                           :where [:= :user_type "patient"]})]
+    (jdbc/execute! db/datasource query)))
+
 (defn register-user [email password name user-type specialty]
   (let [hashed-password (hashers/derive password)
         columns [:email :password :name :user_type]
