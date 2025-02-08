@@ -1,0 +1,493 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:43989 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; Syntax error compiling at (tools_methods_project/services/personalized_treatment_service.clj:10:3).
+; No such var: use-case/recommend-treatment
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Syntax error compiling at (tools_methods_project/handlers/personalized_treatment_handler.clj:1:1).
+; namespace 'tools-methods-project.services.personalized-treatment-service' not found
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> (-main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:70:36).
+; Unable to resolve symbol: -main in this context
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Syntax error compiling at (tools_methods_project/handlers/personalized_treatment_handler.clj:1:1).
+; namespace 'tools-methods-project.services.personalized-treatment-service' not found
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment.clj
+#'tools-methods-project.use-cases.personalized-treatment/recommend-treatment
+clj꞉tools-methods-project.use-cases.personalized-treatment꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Syntax error compiling at (tools_methods_project/handlers/personalized_treatment_handler.clj:1:1).
+; namespace 'tools-methods-project.services.personalized-treatment-service' not found
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: personalized_treatment_service.clj
+#'tools-methods-project.services.personalized-treatment-service/recommend-treatment
+clj꞉tools-methods-project.services.personalized-treatment-service꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 15:15:05] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 15:15:05] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739024105615, :end-time 1739024105618, :cost 30.0}
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x271e7afb "Server@271e7afb{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: group_chat_handler.clj
+#'tools-methods-project.handlers.group-chat-handler/group-chat-handler
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:41177 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 15:24:51] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 15:24:51] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739024691362, :end-time 1739024691364, :cost 30.0}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x54570bd7 "Server@54570bd7{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; User dule@gmail.com received message: veljkocv@gmail.com says: hej
+; Evaluating file: response.clj
+nil
+clj꞉tools-methods-project.helpers.response꞉> 
+; Evaluating file: response.clj
+#'tools-methods-project.helpers.response/json-response
+clj꞉tools-methods-project.helpers.response꞉> 
+; Evaluating file: group_chat_handler.clj
+#'tools-methods-project.handlers.group-chat-handler/group-chat-handler
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; Evaluating file: response.clj
+#'tools-methods-project.helpers.response/handle-domain-result
+clj꞉tools-methods-project.helpers.response꞉> 
+; Evaluating file: group_chat_handler.clj
+#'tools-methods-project.handlers.group-chat-handler/group-chat-handler
+clj꞉tools-methods-project.handlers.group-chat-handler꞉> 
+; Evaluating file: chatbot_handler.clj
+#'tools-methods-project.handlers.chatbot-handler/chatbot-handler
+clj꞉tools-methods-project.handlers.chatbot-handler꞉> 
+; Evaluating file: chatbot_handler.clj
+#'tools-methods-project.handlers.chatbot-handler/chatbot-handler
+clj꞉tools-methods-project.handlers.chatbot-handler꞉> 
+; User veljkocv@gmail.com received message: dule@gmail.com says: fvdf
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.handlers.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.handlers.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.handlers.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.handlers.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.handlers.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.handlers.personalized-treatment-handler꞉> 
+; Evaluating file: personalized_treatment_handler.clj
+#'tools-methods-project.handlers.personalized-treatment-handler/personalized-treatment
+clj꞉tools-methods-project.handlers.personalized-treatment-handler꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:42059 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:34265 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 15:49:32] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 15:49:32] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739026172116, :end-time 1739026172119, :cost 30.0}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x7aafaee6 "Server@7aafaee6{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; User veljkocv@gmail.com received message: dule@gmail.com says: eeee
+; Evaluating file: specialist_chat_handler.clj
+#'tools-methods-project.handlers.specialist-chat-handler/specialist-chat-handler
+clj꞉tools-methods-project.handlers.specialist-chat-handler꞉> 
+; Evaluating file: specialist_chat_handler.clj
+#'tools-methods-project.handlers.specialist-chat-handler/specialist-chat-handler
+clj꞉tools-methods-project.handlers.specialist-chat-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/handle-get-all-patients
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; Evaluating file: specialist_handler.clj
+#'tools-methods-project.handlers.specialist-handler/handle-get-all-patients
+clj꞉tools-methods-project.handlers.specialist-handler꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:42625 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 16:02:51] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 16:02:51] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739026971641, :end-time 1739026971645, :cost 30.0}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x60da18df "Server@60da18df{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: symptom_checker_handler.clj
+; 
+; ; clj  tools-methods-project.handlers.symptom-checker-handler 
+; Execution error (IllegalStateException) at tools-methods-project.handlers.symptom-checker-handler/eval27916$loading (symptom_checker_handler.clj:1).
+; Alias json already exists in namespace tools-methods-project.handlers.symptom-checker-handler, aliasing clojure.data.json
+; Evaluation of file symptom_checker_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: user_handler.clj
+#'tools-methods-project.handlers.user-handler/handle-logout
+clj꞉tools-methods-project.handlers.user-handler꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:41449 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; Syntax error (IllegalArgumentException) compiling try at (tools_methods_project/handlers/symptom_checker_handler.clj:8:45).
+; Bad binding form, expected symbol, got: {:error "Invalid JSON format"}
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> (-main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:304:36).
+; Unable to resolve symbol: -main in this context
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Execution error at tools-methods-project.routes/eval17956$loading (routes.clj:1).
+; No namespace: tools-methods-project.handlers.symptom-checker-handler
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> (-main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:313:36).
+; Unable to resolve symbol: -main in this context
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: symptom_checker_handler.clj
+; 
+; ; clj  tools-methods-project.handlers.symptom-checker-handler 
+; Syntax error (IllegalArgumentException) compiling try at (src/tools_methods_project/handlers/symptom_checker_handler.clj:8:45).
+; Bad binding form, expected symbol, got: {:error "Invalid JSON format"}
+; Evaluation of file symptom_checker_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: symptom_checker_handler.clj
+; 
+; Syntax error (IllegalArgumentException) compiling try at (src/tools_methods_project/handlers/symptom_checker_handler.clj:8:45).
+; Bad binding form, expected symbol, got: {:error "Invalid JSON format"}
+; Evaluation of file symptom_checker_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: routes.clj
+; 
+; ; clj  tools-methods-project.routes 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval18280$loading (routes.clj:1).
+; symptoms-history-handler does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+; 
+; Execution error (IllegalAccessError) at tools-methods-project.routes/eval18289$loading (routes.clj:1).
+; symptoms-history-handler does not exist
+; Evaluation of file routes.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: symptom_checker_handler.clj
+; 
+; ; clj  tools-methods-project.handlers.symptom-checker-handler 
+; Syntax error (IllegalArgumentException) compiling try at (src/tools_methods_project/handlers/symptom_checker_handler.clj:8:45).
+; Bad binding form, expected symbol, got: {:error "Invalid JSON format"}
+; Evaluation of file symptom_checker_handler.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: symptom_checker_handler.clj
+#'tools-methods-project.handlers.symptom-checker-handler/symptoms-history-handler
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: symptom_checker_handler.clj
+#'tools-methods-project.handlers.symptom-checker-handler/symptoms-history-handler
+clj꞉tools-methods-project.handlers.symptom-checker-handler꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 16:31:59] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 16:31:59] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739028719815, :end-time 1739028719817, :cost 30.0}
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x332f4457 "Server@332f4457{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:41699 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 16:36:33] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 16:36:33] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739028993656, :end-time 1739028993659, :cost 30.0}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x1acf6030 "Server@1acf6030{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:42309 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x69ec22b7 "Server@69ec22b7{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:36947 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 16:46:39] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 16:46:39] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739029599032, :end-time 1739029599034, :cost 30.0}
+; 
+; ; clj  tools-methods-project.routes 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x6ead87e5 "Server@6ead87e5{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
+; Evaluating file: routes.clj
+#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/dunja/project/tools_methods_project; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:37681 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉tools-methods-project.core꞉> 
+; Evaluating file: routes.clj
+; Jack-in done.
+clj꞉tools-methods-project.core꞉> (-ma)
+; #:userr{:id 118, :email pavle@gmail.com, :password bcrypt+sha512$5184d0f57380f8d573cd608261890047$12$1c9a9f6214b75a6abe18c1eaa3193244eb74502b1e58bbf4, :name Pavle Gasic, :user_type specialist, :specialty Neurologist}
+; [2025-02-08 16:50:01] Started paid chat for user: aaa@gmail.com with specialist: drHouse@gmail.com
+; [2025-02-08 16:50:01] Ended chat for user: aaa@gmail.com with specialist: drHouse@gmail.com. Duration = 1.0 min, cost = 30.0 RSD.
+; Chat session details:  {:start-time 1739029801351, :end-time 1739029801352, :cost 30.0}
+in#'tools-methods-project.routes/-main
+clj꞉tools-methods-project.routes꞉> (=main)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:487:36).
+; Unable to resolve symbol: =main in this context
+clj꞉tools-methods-project.routes꞉> (-main)
+; Starting server on http://localhost:3000
+#object[org.eclipse.jetty.server.Server 0x46d73418 "Server@46d73418{STARTED}[11.0.24,sto=0]"]
+clj꞉tools-methods-project.routes꞉> 
